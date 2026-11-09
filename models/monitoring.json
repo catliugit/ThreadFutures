@@ -1,0 +1,202 @@
+{
+  "thresholds": {
+    "psi": 0.25,
+    "ks_p": 0.01,
+    "auc": 0.7
+  },
+  "periods": [
+    {
+      "launch_quarter": "2010Q4",
+      "skus": 175,
+      "roc_auc": 0.814,
+      "pr_auc": 0.657,
+      "predicted_stall_rate": 0.284,
+      "actual_stall_rate": 0.211,
+      "drift": {
+        "early_units_per_week": {
+          "psi": 0.316,
+          "ks_p": 1.06e-05
+        },
+        "early_trend": {
+          "psi": 0.163,
+          "ks_p": 1.5e-05
+        },
+        "early_zero_week_share": {
+          "psi": 2.634,
+          "ks_p": 4.36e-18
+        },
+        "early_customers": {
+          "psi": 0.279,
+          "ks_p": 2.35e-06
+        },
+        "early_orders": {
+          "psi": 0.397,
+          "ks_p": 2.94e-07
+        },
+        "early_return_rate": {
+          "psi": 0.261,
+          "ks_p": 6.6e-08
+        },
+        "early_max_markdown": {
+          "psi": 0.0,
+          "ks_p": 0.0846
+        },
+        "launch_list_price": {
+          "psi": 0.377,
+          "ks_p": 6.5e-09
+        },
+        "launch_month": {
+          "psi": 8.883,
+          "ks_p": 4.77e-206
+        },
+        "is_seasonal_christmas": {
+          "psi": 0.0,
+          "ks_p": 0.998
+        }
+      },
+      "alerts": [
+        "early_units_per_week: PSI 0.316",
+        "early_zero_week_share: PSI 2.634",
+        "early_customers: PSI 0.279",
+        "early_orders: PSI 0.397",
+        "early_return_rate: PSI 0.261",
+        "launch_list_price: PSI 0.377",
+        "launch_month: PSI 8.883",
+        "early_trend: KS p=1.5e-05"
+      ]
+    },
+    {
+      "launch_quarter": "2011Q1",
+      "skus": 70,
+      "roc_auc": 0.615,
+      "pr_auc": 0.306,
+      "predicted_stall_rate": 0.209,
+      "actual_stall_rate": 0.071,
+      "drift": {
+        "early_units_per_week": {
+          "psi": 1.616,
+          "ks_p": 3e-06
+        },
+        "early_trend": {
+          "psi": 0.328,
+          "ks_p": 0.0677
+        },
+        "early_zero_week_share": {
+          "psi": 0.559,
+          "ks_p": 2.47e-07
+        },
+        "early_customers": {
+          "psi": 1.212,
+          "ks_p": 1.85e-08
+        },
+        "early_orders": {
+          "psi": 0.881,
+          "ks_p": 3.98e-08
+        },
+        "early_return_rate": {
+          "psi": 0.413,
+          "ks_p": 2.17e-07
+        },
+        "early_max_markdown": {
+          "psi": 0.0,
+          "ks_p": 0.923
+        },
+        "launch_list_price": {
+          "psi": 1.513,
+          "ks_p": 0.014
+        },
+        "launch_month": {
+          "psi": 3.347,
+          "ks_p": 2.05e-09
+        },
+        "is_seasonal_christmas": {
+          "psi": 0.0,
+          "ks_p": 0.987
+        }
+      },
+      "alerts": [
+        "early_units_per_week: PSI 1.616",
+        "early_trend: PSI 0.328",
+        "early_zero_week_share: PSI 0.559",
+        "early_customers: PSI 1.212",
+        "early_orders: PSI 0.881",
+        "early_return_rate: PSI 0.413",
+        "launch_list_price: PSI 1.513",
+        "launch_month: PSI 3.347",
+        "AUC 0.62 below 0.7"
+      ]
+    },
+    {
+      "launch_quarter": "2011Q2",
+      "skus": 178,
+      "roc_auc": 0.792,
+      "pr_auc": 0.438,
+      "predicted_stall_rate": 0.139,
+      "actual_stall_rate": 0.017,
+      "drift": {
+        "early_units_per_week": {
+          "psi": 1.311,
+          "ks_p": 3.43e-10
+        },
+        "early_trend": {
+          "psi": 0.238,
+          "ks_p": 0.00182
+        },
+        "early_zero_week_share": {
+          "psi": 0.899,
+          "ks_p": 1.17e-14
+        },
+        "early_customers": {
+          "psi": 1.119,
+          "ks_p": 1.37e-18
+        },
+        "early_orders": {
+          "psi": 1.182,
+          "ks_p": 9.88e-17
+        },
+        "early_return_rate": {
+          "psi": 0.07,
+          "ks_p": 1.3e-05
+        },
+        "early_max_markdown": {
+          "psi": 0.0,
+          "ks_p": 0.999
+        },
+        "launch_list_price": {
+          "psi": 0.413,
+          "ks_p": 0.0402
+        },
+        "launch_month": {
+          "psi": 5.24,
+          "ks_p": 1.4e-52
+        },
+        "is_seasonal_christmas": {
+          "psi": 0.0,
+          "ks_p": 1.0
+        }
+      },
+      "alerts": [
+        "early_units_per_week: PSI 1.311",
+        "early_zero_week_share: PSI 0.899",
+        "early_customers: PSI 1.119",
+        "early_orders: PSI 1.182",
+        "launch_list_price: PSI 0.413",
+        "launch_month: PSI 5.24",
+        "early_trend: KS p=0.00182",
+        "early_return_rate: KS p=1.3e-05"
+      ]
+    }
+  ],
+  "offcut_model": {
+    "note": "Simulated cutting runs. Error by garment on the 1,600-run hold-out.",
+    "mae_pp_by_garment": {
+      "dress": 2.16,
+      "hoodie": 1.6,
+      "jeans": 1.23,
+      "shirt": 1.86,
+      "tee": 1.22
+    },
+    "p10_p90_coverage": 76.8,
+    "coverage_target": 80.0
+  }
+}

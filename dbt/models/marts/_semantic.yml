@@ -1,0 +1,69 @@
+version: 2
+models:
+  - name: metricflow_time_spine
+    time_spine:
+      standard_granularity_column: date_day
+    columns:
+      - name: date_day
+        granularity: day
+
+semantic_models:
+  - name: sku_weekly
+    description: Weekly sales per SKU. Shared metric definitions for dashboards and the disclosure table.
+    model: ref('fct_sku_weekly')
+    defaults:
+      agg_time_dimension: week_start
+    entities:
+      - name: sku
+        type: foreign
+        expr: stock_code
+      - name: sku_week
+        type: primary
+        expr: stock_code || '-' || cast(week_start as varchar)
+    dimensions:
+      - name: week_start
+        type: time
+        type_params: {time_granularity: week}
+      - name: weeks_since_launch
+        type: categorical
+    measures:
+      - {name: units_sold, agg: sum}
+      - {name: units_returned, agg: sum}
+      - {name: revenue, agg: sum}
+      - {name: avg_markdown_pct, expr: markdown_pct, agg: average}
+
+  - name: sku
+    description: SKU attributes.
+    model: ref('dim_sku')
+    entities:
+      - name: sku
+        type: primary
+        expr: stock_code
+    dimensions:
+      - name: launch_cohort
+        type: categorical
+      - name: is_seasonal_christmas
+        type: categorical
+
+metrics:
+  - name: units_sold
+    label: Units sold
+    type: simple
+    type_params: {measure: units_sold}
+  - name: units_returned
+    label: Units returned
+    type: simple
+    type_params: {measure: units_returned}
+  - name: revenue
+    label: Revenue (GBP)
+    type: simple
+    type_params: {measure: revenue}
+  - name: return_rate
+    label: Return rate
+    description: Units returned as a share of units sold.
+    type: ratio
+    type_params: {numerator: units_returned, denominator: units_sold}
+  - name: avg_markdown
+    label: Average markdown vs launch price
+    type: simple
+    type_params: {measure: avg_markdown_pct}

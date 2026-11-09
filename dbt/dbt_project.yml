@@ -1,0 +1,16 @@
+name: thread_futures
+version: "1.0.0"
+config-version: 2
+profile: thread_futures
+model-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+vars:
+  raw_transactions: "../data/raw/retail/transactions.parquet"
+models:
+  thread_futures:
+    staging: {+materialized: view}
+    intermediate: {+materialized: table}
+    marts: {+materialized: table}

@@ -1,0 +1,31 @@
+version: 2
+models:
+  - name: dim_sku
+    description: One row per SKU with launch week, launch cohort and launch list price.
+    columns:
+      - name: stock_code
+        tests: [unique, not_null]
+      - name: launch_cohort
+        tests: [not_null]
+  - name: fct_sku_weekly
+    description: SKU-week fact with weeks since launch and markdown versus launch price.
+    columns:
+      - name: stock_code
+        tests: [not_null, {relationships: {arguments: {to: ref('dim_sku'), field: stock_code}}}]
+      - name: weeks_since_launch
+        tests: [{between: {arguments: {min_value: 0, max_value: 120}}}]
+      - name: markdown_pct
+        tests: [{between: {arguments: {min_value: 0, max_value: 1}}}]
+  - name: mart_sku_health
+    description: Merchandising health per SKU at 5 Dec 2011 (ABC/XYZ, velocity, markdown, status).
+    columns:
+      - name: stock_code
+        tests: [unique, not_null]
+      - name: abc_class
+        tests: [{accepted_values: {arguments: {values: ['A', 'B', 'C']}}}]
+      - name: xyz_class
+        tests: [{accepted_values: {arguments: {values: ['X', 'Y', 'Z']}}}]
+      - name: stock_status
+        tests: [{accepted_values: {arguments: {values: ['selling', 'slowing', 'stopped']}}}]
+      - name: velocity_ratio
+        tests: [{between: {arguments: {min_value: 0, max_value: 1}}}]

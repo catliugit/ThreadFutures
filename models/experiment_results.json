@@ -1,0 +1,43 @@
+{
+  "markdown_did": {
+    "design": "stacked difference-in-differences, 4 weeks either side, 5 nearest-sales controls per SKU from the same launch cohort",
+    "treated_skus": 768,
+    "control_skus": 1580,
+    "effect_log_units": 0.8105,
+    "effect_pct": 124.9,
+    "ci95_pct": [
+      106.4,
+      145.0
+    ],
+    "p_value": 1.27e-76,
+    "placebo_pre_trend_effect": 0.1607,
+    "placebo_p_value": 0.000517
+  },
+  "pilot_design": {
+    "assumptions": {
+      "liquidator_mean": 0.08,
+      "routed_mean": 0.11,
+      "sd": 0.06,
+      "alpha": 0.05,
+      "power": 0.8
+    },
+    "effect_size_d": 0.5,
+    "batches_per_arm": 64,
+    "power_by_batches_per_arm": {
+      "10": 0.185,
+      "20": 0.338,
+      "30": 0.478,
+      "40": 0.598,
+      "60": 0.775,
+      "80": 0.882
+    },
+    "simulated_pilot": {
+      "uplift_pence_per_pound": 2.9,
+      "welch_p_value": 0.00665,
+      "bootstrap_ci95_pence": [
+        0.85,
+        4.93
+      ]
+    }
+  }
+}

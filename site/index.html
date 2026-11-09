@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thread Futures | See the waste before it happens</title>
+<meta name="description" content="Software for fashion teams: forecast fabric offcuts before cutting, spot lines likely to go unsold, and keep a clearer record of what happens to stock.">
+<meta property="og:title" content="Thread Futures">
+<meta property="og:description" content="Forecast fabric offcuts, spot unsold stock early, and keep the record of what happens next.">
+<meta property="og:url" content="https://threadfutures.com/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://threadfutures.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23173D35'/%3E%3Cpath d='M7 11h18M7 16h18M7 21h18' stroke='%23D7EF91' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#173D35;--forest-2:#1F4D43;--lime:#D7EF91;--ivory:#F7F7F1;--char:#242A28;--sage:#B5D9C8;--white:#FFFFFF;
+  --muted:#59615E;--hair:#DEDED4;--hair-d:rgba(255,255,255,.16);--on-forest:#DCE7E2;
+  --wrap:1180px;--r:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:'Manrope',system-ui,-apple-system,sans-serif;background:var(--ivory);color:var(--char);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
+h1{font-size:clamp(2.5rem,5.6vw,4.6rem)}
+h2{font-size:clamp(1.9rem,3.6vw,3rem)}
+h3{font-size:1.12rem;letter-spacing:-.01em;line-height:1.3}
+.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--forest)}
+.on-forest .eyebrow{color:var(--lime)}
+.lede{font-size:1.1rem;color:var(--muted);max-width:34em}
+.on-forest .lede{color:var(--on-forest)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:5px;background:var(--lime);color:var(--forest);white-space:nowrap}
+.tag.plan{background:transparent;color:var(--forest);box-shadow:inset 0 0 0 1.5px var(--forest)}
+.tag.sim{background:var(--sage);color:var(--forest)}
+.on-forest .tag.plan{color:var(--lime);box-shadow:inset 0 0 0 1.5px var(--lime)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:800;font-size:.95rem;padding:13px 20px;border-radius:8px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--forest);color:var(--white)}
+.btn-primary:hover{background:var(--forest-2)}
+.btn-lime{background:var(--lime);color:var(--forest)}
+.btn-line{background:transparent;color:var(--forest);box-shadow:inset 0 0 0 1.5px var(--forest)}
+.btn-sm{padding:9px 14px;font-size:.86rem}
+:focus-visible{outline:3px solid var(--forest);outline-offset:3px;border-radius:4px}
+.on-forest :focus-visible{outline-color:var(--lime)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--forest);color:#fff;padding:8px 12px;border-radius:6px;z-index:100}
+.skip:focus{left:8px}
+.hair{border:0;border-top:1px solid var(--hair)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(247,247,241,.92);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--hair)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.08rem;letter-spacing:-.02em;text-decoration:none;color:var(--forest)}
+.logo svg{width:28px;height:28px}
+.links{display:flex;align-items:center;gap:28px;font-size:.92rem;font-weight:600}
+.links a{text-decoration:none}
+.links a:not(.btn):hover{color:var(--forest);text-decoration:underline;text-underline-offset:4px}
+.menu{display:none;font:inherit;font-weight:700;background:none;border:1.5px solid var(--forest);color:var(--forest);border-radius:7px;padding:7px 12px}
+@media (max-width:860px){
+  .menu{display:block}
+  .links{display:none;position:absolute;left:0;right:0;top:66px;background:var(--ivory);flex-direction:column;align-items:flex-start;gap:0;padding:8px 16px 18px;border-bottom:1px solid var(--hair)}
+  .links.open{display:flex}
+  .links a{padding:12px 0;width:100%}
+  .links .btn{margin-top:8px;width:auto;padding:11px 16px}
+}
+
+/* HERO */
+.hero{padding:64px 0 56px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,.68fr) minmax(0,1fr);gap:56px;align-items:center}
+.hero h1{margin:18px 0 22px}
+.hero .lede{font-size:1.16rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-note{margin-top:26px;font-size:.84rem;color:var(--muted);max-width:30em}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero{padding:44px 0}}
+
+/* PRODUCT PANEL (real demo) */
+.app{background:var(--white);border:1px solid var(--hair);border-radius:14px;box-shadow:0 1px 0 var(--hair),0 30px 60px -30px rgba(23,61,53,.28);overflow:hidden}
+.app-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 12px;padding:12px 18px;border-bottom:1px solid var(--hair);background:#FBFBF7}
+.app-bar b{font-size:.86rem}
+.app-bar .crumb{font-size:.78rem;color:var(--muted)}
+.app-body{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+.inputs{padding:20px 20px 22px;border-right:1px solid var(--hair)}
+.inputs .group{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.field{display:block;margin-bottom:12px}
+.field span{display:flex;justify-content:space-between;font-size:.8rem;font-weight:700;margin-bottom:5px}
+.field output{font-weight:600;color:var(--muted)}
+select,input[type=text],input[type=email],textarea{width:100%;font:inherit;font-size:.9rem;padding:9px 10px;border:1px solid var(--hair);border-radius:7px;background:var(--white);color:var(--char)}
+textarea{min-height:96px;resize:vertical}
+input[type=range]{width:100%;accent-color:var(--forest)}
+.results{padding:20px 22px 22px;display:flex;flex-direction:column;gap:16px}
+.ann{font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);display:flex;align-items:center;gap:8px}
+.ann::before{content:"";width:14px;height:1.5px;background:var(--forest)}
+.big{font-size:2.6rem;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--forest)}
+.big small{font-size:1rem;font-weight:700;margin-left:4px;color:var(--muted)}
+.range{font-size:.88rem;color:var(--muted);margin-top:6px}
+.range b{color:var(--char)}
+.bar{height:12px;border-radius:99px;background:var(--sage);overflow:hidden;display:flex}
+.bar span{display:block;height:100%}
+.bar .cut{background:var(--sage)}
+.bar .off{background:var(--forest)}
+.legend{display:flex;justify-content:space-between;font-size:.76rem;color:var(--muted);margin-top:6px}
+.compare{width:100%;border-collapse:collapse;font-size:.86rem}
+.compare td{padding:7px 0;border-top:1px solid var(--hair)}
+.compare td:last-child{text-align:right;font-weight:700}
+.compare tr.me td{color:var(--forest);font-weight:800}
+.app-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;border-top:1px solid var(--hair);background:#FBFBF7;font-size:.78rem;color:var(--muted)}
+@media (max-width:640px){.app-bar .tag{white-space:normal}.app-body{grid-template-columns:1fr}.inputs{border-right:0;border-bottom:1px solid var(--hair)}.big{font-size:2.2rem}}
+
+/* SECTIONS */
+section{padding:104px 0}
+@media (max-width:640px){section{padding:72px 0}}
+.on-forest{background:var(--forest);color:var(--white)}
+.on-white{background:var(--white)}
+
+/* THE GAP */
+.gap-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:end}
+.gap h2{margin-top:16px;max-width:12em}
+.seq{list-style:none;margin-top:64px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--char)}
+.seq li{padding:20px 24px 0 0}
+.seq .k{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.seq h3{margin:8px 0 6px;font-size:1.3rem}
+.seq p{font-size:.92rem;color:var(--muted);max-width:22em}
+@media (max-width:860px){.gap-grid{grid-template-columns:1fr;gap:20px}.seq{grid-template-columns:1fr}.seq li{padding:18px 0;border-bottom:1px solid var(--hair)}}
+
+/* STORY SPLIT */
+.split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.split h2{margin:16px 0 18px}
+.split .truth{margin-top:22px;font-size:.86rem;color:var(--muted);padding-left:14px;border-left:2px solid var(--sage)}
+.split .cta-row{margin-top:24px}
+@media (max-width:980px){.split{grid-template-columns:1fr;gap:36px}}
+.panel{background:var(--white);border:1px solid var(--hair);border-radius:12px;overflow:hidden}
+.panel-head{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--hair)}
+.panel-head b{font-size:.9rem}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.data{width:100%;border-collapse:collapse;font-size:.88rem;min-width:560px}
+table.data th{font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 14px;border-bottom:1px solid var(--hair);background:#FBFBF7}
+table.data td{padding:11px 14px;border-bottom:1px solid var(--hair);vertical-align:top}
+table.data tr:last-child td{border-bottom:0}
+table.data .num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.best td{background:#F3F9E2}
+table.data tr.best td:first-child{box-shadow:inset 3px 0 0 var(--forest)}
+.panel-foot{padding:12px 18px;font-size:.8rem;color:var(--muted);border-top:1px solid var(--hair)}
+.panel-foot a{color:var(--forest);font-weight:700}
+
+/* FULL-WIDTH INTERFACE */
+.wide-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:end;margin-bottom:40px}
+.wide-head h2{margin-top:16px}
+@media (max-width:860px){.wide-head{grid-template-columns:1fr;gap:16px}}
+.annots{display:flex;flex-wrap:wrap;gap:22px;margin-bottom:14px}
+.risk{display:inline-block;min-width:46px;text-align:center;font-weight:800;font-size:.8rem;padding:3px 8px;border-radius:5px}
+.risk.hi{background:var(--forest);color:var(--white)}
+.risk.lo{background:var(--sage);color:var(--forest)}
+.out-yes{font-weight:700;color:var(--forest)}
+.out-no{color:var(--muted)}
+.routes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px dashed var(--forest);border-radius:12px;margin-top:18px}
+.routes div{padding:18px 20px}
+.routes div+div{border-left:1px dashed var(--hair)}
+.routes h3{font-size:.98rem;margin-bottom:4px}
+.routes p{font-size:.86rem;color:var(--muted)}
+@media (max-width:760px){.routes{grid-template-columns:1fr}.routes div+div{border-left:0;border-top:1px dashed var(--hair)}}
+
+/* EVIDENCE (quiet editorial) */
+.quiet{max-width:820px}
+.quiet h2{margin:16px 0 18px}
+.record{margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+.record div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--hair);font-size:.92rem}
+.record span{color:var(--muted)}
+@media (max-width:640px){.record{grid-template-columns:1fr}}
+
+/* HOW IT WORKS */
+.steps{list-style:none;margin-top:48px;border-top:1px solid var(--hair-d)}
+.steps li{display:grid;grid-template-columns:80px minmax(0,1.1fr) minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--hair-d)}
+.steps .n{font-size:.9rem;font-weight:800;color:var(--lime)}
+.steps h3{font-size:1.35rem}
+.steps p{color:var(--on-forest);font-size:.95rem}
+@media (max-width:860px){.steps li{grid-template-columns:48px 1fr;gap:6px 14px}.steps p,.steps .tag{grid-column:2}.steps .tag{justify-self:start;margin-top:6px}}
+
+/* AUDIENCE */
+.aud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:48px}
+.aud div{border-top:2px solid var(--forest);padding-top:18px}
+.aud h3{margin-bottom:8px}
+.aud p{color:var(--muted);font-size:.95rem}
+@media (max-width:860px){.aud{grid-template-columns:1fr;gap:28px}}
+
+/* WHY IT MATTERS */
+.why-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;margin-top:44px}
+.why-grid h3{font-size:1.25rem;margin-bottom:10px}
+.why-grid p{color:var(--muted);font-size:.96rem}
+.why-grid p+p{margin-top:12px}
+.quote{margin-top:44px;background:var(--white);border:1px solid var(--hair);border-radius:12px;padding:22px 24px}
+.quote .q{font-weight:700;margin:10px 0 12px}
+.quote ol{list-style:none;display:grid;gap:10px}
+.quote li{display:grid;grid-template-columns:96px 1fr;gap:14px;font-size:.88rem;padding-top:10px;border-top:1px solid var(--hair)}
+.quote li b{color:var(--forest)}
+.quote li span{color:var(--muted)}
+.quote .small{margin-top:12px;font-size:.78rem;color:var(--muted)}
+@media (max-width:860px){.why-grid{grid-template-columns:1fr;gap:32px}.quote li{grid-template-columns:1fr;gap:2px}}
+
+/* PROOF / REPOSITORY */
+.proof-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:end}
+.proof-head h2{margin-top:16px}
+@media (max-width:860px){.proof-head{grid-template-columns:1fr;gap:16px}}
+.parts{margin-top:44px;border-top:1px solid var(--char)}
+.part{display:grid;grid-template-columns:44px minmax(0,1fr) minmax(0,1.15fr) minmax(0,.9fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--hair)}
+.part .n{font-weight:800;color:var(--muted);font-size:.86rem;padding-top:2px}
+.part h3{margin-bottom:6px}
+.part .what{font-size:.92rem;color:var(--muted)}
+.part .tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.part .tools span{font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:5px;background:var(--white);border:1px solid var(--hair)}
+.part .skills{font-size:.84rem;color:var(--muted)}
+.part .result{font-size:.9rem}
+.part .result b{color:var(--forest)}
+.part .result a{color:var(--forest);font-weight:700}
+.part .tag{margin-top:8px}
+@media (max-width:980px){.part{grid-template-columns:36px 1fr;gap:10px 14px}.part>div:nth-child(n+3){grid-column:2}}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1fr);gap:64px;align-items:start}
+.about img{border-radius:12px;aspect-ratio:4/5;object-fit:cover;width:100%;max-width:380px;filter:saturate(.92)}
+.about h2{margin:16px 0 20px}
+.about p{color:var(--muted);max-width:36em}
+.about p+p{margin-top:14px}
+.about .links-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:28px}.about img{max-width:260px}}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.contact h2{margin:16px 0 18px}
+.form{background:var(--white);color:var(--char);border-radius:12px;padding:26px}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form label{display:block;font-size:.82rem;font-weight:700;margin-bottom:14px}
+.form label select,.form label input,.form label textarea{margin-top:6px}
+.form .hint{font-size:.78rem;color:var(--muted);margin-top:10px}
+.contact .mail{display:inline-block;margin-top:18px;color:var(--lime);font-weight:700}
+@media (max-width:860px){.contact{grid-template-columns:1fr;gap:28px}}
+@media (max-width:520px){.form .row{grid-template-columns:1fr;gap:0}}
+.hidden-field{position:absolute;left:-9999px}
+
+/* FAQ */
+.faq{margin-top:36px;border-top:1px solid var(--hair)}
+.faq details{border-bottom:1px solid var(--hair);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"+";font-weight:800;color:var(--forest)}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin-top:10px;color:var(--muted);font-size:.95rem;max-width:44em}
+
+/* FOOTER */
+footer{padding:44px 0 56px;border-top:1px solid var(--hair);font-size:.86rem;color:var(--muted)}
+.foot{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px}
+.foot nav{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:flex-end}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--forest);text-decoration:underline}
+@media (max-width:760px){.foot{grid-template-columns:1fr}.foot nav{justify-content:flex-start}}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(30px);background:var(--forest);color:#fff;padding:12px 18px;border-radius:8px;font-size:.9rem;font-weight:600;opacity:0;pointer-events:none;transition:all .25s ease;z-index:60}
+.toast.show{opacity:1;transform:translateX(-50%)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top" aria-label="Thread Futures home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#173D35"/><path d="M7 11h18M7 16h18M7 21h18" stroke="#D7EF91" stroke-width="2.4" stroke-linecap="round"/></svg>
+      thread futures
+    </a>
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu</button>
+    <nav class="links" id="links" aria-label="Main">
+      <a href="#platform">Platform</a>
+      <a href="#how">How it works</a>
+      <a href="#why">Why it matters</a>
+      <a href="#about">About</a>
+      <a class="btn btn-primary btn-sm" href="#demo">Explore the demo</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<!-- HERO: the working forecast is the first visual -->
+<section class="hero" id="top" style="padding-top:64px">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Software for circular fashion</div>
+      <h1>See the waste before it happens.</h1>
+      <p class="lede">Forecast fabric offcuts, assess routes for unsold stock, and keep a clearer record of what happens next.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#demo">Explore the demo</a>
+        <a class="btn btn-line" href="#how">See the workflow</a>
+      </div>
+      <p class="hero-note">The forecast on this page runs in your browser. It is a prototype trained on simulated cutting runs, not on customer production data.</p>
+    </div>
+
+    <div class="app reveal" id="demo" aria-label="Offcut forecast prototype">
+      <div class="app-bar">
+        <div><b>Offcut forecast</b> <span class="crumb">/ Planned cutting run</span></div>
+        <span class="tag sim">Prototype · simulated production data</span>
+      </div>
+      <div class="app-body">
+        <form class="inputs" onsubmit="return false">
+          <p class="group">Planned cutting run</p>
+          <label class="field"><span>Style</span>
+            <select id="garment"><option value="tee">T-shirt, jersey</option><option value="hoodie">Hoodie, fleece</option><option value="shirt">Shirt, woven</option><option value="jeans">Jeans, denim</option><option value="dress">Dress, woven</option></select></label>
+          <label class="field"><span>Fabric type</span>
+            <select id="fibre"><option value="cotton">100% cotton</option><option value="polyester">100% polyester</option><option value="cotton_poly">Cotton/polyester blend</option><option value="cotton_elastane">Cotton with elastane</option></select></label>
+          <label class="field"><span>Size range</span>
+            <select id="sizemix"><option value="narrow">Core sizes (S–XL)</option><option value="standard" selected>Standard (XS–XXL)</option><option value="extended">Extended</option></select></label>
+          <label class="field"><span>Fabric length <output id="metresVal">18,000 m</output></span>
+            <input id="metres" type="range" min="2000" max="40000" step="500" value="18000"></label>
+          <label class="field"><span>Roll width <output id="widthVal">1.80 m</output></span>
+            <input id="width" type="range" min="1.2" max="2.2" step="0.05" value="1.8"></label>
+          <label class="field"><span>Fabric weight <output id="gsmVal">180 g/m²</output></span>
+            <input id="gsm" type="range" min="80" max="450" step="5" value="180"></label>
+        </form>
+        <div class="results" aria-live="polite">
+          <div>
+            <div class="ann">Estimated offcuts</div>
+            <div class="big" id="p50">–<small>kg</small></div>
+            <div class="range">Likely range <b id="range">–</b> (P10–P90)</div>
+          </div>
+          <div>
+            <div class="bar" aria-hidden="true"><span class="cut" id="cutBar" style="width:81%"></span><span class="off" id="offBar" style="width:19%"></span></div>
+            <div class="legend"><span id="cutPct">Cut panels</span><span id="offPct">Offcuts</span></div>
+          </div>
+          <div>
+            <div class="ann">Model comparison</div>
+            <table class="compare">
+              <tr class="me"><td>Model estimate (P50)</td><td id="cmpModel">–</td></tr>
+              <tr><td>Flat 15% rule of thumb</td><td id="cmpRule">–</td></tr>
+              <tr><td>Fabric in</td><td id="cmpIn">–</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="app-foot">
+        <span>Demo data, not a live customer result.</span>
+        <button class="btn btn-line btn-sm" id="copyBtn" type="button">Copy estimate</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE GAP -->
+<section class="gap on-white" id="platform">
+  <div class="wrap">
+    <div class="gap-grid">
+      <div class="reveal"><div class="eyebrow">The gap</div><h2>Waste decisions start long before disposal.</h2></div>
+      <p class="lede reveal">Cutting plans create offcuts. Unsold stock accumulates across seasons. The information needed to act is often spread across teams, files and suppliers.</p>
+    </div>
+    <ol class="seq reveal">
+      <li><div class="k">Before the run</div><h3>The cutting plan</h3><p>Marker software reports planned efficiency, but the cutting room loses more: ends, splices, defects.</p></li>
+      <li><div class="k">After the season</div><h3>The unsold batch</h3><p>Lines that stopped selling sit in the warehouse until someone decides what happens to them.</p></li>
+      <li><div class="k">Afterwards</div><h3>The record</h3><p>What was considered, what was chosen, and which documents support it, usually rebuilt from email.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- STORY 1: FORECASTING -->
+<section>
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="eyebrow">01 / Before production</div>
+      <h2>Estimate the offcuts.</h2>
+      <p class="lede">Model expected fabric waste from planned cutting runs. Compare the estimate with a simple baseline and inspect the inputs behind it.</p>
+      <p class="truth">Prototype trained and evaluated on 8,000 simulated cutting runs. The first pilot goal is to stay within ±15% on real weighed output.</p>
+      <div class="cta-row"><a class="btn btn-primary" href="#demo">Try forecasting</a></div>
+    </div>
+    <div class="panel reveal">
+      <div class="panel-head"><b>Held-out test, 1,600 simulated runs</b><span class="tag sim">Simulated data</span></div>
+      <div class="scroll">
+        <table class="data">
+          <thead><tr><th>Method</th><th class="num">Mean error, offcut kg</th><th class="num">Runs within ±15%</th></tr></thead>
+          <tbody>
+            <tr><td>Marker efficiency alone</td><td class="num">23.3%</td><td class="num">11.1%</td></tr>
+            <tr><td>Flat 15% rule of thumb</td><td class="num">20.3%</td><td class="num">39.2%</td></tr>
+            <tr class="best"><td><b>Model, order data only</b> (this demo)</td><td class="num"><b>8.8%</b></td><td class="num"><b>82.4%</b></td></tr>
+            <tr><td>Model, with planned marker</td><td class="num">4.9%</td><td class="num">96.7%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel-foot">P10–P90 range covers 76.8% of outcomes (target 80%). Method and code: <a href="https://github.com/catliugit/ThreadFutures/tree/main/src/offcut">src/offcut</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 2: UNSOLD STOCK (full-width interface) -->
+<section class="on-white">
+  <div class="wrap">
+    <div class="wide-head">
+      <div class="reveal"><div class="eyebrow">02 / After the season</div><h2>Find the next route for unsold stock.</h2></div>
+      <p class="lede reveal">Spot the lines likely to stop selling while there is still time to act, then review resale, donation and reprocessing routes for each batch.</p>
+    </div>
+    <div class="annots reveal"><span class="ann">Batch details</span><span class="ann">Stall risk</span><span class="ann">What actually happened</span></div>
+    <div class="panel reveal">
+      <div class="panel-head"><b>Lines at risk after 12 weeks on sale</b><span class="tag">Real open retail data</span></div>
+      <div class="scroll">
+        <table class="data" id="riskTable">
+          <thead><tr><th>Line</th><th>Launched</th><th class="num">Units / week, first 12 wks</th><th class="num">Stall risk</th><th class="num">Units / week, wks 12–25</th><th>Outcome</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="panel-foot" id="riskFoot">Scored on later launches the model never saw. Data: UCI Online Retail II, a UK online retailer (CC BY 4.0), not a fashion customer. <a href="https://github.com/catliugit/ThreadFutures/tree/main/src/stock">src/stock</a></div>
+    </div>
+    <div class="routes reveal" aria-label="Recovery options, planned workflow">
+      <div><span class="tag plan">Planned workflow</span><h3 style="margin-top:10px">Off-price and resale</h3><p>Compare expected recovery for the batch with the brand's usual liquidator.</p></div>
+      <div><h3 style="margin-top:34px">Donation</h3><p>Record the offer, the receiving organisation and its response.</p></div>
+      <div><h3 style="margin-top:34px">Reprocessing</h3><p>A last resort, with the reason and the operator's statement kept on file.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 3: EVIDENCE (quiet) -->
+<section>
+  <div class="wrap quiet reveal">
+    <div class="eyebrow">03 / Keep the record</div>
+    <h2>Keep the evidence with the decision.</h2>
+    <p class="lede">Organise batch-level records so teams can trace what was considered, what was chosen and which documents support the outcome.</p>
+    <p style="margin-top:18px"><span class="tag plan">Planned workflow</span></p>
+    <div class="record" aria-label="Fields in a planned decision record">
+      <div><span>Batch reference</span><b>TF-2026-0142</b></div>
+      <div><span>Units and weight</span><b>2,400 · 610 kg</b></div>
+      <div><span>Routes considered</span><b>Resale, donation</b></div>
+      <div><span>Route chosen</span><b>Off-price partner</b></div>
+      <div><span>Supporting documents</span><b>Offer, transfer note</b></div>
+      <div><span>Disclosure category</span><b>Prepared for reuse</b></div>
+    </div>
+    <p style="margin-top:14px;font-size:.82rem;color:var(--muted)">Illustrative data.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="on-forest" id="how">
+  <div class="wrap">
+    <div class="eyebrow">How it works</div>
+    <h2 style="margin-top:16px;max-width:14em">One material story, from plan to outcome.</h2>
+    <ol class="steps">
+      <li><span class="n">01</span><h3>Enter production or inventory details</h3><p>Start with the cutting plan or the unsold batch.</p><span class="tag">Prototype</span></li>
+      <li><span class="n">02</span><h3>Review estimates and options</h3><p>See projected offcuts, or the lines most likely to stop selling.</p><span class="tag">Prototype</span></li>
+      <li><span class="n">03</span><h3>Record the next step</h3><p>Keep decisions and supporting information together.</p><span class="tag plan">Planned</span></li>
+      <li><span class="n">04</span><h3>Learn from patterns</h3><p>Use recurring material and stock signals to inform the next season.</p><span class="tag plan">Planned</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="on-white">
+  <div class="wrap">
+    <div class="eyebrow">Who it's for</div>
+    <h2 style="margin-top:16px;max-width:15em">Made for the teams responsible for what remains.</h2>
+    <div class="aud">
+      <div><h3>Sustainability and compliance</h3><p>Keep a clearer trail of stock outcomes and supporting records.</p></div>
+      <div><h3>Operations and production</h3><p>See potential cutting waste before the run begins.</p></div>
+      <div><h3>Inventory and merchandising</h3><p>Compare options for stock that has not sold, and see which lines are slowing.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT MATTERS -->
+<section id="why">
+  <div class="wrap">
+    <div class="eyebrow">Why it matters</div>
+    <h2 style="margin-top:16px;max-width:16em">Two kinds of waste, decided at different times.</h2>
+    <div class="why-grid">
+      <div class="reveal">
+        <h3>Offcuts happen at production</h3>
+        <p>Fabric left over from cutting is a material stream. Knowing its likely weight and fibre before the run makes it easier to plan a buyer for it.</p>
+        <h3 style="margin-top:28px">Unsold stock happens after it</h3>
+        <p>Finished products that don't sell carry their full cost. Under EU Regulation 2024/1781, large companies may no longer destroy unsold clothing and footwear from 19 July 2026, outside limited exceptions, and must disclose what they discard each year.</p>
+        <p>Medium-sized companies follow from 2030. This is general information, not legal advice.</p>
+      </div>
+      <div class="quote reveal">
+        <span class="tag sim">Retrieval prototype</span>
+        <p class="q">"Can we destroy stock if a donation is refused?"</p>
+        <ol>
+          <li><b>Art 25(5)</b><span>Derogations may be set for reasons including non-acceptance of products offered for donation.</span></li>
+          <li><b>Art 24(1)</b><span>Operators that discard unsold products disclose numbers, weight and reasons each year.</span></li>
+          <li><b>Art 25(1)</b><span>From 19 July 2026, destruction of products listed in Annex VII is prohibited.</span></li>
+        </ol>
+        <p class="small">Paraphrased from the regulation. Search finds the right article in its top three results for 21 of 22 test questions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF / REPOSITORY -->
+<section class="on-white" id="build">
+  <div class="wrap">
+    <div class="proof-head">
+      <div class="reveal"><div class="eyebrow">Status</div><h2>Built around a working prototype.</h2></div>
+      <p class="lede reveal">The forecasting demo uses simulated garment-production data; the stock analytics use real open retail data. Everything below is in the public repository, with tests.</p>
+    </div>
+    <div class="parts">
+      <div class="part reveal"><span class="n">01</span><div><h3>Offcut forecasting</h3><p class="what">Low, likely and high estimates for each cutting run.</p></div>
+        <div><div class="tools"><span>Python</span><span>scikit-learn</span><span>pandas</span><span>JavaScript</span></div><p class="skills">Quantile gradient boosting, baselines, interval coverage, model exported to run in the browser</p></div>
+        <div class="result"><b>8.8%</b> mean error vs 20.3% for the rule of thumb<br><span class="tag sim">Simulated data</span></div></div>
+      <div class="part reveal"><span class="n">02</span><div><h3>Analytics engineering</h3><p class="what">Raw sales, cleaned and modelled into tested tables.</p></div>
+        <div><div class="tools"><span>dbt Core</span><span>DuckDB</span><span>SQL</span><span>Parquet</span></div><p class="skills">Bronze, silver and gold layers, dimensional models, data tests, a shared metrics layer</p></div>
+        <div class="result"><b>1.06m</b> sales lines, <b>28</b> data tests passing<br><span class="tag">Built</span></div></div>
+      <div class="part reveal"><span class="n">03</span><div><h3>Merchandising analytics</h3><p class="what">Which lines are selling, slowing or stopped.</p></div>
+        <div><div class="tools"><span>SQL</span><span>dbt</span><span>DuckDB</span></div><p class="skills">ABC/XYZ classification, sales velocity, markdown depth, return rate, launch cohorts</p></div>
+        <div class="result"><b>4,707</b> lines classified<br><span class="tag">Built</span></div></div>
+      <div class="part reveal"><span class="n">04</span><div><h3>Stall-risk model</h3><p class="what">Flags lines likely to stop selling, from their first 12 weeks.</p></div>
+        <div><div class="tools"><span>scikit-learn</span><span>MLflow</span><span>pandas</span></div><p class="skills">Classification, time-based validation, experiment tracking and model registry</p></div>
+        <div class="result">ROC AUC <b>0.81</b> vs 0.52 for a simple sales-trend rule<br><span class="tag">Built</span></div></div>
+      <div class="part reveal"><span class="n">05</span><div><h3>Experimentation</h3><p class="what">Do markdowns clear stock, and how big must a routing pilot be?</p></div>
+        <div><div class="tools"><span>statsmodels</span><span>SciPy</span><span>DuckDB</span></div><p class="skills">Difference-in-differences with matched controls, placebo test, power analysis, bootstrap intervals</p></div>
+        <div class="result">Placebo test flagged a pre-trend, so the markdown effect is treated as an upper bound. A pilot needs <b>64</b> batches per arm.<br><span class="tag">Built</span></div></div>
+      <div class="part reveal"><span class="n">06</span><div><h3>Model monitoring</h3><p class="what">Accuracy and data drift, launch quarter by quarter.</p></div>
+        <div><div class="tools"><span>SciPy</span><span>pandas</span><span>HTML report</span></div><p class="skills">PSI and Kolmogorov–Smirnov drift checks, calibration, alert thresholds</p></div>
+        <div class="result">Caught over-prediction on 2011 launches. <a href="reports/monitoring.html">See the report</a><br><span class="tag">Built</span></div></div>
+      <div class="part reveal"><span class="n">07</span><div><h3>Regulation search</h3><p class="what">Finds the article of EU law that answers a question.</p></div>
+        <div><div class="tools"><span>BM25</span><span>TF-IDF</span><span>LLM API</span></div><p class="skills">Retrieval, evaluation with hit rate and MRR, citation checking</p></div>
+        <div class="result">Right article in the top 3 for <b>21 of 22</b> test questions<br><span class="tag">Built</span></div></div>
+      <div class="part reveal"><span class="n">08</span><div><h3>Purchase-order agent</h3><p class="what">Reads a messy order note and plans the run.</p></div>
+        <div><div class="tools"><span>LLM API</span><span>Tool use</span><span>Python</span></div><p class="skills">The model extracts and explains; tested code does every calculation</p></div>
+        <div class="result">States its assumptions; numbers come from tested tools<br><span class="tag">Built</span></div></div>
+      <div class="part reveal"><span class="n">09</span><div><h3>API and deployment</h3><p class="what">Forecasts, stall risk and search behind one service.</p></div>
+        <div><div class="tools"><span>FastAPI</span><span>Pydantic</span><span>Docker</span><span>pytest</span></div><p class="skills">REST endpoints with input validation, containerised service, automated tests</p></div>
+        <div class="result"><b>22</b> automated tests passing. Docker image build to be checked in CI.<br><span class="tag">Built</span></div></div>
+    </div>
+    <p style="margin-top:22px;font-size:.88rem;color:var(--muted)">Code, data sources and method notes: <a href="https://github.com/catliugit/ThreadFutures" style="color:var(--forest);font-weight:700">github.com/catliugit/ThreadFutures</a></p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about">
+    <img class="reveal" src="cathy-liu.jpg" alt="Cathy Liu, founder of Thread Futures" width="800" height="800" loading="lazy">
+    <div class="reveal">
+      <div class="eyebrow">About</div>
+      <h2>Cathy Liu, founder.</h2>
+      <p>I'm a data analyst from California, now based in London, with seven years of experience across aviation, banking and healthcare. At Bank of Hawaii I built treasury forecasts and automated financial reporting. At Hawaiian Airlines I ran workforce analytics and built the dashboards leadership used for payroll and benefits decisions.</p>
+      <p>I recently finished an MSc in AI and Data Analytics at Northeastern University London, where my dissertation tested whether 10 AI models ask the right questions before giving financial advice.</p>
+      <p>Perfectly good clothes still get shredded or burned because it's cheaper than finding them a home. I don't think the answer is guilt. It's making the waste visible early enough to do something about it, which is mostly a data problem.</p>
+      <div class="links-row">
+        <a class="btn btn-line btn-sm" href="https://www.linkedin.com/in/cathyqliu" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-line btn-sm" href="https://github.com/catliugit/ThreadFutures" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="on-white" id="faq">
+  <div class="wrap" style="max-width:900px">
+    <div class="eyebrow">Questions</div>
+    <h2 style="margin-top:16px">Before you ask.</h2>
+    <div class="faq">
+      <details><summary>Is the product live?</summary><p>Not yet. The forecasting demo and the stock analytics are working prototypes. The routing and evidence workflows are being designed with early partners.</p></details>
+      <details><summary>Is the forecast based on real factory data?</summary><p>No. It is trained on 8,000 simulated cutting runs, calibrated to published industry ranges. A pilot would test it against real weighed offcuts.</p></details>
+      <details><summary>Does the EU rule apply to UK brands?</summary><p>It can, if they place clothing or footwear on the EU market and count as a large company. Medium-sized companies follow from July 2030. Check the specifics with your advisers; this is general information, not legal advice.</p></details>
+      <details><summary>Do you buy or hold stock?</summary><p>No. Thread Futures is software. Stock moves directly between a brand and the organisation that takes it.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="on-forest" id="contact">
+  <div class="wrap contact">
+    <div>
+      <div class="eyebrow">Design partners</div>
+      <h2>Bring us a real material problem.</h2>
+      <p class="lede">We're looking to learn from fashion teams managing offcuts, unsold inventory and recovery decisions.</p>
+      <a class="mail" id="mailBtn" href="#contact">Or email Cathy directly</a>
+    </div>
+    <form class="form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hidden-field"><label>Leave this empty <input name="bot-field"></label></p>
+      <div class="row">
+        <label>Your name<input id="fName" name="name" type="text" autocomplete="name" required></label>
+        <label>Email<input id="fEmail" name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <div class="row">
+        <label>Organisation<input id="fOrg" name="organisation" type="text" autocomplete="organization"></label>
+        <label>Your team<select id="fTeam" name="team"><option value="">Choose</option><option>Sustainability or compliance</option><option>Operations or production</option><option>Inventory or merchandising</option><option>Resale, outlet or charity</option><option>Investor or programme</option><option>Other</option></select></label>
+      </div>
+      <label>What's the problem?<textarea id="fMsg" name="message" required placeholder="For example: we send end-of-season stock to two liquidators and aren't sure how we'll report it."></textarea></label>
+      <button class="btn btn-primary" type="submit" id="fSubmit">Talk to us</button>
+      <p class="hint">We'll reply by email. Nothing is shared with anyone else.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <p><b style="color:var(--forest)">thread futures</b> · Software for fashion teams to forecast offcuts, spot unsold stock early and keep the record of what happens to it.</p>
+      <p style="margin-top:8px">Demo outputs are illustrative. Offcut forecasts use simulated data; stock analytics use UCI Online Retail II (CC BY 4.0). Regulation text © European Union, EUR-Lex.</p>
+    </div>
+    <nav aria-label="Footer"><a href="#platform">Platform</a><a href="#how">How it works</a><a href="#why">Why it matters</a><a href="#build">Status</a><a href="#about">About</a><a href="reports/monitoring.html">Monitoring report</a><a href="https://github.com/catliugit/ThreadFutures">GitHub</a></nav>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="forecast.js"></script>
+<script src="model.js"></script>
+<script src="data/stock.js"></script>
+<script>
+(() => {
+  'use strict';
+  const CONTACT_EMAIL = 'cathyqliu1@gmail.com';
+  const $ = id => document.getElementById(id);
+  const fmt = n => Math.round(n).toLocaleString('en-GB');
+  const typical = {tee:[1.8,180], hoodie:[1.8,320], shirt:[1.5,120], jeans:[1.55,380], dress:[1.5,140]};
+  const fibreLabel = {cotton:'100% cotton', polyester:'100% polyester', cotton_poly:'cotton/polyester blend', cotton_elastane:'cotton with elastane'};
+  let summary = '', toastT;
+
+  function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('show'),2600); }
+
+  function recalc(){
+    const o = {garment:$('garment').value, fibre:$('fibre').value, size_mix:$('sizemix').value,
+               fabric_metres:+$('metres').value, fabric_width_m:+$('width').value, gsm:+$('gsm').value};
+    $('metresVal').textContent = fmt(o.fabric_metres)+' m';
+    $('widthVal').textContent = o.fabric_width_m.toFixed(2)+' m';
+    $('gsmVal').textContent = o.gsm+' g/m²';
+    let r;
+    try { r = window.OffcutForecast.predict(window.OFFCUT_MODEL, o); }
+    catch (e) { $('p50').textContent = '–'; toast("We couldn't calculate this estimate. Check the inputs and try again."); return; }
+    const pct = r.ratio.p50*100, rule = r.input_kg*0.15;
+    $('p50').innerHTML = fmt(r.kg.p50)+'<small>kg</small>';
+    $('range').textContent = fmt(r.kg.p10)+'–'+fmt(r.kg.p90)+' kg';
+    $('cutBar').style.width = (100-pct).toFixed(1)+'%';
+    $('offBar').style.width = pct.toFixed(1)+'%';
+    $('cutPct').textContent = 'Cut panels '+(100-pct).toFixed(1)+'%';
+    $('offPct').textContent = 'Offcuts '+pct.toFixed(1)+'%';
+    $('cmpModel').textContent = fmt(r.kg.p50)+' kg';
+    $('cmpRule').textContent = fmt(rule)+' kg';
+    $('cmpIn').textContent = fmt(r.input_kg)+' kg';
+    summary = `Thread Futures offcut estimate (prototype, simulated training data)\nRun: ${o.garment}, ${o.size_mix} sizes, ${fibreLabel[o.fibre]}\nFabric: ${fmt(o.fabric_metres)} m × ${o.fabric_width_m.toFixed(2)} m at ${o.gsm} g/m² = ${fmt(r.input_kg)} kg\nEstimated offcuts: ${fmt(r.kg.p50)} kg (P10–P90 ${fmt(r.kg.p10)}–${fmt(r.kg.p90)} kg), ${pct.toFixed(1)}% of fabric\n15% rule of thumb: ${fmt(rule)} kg`;
+  }
+  ['garment','fibre','sizemix','metres','width','gsm'].forEach(id => $(id).addEventListener('input', recalc));
+  $('garment').addEventListener('change', () => { const t=typical[$('garment').value]; $('width').value=t[0]; $('gsm').value=t[1]; recalc(); });
+  $('copyBtn').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(summary); toast('Estimate copied'); }
+    catch (_) { toast('Copy is not available here'); }
+  });
+
+  // Real model output: lines scored after 12 weeks, next to what happened.
+  const S = window.TF_STOCK;
+  if (S) {
+    const tb = document.querySelector('#riskTable tbody');
+    S.rows.forEach(r => {
+      const tr = document.createElement('tr');
+      const hi = r.risk >= 0.4;
+      tr.innerHTML = `<td><b></b><br><span style="color:var(--muted);font-size:.8rem">SKU ${r.sku}</span></td><td>${r.launched}</td>`+
+        `<td class="num">${r.early_units_wk}</td><td class="num"><span class="risk ${hi?'hi':'lo'}">${Math.round(r.risk*100)}%</span></td>`+
+        `<td class="num">${r.late_units_wk}</td><td class="${r.stalled?'out-yes':'out-no'}">${r.stalled?'Stopped selling':'Kept selling'}</td>`;
+      tr.querySelector('b').textContent = r.name;
+      tb.appendChild(tr);
+    });
+    $('riskFoot').insertAdjacentText('afterbegin', `Model ROC AUC ${S.auc} on ${S.test_skus} later launches (simple sales-trend rule: ${S.rule_auc}). `);
+  }
+
+  // Contact: Netlify Forms, with an email fallback.
+  const intro = 'Hi Cathy, I came across Thread Futures and would like to talk about ';
+  $('mailBtn').href = 'mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('Thread Futures')+'&body='+encodeURIComponent(intro);
+  const f = $('contactForm');
+  f.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (!$('fName').value.trim() || !/^\S+@\S+\.\S+$/.test($('fEmail').value.trim()) || !$('fMsg').value.trim()) { toast('Please add your name, email and a short message'); return; }
+    const btn = $('fSubmit'); btn.disabled = true;
+    try {
+      const res = await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(f)).toString()});
+      if (!res.ok) throw new Error(res.status);
+      f.reset(); toast('Message sent. Cathy will reply by email.');
+    } catch (_) {
+      const body = `Name: ${$('fName').value}\nOrganisation: ${$('fOrg').value}\nTeam: ${$('fTeam').value}\n\n${$('fMsg').value}`;
+      toast('Opening your email app instead');
+      location.href = 'mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('Thread Futures')+'&body='+encodeURIComponent(body);
+    } finally { btn.disabled = false; }
+  });
+
+  $('menu').addEventListener('click', () => { const o=$('links').classList.toggle('open'); $('menu').setAttribute('aria-expanded', String(o)); });
+  document.querySelectorAll('#links a').forEach(a => a.addEventListener('click', () => { $('links').classList.remove('open'); $('menu').setAttribute('aria-expanded','false'); }));
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduce) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else { document.querySelectorAll('.reveal').forEach(el => el.classList.add('in')); }
+  recalc();
+})();
+</script>
+</body>
+</html>

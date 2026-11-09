@@ -1,0 +1,37 @@
+{
+  "n_train": 6400,
+  "n_test": 1600,
+  "rule_of_thumb_15pct": {
+    "mae_pp": 4.305,
+    "mape_kg": 20.25,
+    "within_15pct_kg": 39.2,
+    "bias_pp": -3.998
+  },
+  "marker_only": {
+    "mae_pp": 4.366,
+    "mape_kg": 23.29,
+    "within_15pct_kg": 11.1,
+    "bias_pp": -4.366
+  },
+  "ml_pre_marker": {
+    "mae_pp": 1.62,
+    "mape_kg": 8.8,
+    "within_15pct_kg": 82.4,
+    "bias_pp": -0.001,
+    "p10_p90_coverage": 76.8
+  },
+  "ml_post_marker": {
+    "mae_pp": 0.906,
+    "mape_kg": 4.87,
+    "within_15pct_kg": 96.7,
+    "bias_pp": -0.148,
+    "p10_p90_coverage": 78.0
+  },
+  "ml_pre_marker_by_garment_mae_pp": {
+    "dress": 2.16,
+    "hoodie": 1.6,
+    "jeans": 1.23,
+    "shirt": 1.86,
+    "tee": 1.22
+  }
+}

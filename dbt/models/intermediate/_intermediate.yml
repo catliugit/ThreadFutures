@@ -1,0 +1,9 @@
+version: 2
+models:
+  - name: int_sku_weekly
+    description: SKU x week sales, returns, revenue and list price.
+    tests:
+      - unique_combination: {arguments: {columns: [stock_code, week_start]}}
+    columns:
+      - name: units_sold
+        tests: [not_null, {between: {arguments: {min_value: 0, max_value: 1000000}}}]

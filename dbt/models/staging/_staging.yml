@@ -1,0 +1,13 @@
+version: 2
+models:
+  - name: stg_transactions
+    description: Invoice lines for real products (postage, fees and adjustments removed). Returns flagged.
+    columns:
+      - name: line_id
+        tests: [unique, not_null]
+      - name: stock_code
+        tests: [not_null]
+      - name: unit_price
+        tests: [{between: {arguments: {min_value: 0.001, max_value: 100000}}}]
+      - name: week_start
+        tests: [not_null]

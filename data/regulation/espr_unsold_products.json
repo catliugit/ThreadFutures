@@ -1,0 +1,115 @@
+{
+ "source": "Regulation (EU) 2024/1781 (Ecodesign for Sustainable Products Regulation), Official Journal L, 28.6.2024. https://eur-lex.europa.eu/eli/reg/2024/1781/oj. © European Union, reused under Commission Decision 2011/833/EU.",
+ "chunks": [
+  {
+   "id": "Art 2(11)",
+   "title": "Definitions",
+   "text": "‘value chain’ means all activities and processes that are part of the life cycle of a product, as well as its possible remanufacturing;"
+  },
+  {
+   "id": "Art 2(16)",
+   "title": "Definitions",
+   "text": "‘remanufacturing’ means actions through which a new product is produced from objects that are waste, products or components and through which at least one change is made that substantially affects the safety, performance, purpose or type of the product;"
+  },
+  {
+   "id": "Art 2(32)",
+   "title": "Definitions",
+   "text": "‘digital product passport service provider’ means a natural or legal person that is an independent third-party authorised by the economic operator which places the product on the market or puts it into service and that processes the digital product passport data for that product for the purpose of making such data available to economic operators and other relevant actors with a right to access those data under this Regulation or other Union law;"
+  },
+  {
+   "id": "Art 2(34)",
+   "title": "Definitions",
+   "text": "‘destruction’ means the intentional damaging or discarding of a product as waste with the exception of discarding for the sole purpose of delivering the discarded product for preparing for reuse, including refurbishment or remanufacturing operations;"
+  },
+  {
+   "id": "Art 2(36)",
+   "title": "Definitions",
+   "text": "‘consumer product’ means any product, excluding components and intermediate products, primarily intended for consumers;"
+  },
+  {
+   "id": "Art 2(37)",
+   "title": "Definitions",
+   "text": "‘unsold consumer product’ means any consumer product that has not been sold including surplus stock, excess inventory and deadstock and products returned by a consumer on the basis of their right of withdrawal in accordance with Article 9 of Directive 2011/83/EU or, where applicable, during any longer withdrawal period provided by the trader;"
+  },
+  {
+   "id": "Art 2(38)",
+   "title": "Definitions",
+   "text": "‘self-regulation measure’ means a voluntary agreement or a code of conduct, concluded by economic operators on their own initiative, which they are responsible for enforcing;"
+  },
+  {
+   "id": "Art 2(39)",
+   "title": "Definitions",
+   "text": "‘making available on the market’ means any supply of a product for distribution, consumption or use on the Union market in the course of a commercial activity, whether in return for payment or free of charge;"
+  },
+  {
+   "id": "Art 2(40)",
+   "title": "Definitions",
+   "text": "‘placing on the market’ means the first making available of a product on the Union market;"
+  },
+  {
+   "id": "Art 2(46)",
+   "title": "Definitions",
+   "text": "‘economic operator’ means the manufacturer, the authorised representative, the importer, the distributor, the dealer and the fulfilment service provider;"
+  },
+  {
+   "id": "Art 2(54)",
+   "title": "Definitions",
+   "text": "‘provider of an online marketplace’ means a provider of an intermediary service using an online interface which allows customers to conclude distance contracts with economic operators for the sale of products covered by delegated acts adopted pursuant to Article 4;"
+  },
+  {
+   "id": "Art 23",
+   "title": "General principle of prevention of destruction",
+   "text": "Economic operators shall take necessary measures which can reasonably be expected to prevent the need to destroy unsold consumer products."
+  },
+  {
+   "id": "Art 24(1)",
+   "title": "Disclosure of information on unsold consumer products",
+   "text": "1. Economic operators that discard unsold consumer products directly or have unsold consumer products discarded on their behalf shall disclose: (a) the number and weight of unsold consumer products discarded per year, differentiated per type or category of products; (b) the reasons for discarding products, and where applicable, the relevant derogation under Article 25(5); (c) the proportion of discarded products delivered, whether directly or through a third party, to undergo each of the following activities: preparing for reuse, including refurbishment and remanufacturing, recycling, other recovery including energy recovery, and disposal operations in accordance with the waste hierarchy as defined by Article 4 of Directive 2008/98/EC; (d) measures taken and measures planned for the purpose of preventing the destruction of unsold consumer products. Economic operators shall disclose the information referred to in the first subparagraph in a clear and visible manner at least on an easily accessible page of their website. Economic operators that are subject to the obligation to publish the sustainability reporting in their management report pursuant to Article 19a or 29a of Directive 2013/34/EU may also include that information in that sustainability reporting. Economic operators shall disclose the information referred to in the first subparagraph on an annual basis and shall include as part of that information the unsold consumer products discarded during the preceding financial year. They shall make the information for each year publicly available. That first disclosure shall cover unsold consumer products discarded during the first full financial year during which this Regulation is in force. This paragraph shall not apply to micro and small enterprises. This paragraph shall apply to medium-sized enterprises from 19 July 2030."
+  },
+  {
+   "id": "Art 24(2)",
+   "title": "Disclosure of information on unsold consumer products",
+   "text": "2. With the exception of when the information is available to the competent national authority on the basis of another legal act, the economic operators shall, at the request of the Commission or a competent national authority, provide all the information and documentation necessary to demonstrate the delivery and reception of the discarded products as disclosed pursuant to paragraph 1, point (c), of this Article, and, where relevant, the information necessary to demonstrate the applicability of a derogation under Article 25(5). Such information and documentation shall be provided in paper or electronic form within 30 days of receipt of the request."
+  },
+  {
+   "id": "Art 24(3)",
+   "title": "Disclosure of information on unsold consumer products",
+   "text": "3. The Commission shall adopt implementing acts setting out the details and format for the disclosure of the information referred to in paragraph 1, including the delimitation of product types or categories and how such information is to be verified. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 73(3). The first such implementing act shall be adopted by 19 July 2025."
+  },
+  {
+   "id": "Art 25(1)",
+   "title": "Destruction of unsold consumer products",
+   "text": "1. From 19 July 2026, the destruction of unsold consumer products as listed in Annex VII shall be prohibited. This paragraph shall not apply to micro and small enterprises. This paragraph shall apply to medium-sized enterprises from 19 July 2030."
+  },
+  {
+   "id": "Art 25(2)",
+   "title": "Destruction of unsold consumer products",
+   "text": "2. Economic operators that are not subject to the prohibition referred to in paragraph 1 shall not destroy unsold consumer products supplied to them with the purpose of circumventing that prohibition."
+  },
+  {
+   "id": "Art 25(3)",
+   "title": "Destruction of unsold consumer products",
+   "text": "3. The Commission is empowered to adopt delegated acts in accordance with Article 72 in order to amend Annex VII: (a) to add new products, in order to take account of the environmental impacts of their destruction; (b) to update the entries within product groups, in order to align them to modifications of their respective commodity codes or descriptions that are made in Annex I to Regulation (EEC) No 2658/87, where necessary."
+  },
+  {
+   "id": "Art 25(4)",
+   "title": "Destruction of unsold consumer products",
+   "text": "4. When preparing a delegated act to be adopted pursuant to paragraph 3, point (a), the Commission shall: (a) assess the prevalence and environmental impacts of the destruction of certain unsold consumer products; (b) take into account the information disclosed by economic operators pursuant to Article 24(1); (c) carry out an impact assessment based on best available evidence and analyses, and on additional studies as necessary. That delegated act shall specify its date of application and, where appropriate, any tiered measures or transitional measures or periods."
+  },
+  {
+   "id": "Art 25(5)",
+   "title": "Destruction of unsold consumer products",
+   "text": "5. The Commission shall adopt delegated acts in accordance with Article 72 to supplement this Regulation by setting out derogations from the prohibition of destruction of unsold consumer products listed in Annex VII where it is appropriate for any of the following reasons: (a) health, hygiene and safety reasons; (b) damage caused to products as a result of their handling, or detected after products have been returned, which cannot be repaired in a cost-effective manner; (c) unfitness of products for the purpose for which they are intended, taking into account, where applicable, Union and national law and technical standards; (d) non-acceptance of products offered for donation; (e) unsuitability of products for preparing for reuse or for remanufacturing; (f) unsaleability of products due to infringement of intellectual property rights, including counterfeit products; (g) destruction is the option with the least negative environmental impacts. Those delegated acts may also, where relevant, provide that the prohibition to destroy unsold consumer products referred to in paragraph 1 of this Article or the disclosure obligation set out in Article 24 apply to micro and small enterprises where there is sufficient evidence that such enterprises could be used to circumvent that prohibition or that obligation. The first delegated act referred to in the first subparagraph shall be adopted by 19 July 2025."
+  },
+  {
+   "id": "Art 26",
+   "title": "Consolidated information on the destruction of unsold consumer products",
+   "text": "By 19 July 2027 and every 36 months thereafter, the Commission shall publish on its website consolidated information on the destruction of unsold consumer products, including the following elements: (a) the prevalence of the destruction of specific groups of unsold consumer products per year, on the basis of the information disclosed by economic operators pursuant to Article 24(1); (b) the comparative environmental impacts resulting from destruction of unsold consumer products per product group. CHAPTER VII  OBLIGATIONS OF ECONOMIC OPERATORS"
+  },
+  {
+   "id": "Annex VII",
+   "title": "List of unsold consumer products subject to the prohibition of destruction",
+   "text": "ANNEX VII Consumer products of which the destruction by economic operators is prohibited The commodity codes and descriptions are taken from the combined nomenclature as referred to in Article 1(2) of Regulation (EEC) No 2658/87 and as set out in Annex I thereto, in the version in force on 28 June 2024. Commodity code Description 1. Apparel and clothing accessories 4203 Articles of apparel and clothing accessories, of leather or composition leather 61 Articles of apparel and clothing accessories, knitted or crocheted 62 Articles of apparel and clothing accessories, not knitted or crocheted 6504 Hats and other headgear, plaited or made by assembling strips of any material, whether or not lined or trimmed 6505 Hats and other headgear, knitted or crocheted, or made up from lace, felt or other textile fabric, in the piece (but not in strips), whether or not lined or trimmed; hairnets of any material, whether or not lined or trimmed 2. Footwear 6401 Waterproof footwear with outer soles and uppers of rubber or of plastics, the uppers of which are neither fixed to the sole nor assembled by stitching, riveting, nailing, screwing, plugging or similar processes 6402 Other footwear with outer soles and uppers of rubber or plastics 6403 Footwear with outer soles of rubber, plastics, leather or composition leather and uppers of leather 6404 Footwear with outer soles of rubber, plastics, leather or composition leather and uppers of textile materials 6405 Other footwear"
+  }
+ ]
+}

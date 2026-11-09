@@ -1,0 +1,12 @@
+data/raw
+data/staged
+data/features
+data/*.duckdb
+data/mlflow.db
+dbt
+site
+docs
+tests
+.git
+.env
+.env.*

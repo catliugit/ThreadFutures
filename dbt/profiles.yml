@@ -1,0 +1,7 @@
+thread_futures:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('TF_WAREHOUSE', '../data/warehouse.duckdb') }}"
+      threads: 4

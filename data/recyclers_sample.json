@@ -1,0 +1,55 @@
+{
+  "_note": "Fictional recycler profiles for demonstrating the matching logic. Not real companies, specs or commitments.",
+  "recyclers": [
+    {
+      "name": "Northfibre Mechanical (sample)",
+      "process": "mechanical",
+      "regions": ["UK", "EU"],
+      "accepts_grades": ["C1-W", "C1-L", "C1-D", "B1-W", "B1-L"],
+      "accepts_forms": ["strips", "remnant", "cutting"],
+      "min_lot_kg": 500,
+      "lead_time_days": 14,
+      "process_fit": {"cotton": 0.95, "cotton_poly": 0.6, "polyester": 0.2, "cotton_elastane": 0.3}
+    },
+    {
+      "name": "Cellulose Loop (sample)",
+      "process": "chemical (cellulosic)",
+      "regions": ["EU", "UK", "South Asia"],
+      "accepts_grades": ["C1-W", "C1-L", "C1-D", "C1-M"],
+      "accepts_forms": ["strips", "cutting"],
+      "min_lot_kg": 1000,
+      "lead_time_days": 30,
+      "process_fit": {"cotton": 0.9, "cotton_poly": 0.3, "polyester": 0.0, "cotton_elastane": 0.4}
+    },
+    {
+      "name": "PolyCycle Depoly (sample)",
+      "process": "chemical (polyester depolymerisation)",
+      "regions": ["EU", "Turkey", "South Asia"],
+      "accepts_grades": ["P1-W", "P1-L", "P1-D", "P1-M", "B1-W", "B1-L", "B1-D"],
+      "accepts_forms": ["strips", "remnant", "cutting"],
+      "min_lot_kg": 800,
+      "lead_time_days": 21,
+      "process_fit": {"cotton": 0.0, "cotton_poly": 0.7, "polyester": 0.95, "cotton_elastane": 0.1}
+    },
+    {
+      "name": "Dhaka Sort & Bale (sample)",
+      "process": "sorting and baling for export",
+      "regions": ["South Asia"],
+      "accepts_grades": ["C1-W", "C1-L", "C1-D", "C1-M", "B1-W", "B1-L", "B1-D", "B1-M", "E1-W", "E1-L", "E1-D", "E1-M"],
+      "accepts_forms": ["strips", "remnant", "cutting"],
+      "min_lot_kg": 200,
+      "lead_time_days": 5,
+      "process_fit": {"cotton": 0.7, "cotton_poly": 0.6, "polyester": 0.5, "cotton_elastane": 0.5}
+    },
+    {
+      "name": "Remnant Market (sample)",
+      "process": "reuse (remnants resold for small-batch production)",
+      "regions": ["UK", "EU", "Turkey", "South Asia"],
+      "accepts_grades": ["C1-W", "C1-L", "C1-D", "P1-W", "P1-L", "P1-D", "B1-W", "B1-L", "B1-D", "E1-W", "E1-L", "E1-D"],
+      "accepts_forms": ["remnant"],
+      "min_lot_kg": 100,
+      "lead_time_days": 7,
+      "process_fit": {"cotton": 0.8, "cotton_poly": 0.8, "polyester": 0.8, "cotton_elastane": 0.8}
+    }
+  ]
+}
