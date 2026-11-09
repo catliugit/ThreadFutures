@@ -1,5 +1,7 @@
 # Thread Futures
 
+[![ci](https://github.com/catliugit/ThreadFutures/actions/workflows/ci.yml/badge.svg)](https://github.com/catliugit/ThreadFutures/actions/workflows/ci.yml)
+
 **Software for fashion teams: forecast fabric offcuts before cutting, spot lines likely to go unsold, and keep a clearer record of what happens to stock.**
 
 Website: [threadfutures.com](https://threadfutures.com) · Founder: Cathy Liu ([LinkedIn](https://www.linkedin.com/in/cathyqliu))
@@ -25,7 +27,7 @@ Two kinds of textile waste are decided at different times:
 | 6 | [Model monitoring](src/stock/monitor.py) | Accuracy, calibration and data drift per launch quarter | SciPy, pandas | Flagged over-prediction on 2011 launches (14% predicted vs 1.7% actual) and PSI drift. [Report](site/reports/monitoring.html) |
 | 7 | [Regulation search](src/regsearch/search.py) | Finds the article of EU law that answers a question; checks citations | BM25, TF-IDF (scikit-learn), LLM API | Right article in the top 3 for **21 of 22** test questions (hit@1 73%, MRR 0.83) |
 | 8 | [Purchase-order agent](src/offcut/agent.py) | Reads a messy order note, states assumptions, calls tested tools | LLM API with tool use | The model never does the arithmetic |
-| 9 | [API](src/api/main.py) | Offcut forecast, stall risk and regulation search endpoints | FastAPI, Pydantic, Docker | **22** pytest tests passing; Dockerfile included |
+| 9 | [API](src/api/main.py) | Offcut forecast, stall risk and regulation search endpoints | FastAPI, Pydantic, Docker | **22** pytest tests; GitHub Actions runs them, builds the Docker image and calls the API on every push |
 
 Every number above is produced by the code in this repo and saved under [`models/`](models).
 
