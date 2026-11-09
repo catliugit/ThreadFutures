@@ -267,6 +267,72 @@ footer{padding:44px 0 56px;border-top:1px solid var(--hair);font-size:.86rem;col
 
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(30px);background:var(--forest);color:#fff;padding:12px 18px;border-radius:8px;font-size:.9rem;font-weight:600;opacity:0;pointer-events:none;transition:all .25s ease;z-index:60}
 .toast.show{opacity:1;transform:translateX(-50%)}
+
+/* ===== Dark forest theme (Nov 2026) ===== */
+:root{--bg:#173D35;--bg-2:#133229;--bg-3:#0F2A23;--text:#F7F7F1;--muted:#C5D5CF;--hair:rgba(255,255,255,.14)}
+body{background:var(--bg);color:var(--text)}
+.eyebrow{color:var(--lime)}
+.lede,.hero .lede{color:var(--muted)}
+.on-white{background:var(--bg-2)}
+.on-forest{background:var(--bg-3)}
+:focus-visible{outline-color:var(--lime)}
+.nav{background:rgba(23,61,53,.94);border-bottom-color:var(--hair)}
+.logo{color:var(--text)}
+.logo svg rect{fill:#D7EF91}.logo svg path{stroke:#173D35}
+.links a:not(.btn):hover{color:var(--lime)}
+.menu{color:var(--text);border-color:var(--text)}
+@media (max-width:860px){.links{background:var(--bg)}}
+.btn-primary{background:var(--lime);color:var(--forest)}
+.btn-primary:hover{background:#E4F5B4}
+.btn-line{color:var(--text);box-shadow:inset 0 0 0 1.5px var(--text)}
+.tag.plan{color:var(--lime);box-shadow:inset 0 0 0 1.5px var(--lime)}
+/* light surfaces keep dark text */
+.app,.panel,.form,.quote{--muted:#59615E;--hair:#DEDED4;color:var(--char);background:#fff}
+.app .btn-line,.panel .btn-line{color:var(--forest);box-shadow:inset 0 0 0 1.5px var(--forest)}
+.form .btn-primary{background:var(--forest);color:#fff}
+.app .tag.plan,.panel .tag.plan,.quote .tag.plan{color:var(--forest);box-shadow:inset 0 0 0 1.5px var(--forest)}
+.seq{border-top-color:var(--text)}
+.annots .ann{color:var(--lime)}.annots .ann::before{background:var(--lime)}
+.routes{border-color:var(--lime)}
+.aud div{border-top-color:var(--lime)}
+.faq summary::after{color:var(--lime)}
+.split .truth{border-left-color:var(--lime)}
+footer{border-top-color:var(--hair)}
+footer b{color:var(--lime)!important}
+.foot a:hover{color:var(--lime)}
+.app{box-shadow:0 40px 90px -30px rgba(0,0,0,.55)}
+
+/* ===== Hero: the prototype is the star ===== */
+.hero{padding:56px 0 72px}
+.hero-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:end;margin-bottom:40px}
+.hero-top h1{margin:16px 0 0;font-size:clamp(2.6rem,5.4vw,4.8rem)}
+.hero-top .cta-row{margin-top:22px}
+.live{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-bottom:14px}
+.live .pulse{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:var(--forest);font-weight:800;font-size:.86rem;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border-radius:99px}
+.live .pulse i{width:9px;height:9px;border-radius:50%;background:var(--forest);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.live span.hint{color:var(--muted);font-size:.95rem}
+.app.hero-app .app-body{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.app.hero-app .inputs{padding:28px 30px}
+.app.hero-app .field span{font-size:.9rem}
+.app.hero-app select{font-size:1rem;padding:11px 12px}
+.app.hero-app .results{padding:30px 36px;gap:22px;justify-content:center}
+.app.hero-app .big{font-size:clamp(3.4rem,7vw,5.6rem)}
+.app.hero-app .big small{font-size:1.4rem}
+.app.hero-app .range{font-size:1.05rem}
+.app.hero-app .bar{height:16px}
+.app.hero-app .compare{font-size:.98rem}
+.app.hero-app .app-bar b{font-size:1rem}
+@media (max-width:980px){.hero-top{grid-template-columns:1fr;gap:18px}}
+@media (max-width:640px){.app.hero-app .app-body{grid-template-columns:1fr}.app.hero-app .inputs{padding:20px;border-right:0;border-bottom:1px solid var(--hair)}.app.hero-app .results{padding:22px 20px}}
+
+/* ===== Proof strip ===== */
+.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:40px;border-top:1px solid var(--hair)}
+.proof div{padding:26px 28px 6px 0}
+.proof div+div{padding-left:28px;border-left:1px solid var(--hair)}
+.proof strong{display:block;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.03em;color:var(--lime);line-height:1.05}
+.proof p{color:var(--muted);font-size:.95rem;margin-top:8px}
+@media (max-width:760px){.proof{grid-template-columns:1fr}.proof div+div{padding-left:0;border-left:0;border-top:1px solid var(--hair)}}
 </style>
 </head>
 <body>
@@ -284,27 +350,30 @@ footer{padding:44px 0 56px;border-top:1px solid var(--hair);font-size:.86rem;col
       <a href="#how">How it works</a>
       <a href="#why">Why it matters</a>
       <a href="#about">About</a>
-      <a class="btn btn-primary btn-sm" href="#demo">Explore the demo</a>
+      <a class="btn btn-primary btn-sm" href="#demo">Try the prototype</a>
     </nav>
   </div>
 </header>
 
 <main id="main">
-<!-- HERO: the working forecast is the first visual -->
-<section class="hero" id="top" style="padding-top:64px">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow">Software for circular fashion</div>
-      <h1>See the waste before it happens.</h1>
-      <p class="lede">Forecast fabric offcuts, assess routes for unsold stock, and keep a clearer record of what happens next.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#demo">Explore the demo</a>
-        <a class="btn btn-line" href="#how">See the workflow</a>
+<!-- HERO: the working prototype is the star -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <div class="eyebrow">Software for circular fashion</div>
+        <h1>See the waste before it happens.</h1>
       </div>
-      <p class="hero-note">The forecast on this page runs in your browser. It is a prototype trained on simulated cutting runs, not on customer production data.</p>
+      <div>
+        <p class="lede">Forecast fabric offcuts, assess routes for unsold stock, and keep a clearer record of what happens next.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#demo">Try the prototype</a>
+          <a class="btn btn-line" href="#how">See the workflow</a>
+        </div>
+      </div>
     </div>
-
-    <div class="app reveal" id="demo" aria-label="Offcut forecast prototype">
+    <div class="live"><span class="pulse"><i aria-hidden="true"></i>Live prototype</span><span class="hint">Change any input: the forecast recalculates in your browser. Trained on simulated cutting runs.</span></div>
+    <div class="app hero-app" id="demo" aria-label="Offcut forecast prototype">
       <div class="app-bar">
         <div><b>Offcut forecast</b> <span class="crumb">/ Planned cutting run</span></div>
         <span class="tag sim">Prototype · simulated production data</span>
@@ -495,43 +564,19 @@ footer{padding:44px 0 56px;border-top:1px solid var(--hair);font-size:.86rem;col
   </div>
 </section>
 
-<!-- PROOF / REPOSITORY -->
+<!-- PROOF -->
 <section class="on-white" id="build">
   <div class="wrap">
-    <div class="proof-head">
-      <div class="reveal"><div class="eyebrow">Status</div><h2>Built around a working prototype.</h2></div>
-      <p class="lede reveal">The forecasting demo uses simulated garment-production data; the stock analytics use real open retail data. Everything below is in the public repository, with tests.</p>
+    <div class="wide-head">
+      <div><div class="eyebrow">Status</div><h2>Built around a working prototype.</h2></div>
+      <p class="lede">The offcut forecast uses simulated garment-production data. The stock analytics run on real open retail data. Routing and evidence workflows are being designed with early partners.</p>
     </div>
-    <div class="parts">
-      <div class="part reveal"><span class="n">01</span><div><h3>Offcut forecasting</h3><p class="what">Low, likely and high estimates for each cutting run.</p></div>
-        <div><div class="tools"><span>Python</span><span>scikit-learn</span><span>pandas</span><span>JavaScript</span></div><p class="skills">Quantile gradient boosting, baselines, interval coverage, model exported to run in the browser</p></div>
-        <div class="result"><b>8.8%</b> mean error vs 20.3% for the rule of thumb<br><span class="tag sim">Simulated data</span></div></div>
-      <div class="part reveal"><span class="n">02</span><div><h3>Analytics engineering</h3><p class="what">Raw sales, cleaned and modelled into tested tables.</p></div>
-        <div><div class="tools"><span>dbt Core</span><span>DuckDB</span><span>SQL</span><span>Parquet</span></div><p class="skills">Bronze, silver and gold layers, dimensional models, data tests, a shared metrics layer</p></div>
-        <div class="result"><b>1.06m</b> sales lines, <b>28</b> data tests passing<br><span class="tag">Built</span></div></div>
-      <div class="part reveal"><span class="n">03</span><div><h3>Merchandising analytics</h3><p class="what">Which lines are selling, slowing or stopped.</p></div>
-        <div><div class="tools"><span>SQL</span><span>dbt</span><span>DuckDB</span></div><p class="skills">ABC/XYZ classification, sales velocity, markdown depth, return rate, launch cohorts</p></div>
-        <div class="result"><b>4,707</b> lines classified<br><span class="tag">Built</span></div></div>
-      <div class="part reveal"><span class="n">04</span><div><h3>Stall-risk model</h3><p class="what">Flags lines likely to stop selling, from their first 12 weeks.</p></div>
-        <div><div class="tools"><span>scikit-learn</span><span>MLflow</span><span>pandas</span></div><p class="skills">Classification, time-based validation, experiment tracking and model registry</p></div>
-        <div class="result">ROC AUC <b>0.81</b> vs 0.52 for a simple sales-trend rule<br><span class="tag">Built</span></div></div>
-      <div class="part reveal"><span class="n">05</span><div><h3>Experimentation</h3><p class="what">Do markdowns clear stock, and how big must a routing pilot be?</p></div>
-        <div><div class="tools"><span>statsmodels</span><span>SciPy</span><span>DuckDB</span></div><p class="skills">Difference-in-differences with matched controls, placebo test, power analysis, bootstrap intervals</p></div>
-        <div class="result">Placebo test flagged a pre-trend, so the markdown effect is treated as an upper bound. A pilot needs <b>64</b> batches per arm.<br><span class="tag">Built</span></div></div>
-      <div class="part reveal"><span class="n">06</span><div><h3>Model monitoring</h3><p class="what">Accuracy and data drift, launch quarter by quarter.</p></div>
-        <div><div class="tools"><span>SciPy</span><span>pandas</span><span>HTML report</span></div><p class="skills">PSI and Kolmogorov–Smirnov drift checks, calibration, alert thresholds</p></div>
-        <div class="result">Caught over-prediction on 2011 launches. <a href="reports/monitoring.html">See the report</a><br><span class="tag">Built</span></div></div>
-      <div class="part reveal"><span class="n">07</span><div><h3>Regulation search</h3><p class="what">Finds the article of EU law that answers a question.</p></div>
-        <div><div class="tools"><span>BM25</span><span>TF-IDF</span><span>LLM API</span></div><p class="skills">Retrieval, evaluation with hit rate and MRR, citation checking</p></div>
-        <div class="result">Right article in the top 3 for <b>21 of 22</b> test questions<br><span class="tag">Built</span></div></div>
-      <div class="part reveal"><span class="n">08</span><div><h3>Purchase-order agent</h3><p class="what">Reads a messy order note and plans the run.</p></div>
-        <div><div class="tools"><span>LLM API</span><span>Tool use</span><span>Python</span></div><p class="skills">The model extracts and explains; tested code does every calculation</p></div>
-        <div class="result">States its assumptions; numbers come from tested tools<br><span class="tag">Built</span></div></div>
-      <div class="part reveal"><span class="n">09</span><div><h3>API and deployment</h3><p class="what">Forecasts, stall risk and search behind one service.</p></div>
-        <div><div class="tools"><span>FastAPI</span><span>Pydantic</span><span>Docker</span><span>pytest</span></div><p class="skills">REST endpoints with input validation, containerised service, CI on every push</p></div>
-        <div class="result"><b>22</b> automated tests and a Docker image build run on every change (GitHub Actions).<br><span class="tag">Built</span></div></div>
+    <div class="proof">
+      <div><strong>8.8%</strong><p>mean error on offcut weight, vs 20.3% for the 15% rule of thumb (1,600 simulated runs)</p></div>
+      <div><strong>0.81</strong><p>ROC AUC for spotting lines about to stop selling, vs 0.52 for a simple sales-trend rule</p></div>
+      <div><strong>50</strong><p>automated checks on the data and code, run on every change</p></div>
     </div>
-    <p style="margin-top:22px;font-size:.88rem;color:var(--muted)">Code, data sources and method notes: <a href="https://github.com/catliugit/ThreadFutures" style="color:var(--forest);font-weight:700">github.com/catliugit/ThreadFutures</a></p>
+    <p style="margin-top:26px;font-size:.92rem;color:var(--muted)">Code and method notes: <a href="https://github.com/catliugit/ThreadFutures" style="color:var(--lime);font-weight:700">github.com/catliugit/ThreadFutures</a></p>
   </div>
 </section>
 
