@@ -17,7 +17,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23173D35'/%3E%3Cpath d='M7 11h18M7 16h18M7 21h18' stroke='%23D7EF91' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --forest:#173D35;--forest-2:#1F4D43;--lime:#D7EF91;--ivory:#F7F7F1;--char:#242A28;--sage:#B5D9C8;--white:#FFFFFF;
@@ -335,6 +335,37 @@ footer b{color:var(--lime)!important}
 .proof strong{display:block;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.03em;color:var(--lime);line-height:1.05}
 .proof p{color:var(--muted);font-size:.95rem;margin-top:8px}
 @media (max-width:760px){.proof{grid-template-columns:1fr}.proof div+div{padding-left:0;border-left:0;border-top:1px solid var(--hair)}}
+
+/* ===== Colour accents (inspired by the earlier hero) ===== */
+.hero{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;background-position:-1px -1px}
+h2 .accent,.hero h1 .accent{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:var(--lime);letter-spacing:-.01em}
+.points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px;padding-top:18px;border-top:1px solid var(--hair)}
+.points b{display:block;font-size:.86rem}
+.points span{display:block;font-size:.8rem;color:var(--muted);line-height:1.4;margin-top:2px}
+@media (max-width:520px){.points{grid-template-columns:1fr;gap:10px}}
+.hero-app{position:relative;overflow:visible}
+.hero-app .app-bar{border-radius:14px 14px 0 0}
+.hero-app .app-foot{border-radius:0 0 14px 14px}
+.marker{background:#F4F7EE;border:1px solid var(--hair);border-radius:10px;padding:8px}
+.marker svg{display:block;width:100%;height:auto}
+.marker .g{stroke:#DCE5D2;stroke-width:1}
+.marker .pc{fill:#2E8B57}
+.marker .of{fill:#C9E265}
+.legend{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);margin-top:8px}
+.legend .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.legend .sw.cut{background:#2E8B57}.legend .sw.off{background:#C9E265}
+.marker-cap{font-size:.74rem;color:var(--muted);margin-top:4px}
+.callout{position:absolute;left:-22px;bottom:58px;display:flex;align-items:center;gap:10px;background:var(--lime);color:var(--forest);padding:10px 16px 10px 10px;border-radius:12px;font-size:.84rem;line-height:1.25;box-shadow:0 16px 40px -12px rgba(0,0,0,.45);transform:rotate(-2deg)}
+.callout .dot{width:28px;height:28px;border-radius:50%;background:var(--forest);color:var(--lime);display:grid;place-items:center;font-weight:800}
+@media (max-width:980px){.callout{display:none}}
+
+.band-lime{background:var(--lime);color:var(--forest);--muted:#2F5A4E;--hair:rgba(23,61,53,.22)}
+.band-lime .eyebrow,.band-lime .lede{color:var(--forest)}
+.band-lime h2 .accent{color:var(--forest)}
+.band-lime .proof strong{color:var(--forest)}
+.riskbar{display:inline-block;width:70px;height:8px;border-radius:99px;background:#EEF1EA;margin-right:10px;vertical-align:middle;overflow:hidden}
+.riskbar i{display:block;height:100%;border-radius:99px}
+.riskbar i.hi{background:var(--forest)}.riskbar i.lo{background:var(--sage)}
 </style>
 </head>
 <body>
@@ -364,13 +395,18 @@ footer b{color:var(--lime)!important}
     <div class="hero-top">
       <div>
         <div class="eyebrow">Software for circular fashion</div>
-        <h1>See the waste before it happens.</h1>
+        <h1>See the waste<br><em class="accent">before it happens.</em></h1>
       </div>
       <div>
         <p class="lede">Forecast fabric offcuts, assess routes for unsold stock, and keep a clearer record of what happens next.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#demo">Try the prototype</a>
           <a class="btn btn-line" href="#how">See the workflow</a>
+        </div>
+        <div class="points">
+          <div><b>Before production</b><span>Offcuts forecast from the order</span></div>
+          <div><b>After the season</b><span>Lines at risk of going unsold</span></div>
+          <div><b>Keep the record</b><span>Evidence for each decision</span></div>
         </div>
       </div>
     </div>
@@ -403,8 +439,9 @@ footer b{color:var(--lime)!important}
             <div class="range">Likely range <b id="range">–</b> (P10–P90)</div>
           </div>
           <div>
-            <div class="bar" aria-hidden="true"><span class="cut" id="cutBar" style="width:81%"></span><span class="off" id="offBar" style="width:19%"></span></div>
-            <div class="legend"><span id="cutPct">Cut panels</span><span id="offPct">Offcuts</span></div>
+            <div class="marker" aria-hidden="true"><svg id="markerSvg" viewBox="0 0 600 170" preserveAspectRatio="xMidYMid meet"></svg></div>
+            <div class="legend"><span><i class="sw cut"></i><span id="cutPct">Cut panels</span></span><span><i class="sw off"></i><span id="offPct">Offcuts</span></span></div>
+            <p class="marker-cap">Illustrative cutting plan. Offcut share follows the forecast.</p>
           </div>
           <div>
             <div class="ann">Model comparison</div>
@@ -416,6 +453,7 @@ footer b{color:var(--lime)!important}
           </div>
         </div>
       </div>
+      <div class="callout" aria-hidden="true"><span class="dot">↗</span><span><b>Offcuts known</b><br>before cutting starts</span></div>
       <div class="app-foot">
         <span>Demo data, not a live customer result.</span>
         <button class="btn btn-line btn-sm" id="copyBtn" type="button">Copy estimate</button>
@@ -428,7 +466,7 @@ footer b{color:var(--lime)!important}
 <section class="gap on-white" id="platform">
   <div class="wrap">
     <div class="gap-grid">
-      <div class="reveal"><div class="eyebrow">The gap</div><h2>Waste decisions start long before disposal.</h2></div>
+      <div class="reveal"><div class="eyebrow">The gap</div><h2>Waste decisions start <em class="accent">long before disposal.</em></h2></div>
       <p class="lede reveal">Cutting plans create offcuts. Unsold stock accumulates across seasons. The information needed to act is often spread across teams, files and suppliers.</p>
     </div>
     <ol class="seq reveal">
@@ -471,7 +509,7 @@ footer b{color:var(--lime)!important}
 <section class="on-white">
   <div class="wrap">
     <div class="wide-head">
-      <div class="reveal"><div class="eyebrow">02 / After the season</div><h2>Find the next route for unsold stock.</h2></div>
+      <div class="reveal"><div class="eyebrow">02 / After the season</div><h2>Find the next route for <em class="accent">unsold stock.</em></h2></div>
       <p class="lede reveal">Spot the lines likely to stop selling while there is still time to act, then review resale, donation and reprocessing routes for each batch.</p>
     </div>
     <div class="annots reveal"><span class="ann">Batch details</span><span class="ann">Stall risk</span><span class="ann">What actually happened</span></div>
@@ -567,7 +605,7 @@ footer b{color:var(--lime)!important}
 </section>
 
 <!-- PROOF -->
-<section class="on-white" id="build">
+<section class="band-lime" id="build">
   <div class="wrap">
     <div class="wide-head">
       <div><div class="eyebrow">Status</div><h2>Built around a working prototype.</h2></div>
@@ -578,7 +616,7 @@ footer b{color:var(--lime)!important}
       <div><strong>0.81</strong><p>ROC AUC for spotting lines about to stop selling, vs 0.52 for a simple sales-trend rule</p></div>
       <div><strong>50</strong><p>automated checks on the data and code, run on every change</p></div>
     </div>
-    <p style="margin-top:26px;font-size:.92rem;color:var(--muted)">Code and method notes: <a href="https://github.com/catliugit/ThreadFutures" style="color:var(--lime);font-weight:700">github.com/catliugit/ThreadFutures</a></p>
+    <p style="margin-top:26px;font-size:.92rem;color:var(--muted)">Code and method notes: <a href="https://github.com/catliugit/ThreadFutures" style="color:var(--forest);font-weight:800">github.com/catliugit/ThreadFutures</a></p>
   </div>
 </section>
 
@@ -588,7 +626,7 @@ footer b{color:var(--lime)!important}
     <img class="reveal" src="cathy-liu.jpg" alt="Cathy Liu, founder of Thread Futures" width="800" height="800" loading="lazy">
     <div class="reveal">
       <div class="eyebrow">Founder</div>
-      <h2>Why I care.</h2>
+      <h2>Why I <em class="accent">care.</em></h2>
       <p class="about-lead">Over the last five years it feels like we've been buying more than ever. More clothes, more deliveries, more things worn twice and forgotten. What bothers me most is how normal it's become.</p>
       <p>Perfectly good clothes get shredded or burned because that's cheaper than finding them a home, and most of us never hear about it. I don't think the answer is making people feel guilty. I think it's making the waste visible early enough to do something about it, and making the better option the easy one.</p>
       <p>I've spent my career turning messy data into things people can act on, and I studied AI because I wanted to understand the technology behind the decisions we're starting to hand over to it. Thread Futures is me pointing those skills at a problem I actually care about: using what we already have, instead of making more of what nobody buys.</p>
@@ -621,7 +659,7 @@ footer b{color:var(--lime)!important}
   <div class="wrap contact">
     <div>
       <div class="eyebrow">Design partners</div>
-      <h2>Bring us a real material problem.</h2>
+      <h2>Bring us a <em class="accent">real</em> material problem.</h2>
       <p class="lede">We're looking to learn from fashion teams managing offcuts, unsold inventory and recovery decisions.</p>
       <a class="mail" id="mailBtn" href="#contact">Or email Cathy directly</a>
     </div>
@@ -671,6 +709,37 @@ footer b{color:var(--lime)!important}
 
   function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('show'),2600); }
 
+  // Illustrative marker: garment pieces (green) with offcuts (lime) scaled to the forecast share.
+  const SHAPES = {
+    tee:'M4 30 L34 8 Q50 22 66 8 L96 30 L84 58 L76 52 L78 150 L22 150 L24 52 L16 58 Z',
+    hoodie:'M2 34 L30 10 L40 2 Q50 14 60 2 L70 10 L98 34 L86 64 L78 58 L80 150 L20 150 L22 58 L14 64 Z',
+    shirt:'M4 28 L34 8 L50 20 L66 8 L96 28 L84 60 L76 54 L78 150 L22 150 L24 54 L16 60 Z',
+    dress:'M34 8 L66 8 L72 40 L90 150 L10 150 L28 40 Z',
+    jeans:'M22 8 L78 8 L84 150 L56 150 L50 60 L44 150 L16 150 Z'
+  };
+  function drawMarker(garment, pct){
+    const svg = $('markerSvg'); if (!svg) return;
+    const W = 600, H = 170, n = 5;
+    const off = Math.max(0.04, Math.min(0.4, pct/100));
+    const end = W * off * 0.45, slot = (W - end - 8) / n;
+    let out = '';
+    for (let x = 0; x <= W; x += 20) out += `<line x1="${x}" y1="0" x2="${x}" y2="${H}" class="g"/>`;
+    for (let y = 0; y <= H; y += 20) out += `<line x1="0" y1="${y}" x2="${W}" y2="${y}" class="g"/>`;
+    const scale = 1 - off * 0.9;               // more offcut share = smaller pieces in each slot
+    for (let i = 0; i < n; i++){
+      const cx = i * slot + slot/2, w = 100 * scale, h = 160 * scale;
+      const tx = cx - w/2, ty = (H - h) / 2 + 2;
+      out += `<path d="${SHAPES[garment] || SHAPES.tee}" transform="translate(${tx.toFixed(1)} ${ty.toFixed(1)}) scale(${(w/100).toFixed(3)} ${(h/160).toFixed(3)})" class="pc"/>`;
+      const gap = slot * off * 0.9;
+      if (i < n - 1){
+        const gx = cx + w/2 + 4;
+        out += `<polygon points="${gx},${H-10} ${gx+gap},${H-10} ${gx},${H-10-gap*1.6}" class="of"/>`;
+        out += `<rect x="${(gx+gap*0.3).toFixed(1)}" y="12" width="${Math.max(5,gap*0.45).toFixed(1)}" height="${(36+gap*1.2).toFixed(1)}" class="of"/>`;
+      }
+    }
+    out += `<rect x="${(W-end).toFixed(1)}" y="6" width="${end.toFixed(1)}" height="${H-12}" class="of" opacity=".85"/>`;
+    svg.innerHTML = out;
+  }
   function recalc(){
     const o = {garment:$('garment').value, fibre:$('fibre').value, size_mix:$('sizemix').value,
                fabric_metres:+$('metres').value, fabric_width_m:+$('width').value, gsm:+$('gsm').value};
@@ -683,8 +752,7 @@ footer b{color:var(--lime)!important}
     const pct = r.ratio.p50*100, rule = r.input_kg*0.15;
     $('p50').innerHTML = fmt(r.kg.p50)+'<small>kg</small>';
     $('range').textContent = fmt(r.kg.p10)+'–'+fmt(r.kg.p90)+' kg';
-    $('cutBar').style.width = (100-pct).toFixed(1)+'%';
-    $('offBar').style.width = pct.toFixed(1)+'%';
+    drawMarker(o.garment, pct);
     $('cutPct').textContent = 'Cut panels '+(100-pct).toFixed(1)+'%';
     $('offPct').textContent = 'Offcuts '+pct.toFixed(1)+'%';
     $('cmpModel').textContent = fmt(r.kg.p50)+' kg';
@@ -707,7 +775,7 @@ footer b{color:var(--lime)!important}
       const tr = document.createElement('tr');
       const hi = r.risk >= 0.4;
       tr.innerHTML = `<td><b></b><br><span style="color:var(--muted);font-size:.8rem">SKU ${r.sku}</span></td><td>${r.launched}</td>`+
-        `<td class="num">${r.early_units_wk}</td><td class="num"><span class="risk ${hi?'hi':'lo'}">${Math.round(r.risk*100)}%</span></td>`+
+        `<td class="num">${r.early_units_wk}</td><td class="num"><span class="riskbar" aria-hidden="true"><i class="${hi?'hi':'lo'}" style="width:${Math.max(4,Math.round(r.risk*100))}%"></i></span><span class="risk ${hi?'hi':'lo'}">${Math.round(r.risk*100)}%</span></td>`+
         `<td class="num">${r.late_units_wk}</td><td class="${r.stalled?'out-yes':'out-no'}">${r.stalled?'Stopped selling':'Kept selling'}</td>`;
       tr.querySelector('b').textContent = r.name;
       tb.appendChild(tr);
