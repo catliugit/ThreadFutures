@@ -691,8 +691,8 @@ tr.clickrow:hover td,tr.clickrow:focus td{background:#F3F9E2}
     </div>
     <div class="proof">
       <div><strong class="count" data-to="8.8" data-dec="1" data-suf="%">8.8%</strong><p>mean error on offcut weight, vs 20.3% for the 15% rule of thumb (1,600 simulated runs)</p></div>
-      <div><strong class="count" data-to="0.81" data-dec="2">0.81</strong><p>ROC AUC for spotting lines about to stop selling, vs 0.52 for a simple sales-trend rule</p></div>
-      <div><strong class="count" data-to="50" data-dec="0">50</strong><p>automated checks on the data and code, run on every change</p></div>
+      <div><strong class="count" data-to="0.81" data-dec="2">0.81</strong><p>ROC AUC for spotting lines about to stop selling, vs 0.60 for a simple sales-trend rule</p></div>
+      <div><strong class="count" data-to="45" data-dec="0">45</strong><p>automated checks on the data and code, run on every change</p></div>
     </div>
     <div class="buildrow">
       <div class="log">
@@ -701,7 +701,7 @@ tr.clickrow:hover td,tr.clickrow:focus td{background:#F3F9E2}
           <li><time>9 Nov</time><span>Stall-risk model runs in the browser; click any line to score it</span></li>
           <li><time>9 Nov</time><span>CI: every change runs the tests, builds the Docker image and calls the API</span></li>
           <li><time>9 Nov</time><span>Monitoring report: drift and calibration by launch quarter</span></li>
-          <li><time>9 Nov</time><span>dbt models on 1.06m real sales lines, 28 data tests</span></li>
+          <li><time>9 Nov</time><span>dbt models on 1.06m real sales lines, 22 data tests</span></li>
           <li><time>Next</time><span>Stock health dashboard and customer cohorts</span></li>
         </ol>
       </div>
@@ -931,7 +931,7 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
       tr.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); loadRow(r); } });
       tb.appendChild(tr);
     });
-    $('riskFoot').insertAdjacentText('afterbegin', `Model ROC AUC ${S.auc} on ${S.test_skus} later launches (simple sales-trend rule: ${S.rule_auc}). `);
+    $('riskFoot').insertAdjacentText('afterbegin', `Model ROC AUC ${(+S.auc).toFixed(2)} on ${S.test_skus} later launches (simple sales-trend rule: ${(+S.rule_auc).toFixed(2)}). `);
   }
 
   // Contact: Netlify Forms, with an email fallback.

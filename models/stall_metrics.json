@@ -3,27 +3,27 @@
   "test_skus": 423,
   "test_stall_rate": 0.1064,
   "model": {
-    "roc_auc": 0.8131,
-    "pr_auc": 0.5094,
-    "precision_top20pct": 0.3452,
-    "brier": 0.0882
+    "roc_auc": 0.8118,
+    "pr_auc": 0.5312,
+    "precision_top20pct": 0.3214,
+    "brier": 0.0874
   },
   "rule_trend_halved": {
-    "roc_auc": 0.516,
-    "pr_auc": 0.1231,
-    "precision_top20pct": 0.0833
+    "roc_auc": 0.5994,
+    "pr_auc": 0.3138,
+    "precision_top20pct": 0.2024
   },
   "feature_importance": {
-    "early_trend": 0.1959,
-    "early_customers": 0.1634,
-    "launch_list_price": 0.154,
-    "early_units_per_week": 0.1386,
-    "launch_month": 0.107,
-    "early_zero_week_share": 0.0753,
-    "early_orders": 0.0598,
-    "early_return_rate": 0.041,
-    "is_seasonal_christmas": 0.0367,
-    "early_max_markdown": 0.0282
+    "early_trend": 0.2005,
+    "early_customers": 0.1817,
+    "launch_list_price": 0.1519,
+    "early_units_per_week": 0.1287,
+    "launch_month": 0.1076,
+    "early_zero_week_share": 0.0637,
+    "early_orders": 0.0592,
+    "early_return_rate": 0.0386,
+    "is_seasonal_christmas": 0.038,
+    "early_max_markdown": 0.0301
   },
-  "mlflow_run_id": "5dd66097c6e54d829c5e8004c37580fa"
+  "mlflow_run_id": "588d9d4399eb4ce0be3deed3809a0b84"
 }

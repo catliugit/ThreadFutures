@@ -20,14 +20,14 @@ Two kinds of textile waste are decided at different times:
 | # | Part | What it does | Tools | Result |
 |---|---|---|---|---|
 | 1 | [Offcut forecasting](src/offcut) | P10/P50/P90 offcut forecast per cutting run; runs in the browser | Python, scikit-learn, pandas, JavaScript | **8.8%** mean error vs 20.3% for the 15% rule of thumb, 1,600 held-out *simulated* runs |
-| 2 | [Analytics engineering](dbt) | Bronze (Parquet) → silver → gold models of 1.06m sales lines | dbt Core, DuckDB, SQL | **28** dbt data tests passing, including revenue reconciliation between layers |
+| 2 | [Analytics engineering](dbt) | Bronze (Parquet) → silver → gold models of 1.06m sales lines | dbt Core, DuckDB, SQL | **22** dbt data tests passing, including revenue reconciliation between layers |
 | 3 | [Merchandising analytics](dbt/models/marts/mart_sku_health.sql) | Selling / slowing / stopped status, ABC/XYZ, velocity, markdown depth, return rate | SQL, dbt | **4,707** SKUs classified |
-| 4 | [Stall-risk model](src/stock/train_stall.py) | From a line's first 12 weeks, predicts whether sales collapse in weeks 12–25 | scikit-learn, MLflow | ROC AUC **0.81** vs 0.52 for a "sales halved" rule on 423 later launches; top-20% precision 34% vs an 11% base rate |
+| 4 | [Stall-risk model](src/stock/train_stall.py) | From a line's first 12 weeks, predicts whether sales collapse in weeks 12–25 | scikit-learn, MLflow | ROC AUC **0.81** vs 0.60 for a "sales halved" rule on 423 later launches; top-20% precision 32% vs an 11% base rate |
 | 5 | [Experimentation](src/stock/experiment.py) | Do markdowns clear stock? How big must a routing pilot be? | statsmodels, SciPy | Stacked difference-in-differences (768 marked-down SKUs, 5 matched controls each). A placebo test found a pre-trend, so the +125% estimate is an upper bound. Pilot power analysis: **64** batches per arm |
 | 6 | [Model monitoring](src/stock/monitor.py) | Accuracy, calibration and data drift per launch quarter | SciPy, pandas | Flagged over-prediction on 2011 launches (14% predicted vs 1.7% actual) and PSI drift. [Report](site/reports/monitoring.html) |
 | 7 | [Regulation search](src/regsearch/search.py) | Finds the article of EU law that answers a question; checks citations | BM25, TF-IDF (scikit-learn), LLM API | Right article in the top 3 for **21 of 22** test questions (hit@1 73%, MRR 0.83) |
 | 8 | [Purchase-order agent](src/offcut/agent.py) | Reads a messy order note, states assumptions, calls tested tools | LLM API with tool use | The model never does the arithmetic |
-| 9 | [API](src/api/main.py) | Offcut forecast, stall risk and regulation search endpoints | FastAPI, Pydantic, Docker | **22** pytest tests; GitHub Actions runs them, builds the Docker image and calls the API on every push |
+| 9 | [API](src/api/main.py) | Offcut forecast, stall risk and regulation search endpoints | FastAPI, Pydantic, Docker | **23** pytest tests; GitHub Actions runs them, builds the Docker image and calls the API on every push |
 
 Every number above is produced by the code in this repo and saved under [`models/`](models).
 
@@ -38,6 +38,11 @@ Every number above is produced by the code in this repo and saved under [`models
 - **The placebo test** showed marked-down lines were already gaining before the markdown, so the difference-in-differences estimate is reported as an upper bound, not a clean effect.
 - **Monitoring** showed the stall model is well ranked but over-confident for spring launches heading into the Christmas season, which a seasonal feature or recalibration would need to fix.
 
+## Documentation
+
+- [Part notes](docs/parts/00_index.md): one page per part (01 to 10 built, 11 to 17 planned).
+- [Step-by-step guides](docs/guides/README.md): each built part explained from the ground up, with the code, every concept from scratch, results, what went wrong and how to run it.
+
 ## Run it
 
 ```bash
@@ -46,7 +51,7 @@ pip install -r requirements.txt
 
 make offcuts      # simulate 8,000 cutting runs, train, evaluate
 make stock        # download retail data, dbt build, stall model, experiment, monitoring, regulation search
-make test         # 22 tests
+make test         # 23 tests
 make site         # copy the browser model into site/
 make api          # http://127.0.0.1:8000/docs
 make mlflow-ui    # browse tracked runs

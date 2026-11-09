@@ -8,9 +8,9 @@
     {
       "launch_quarter": "2010Q4",
       "skus": 175,
-      "roc_auc": 0.814,
-      "pr_auc": 0.657,
-      "predicted_stall_rate": 0.284,
+      "roc_auc": 0.806,
+      "pr_auc": 0.663,
+      "predicted_stall_rate": 0.272,
       "actual_stall_rate": 0.211,
       "drift": {
         "early_units_per_week": {
@@ -68,9 +68,9 @@
     {
       "launch_quarter": "2011Q1",
       "skus": 70,
-      "roc_auc": 0.615,
-      "pr_auc": 0.306,
-      "predicted_stall_rate": 0.209,
+      "roc_auc": 0.649,
+      "pr_auc": 0.326,
+      "predicted_stall_rate": 0.2,
       "actual_stall_rate": 0.071,
       "drift": {
         "early_units_per_week": {
@@ -123,15 +123,15 @@
         "early_return_rate: PSI 0.413",
         "launch_list_price: PSI 1.513",
         "launch_month: PSI 3.347",
-        "AUC 0.62 below 0.7"
+        "AUC 0.65 below 0.7"
       ]
     },
     {
       "launch_quarter": "2011Q2",
       "skus": 178,
-      "roc_auc": 0.792,
-      "pr_auc": 0.438,
-      "predicted_stall_rate": 0.139,
+      "roc_auc": 0.836,
+      "pr_auc": 0.312,
+      "predicted_stall_rate": 0.136,
       "actual_stall_rate": 0.017,
       "drift": {
         "early_units_per_week": {

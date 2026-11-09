@@ -50,7 +50,8 @@ def main() -> dict:
             "train_skus": int(len(tr)), "test_skus": int(len(te)),
             "test_stall_rate": round(float(te.stalled.mean()), 4),
             "model": {**evaluate(te.stalled, p), "brier": round(float(brier_score_loss(te.stalled, p)), 4)},
-            "rule_trend_halved": evaluate(te.stalled, rule + 1e-9 * te.early_trend.rank().to_numpy()),
+            # Rule: flag lines whose sales halved; within each group, a bigger fall ranks as riskier.
+            "rule_trend_halved": evaluate(te.stalled, rule + 1e-9 * (-te.early_trend).rank().to_numpy()),
             "feature_importance": dict(sorted(
                 ((f, round(float(v), 4)) for f, v in zip(FEATURES, model.feature_importances_)),
                 key=lambda kv: -kv[1])),
