@@ -233,6 +233,8 @@ table.data tr.best td:first-child{box-shadow:inset 3px 0 0 var(--forest)}
 .about h2{margin:16px 0 20px}
 .about p{color:var(--muted);max-width:36em}
 .about p+p{margin-top:14px}
+.about .about-lead{font-size:1.15rem;color:var(--text)}
+.about .about-k{font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);margin:26px 0 8px}
 .about .links-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
 @media (max-width:860px){.about{grid-template-columns:1fr;gap:28px}.about img{max-width:340px;height:auto;min-height:0;aspect-ratio:1/1}}
 
@@ -585,11 +587,13 @@ footer b{color:var(--lime)!important}
   <div class="wrap about">
     <img class="reveal" src="cathy-liu.jpg" alt="Cathy Liu, founder of Thread Futures" width="800" height="800" loading="lazy">
     <div class="reveal">
-      <div class="eyebrow">About</div>
-      <h2>Cathy Liu, founder.</h2>
-      <p>I'm a data analyst from California, now based in London, with seven years of experience across aviation, banking and healthcare. At Bank of Hawaii I built treasury forecasts and automated financial reporting. At Hawaiian Airlines I ran workforce analytics and built the dashboards leadership used for payroll and benefits decisions.</p>
-      <p>I recently finished an MSc in AI and Data Analytics at Northeastern University London, where my dissertation tested whether 10 AI models ask the right questions before giving financial advice.</p>
-      <p>Perfectly good clothes still get shredded or burned because it's cheaper than finding them a home. I don't think the answer is guilt. It's making the waste visible early enough to do something about it, which is mostly a data problem.</p>
+      <div class="eyebrow">Founder</div>
+      <h2>Why I care.</h2>
+      <p class="about-lead">Over the last five years it feels like we've been buying more than ever. More clothes, more deliveries, more things worn twice and forgotten. What bothers me most is how normal it's become.</p>
+      <p>Perfectly good clothes get shredded or burned because that's cheaper than finding them a home, and most of us never hear about it. I don't think the answer is making people feel guilty. I think it's making the waste visible early enough to do something about it, and making the better option the easy one.</p>
+      <p>I've spent my career turning messy data into things people can act on, and I studied AI because I wanted to understand the technology behind the decisions we're starting to hand over to it. Thread Futures is me pointing those skills at a problem I actually care about: using what we already have, instead of making more of what nobody buys.</p>
+      <h3 class="about-k">A bit about me</h3>
+      <p>I'm Cathy Liu, a data analyst from California, now based in London. I've worked across aviation, banking and healthcare for seven years, building treasury forecasts at Bank of Hawaii and workforce dashboards at Hawaiian Airlines. I recently finished an MSc in AI and Data Analytics at Northeastern University London, where my dissertation tested whether AI models ask the right questions before giving financial advice.</p>
       <div class="links-row">
         <a class="btn btn-line btn-sm" href="https://www.linkedin.com/in/cathyqliu" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn btn-line btn-sm" href="https://github.com/catliugit/ThreadFutures" target="_blank" rel="noopener">GitHub</a>
