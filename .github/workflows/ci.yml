@@ -1,0 +1,24 @@
+name: ci
+on:
+  push: {branches: [main]}
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12", cache: pip}
+      - run: pip install -r requirements-api.txt scipy==1.18.1 statsmodels==0.15.0 duckdb==2.0.0 httpx==0.28.1 pytest==9.2.0 matplotlib==3.11.2
+      - run: PYTHONPATH=src python -m pytest -q tests
+  docker:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t threadfutures-api .
+      - run: |
+          docker run -d -p 8000:8000 --name api threadfutures-api
+          for i in $(seq 1 20); do curl -fs http://127.0.0.1:8000/health && break; sleep 1; done
+          curl -fs -X POST http://127.0.0.1:8000/v1/offcuts/forecast -H 'Content-Type: application/json' \
+            -d '{"garment":"tee","fibre":"cotton","size_mix":"standard","fabric_width_m":1.8,"gsm":180,"fabric_metres":18000}'
