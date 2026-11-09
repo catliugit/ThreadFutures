@@ -34,6 +34,7 @@ def main() -> None:
         "risk": round(float(r["p"]), 2),
         "late_units_wk": round(r["late_units_per_week"], 1),
         "stalled": bool(r["stalled"]), "abcxyz": health.get(r["stock_code"], ""),
+        "x": [round(float(r[f]), 4) for f in FEATURES],
     } for r in pick]
     metrics = json.loads((ROOT / "models" / "stall_metrics.json").read_text())
     payload = {"rows": rows, "test_skus": metrics["test_skus"], "auc": metrics["model"]["roc_auc"],

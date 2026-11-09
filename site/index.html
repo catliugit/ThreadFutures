@@ -366,6 +366,27 @@ h2 .accent,.hero h1 .accent{font-family:'Instrument Serif',Georgia,serif;font-st
 .riskbar{display:inline-block;width:70px;height:8px;border-radius:99px;background:#EEF1EA;margin-right:10px;vertical-align:middle;overflow:hidden}
 .riskbar i{display:block;height:100%;border-radius:99px}
 .riskbar i.hi{background:var(--forest)}.riskbar i.lo{background:var(--sage)}
+
+.risk-app{margin-bottom:8px}
+.risk-app .app-body{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.risk-app .inputs{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;align-content:start}
+.risk-app .inputs .group{grid-column:1/-1}
+.risk-app .rowfields{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:end}
+.risk-app .check{display:flex;gap:8px;align-items:center;font-size:.86rem;font-weight:700;margin-bottom:16px}
+.risk-app .check input{width:18px;height:18px;accent-color:var(--forest)}
+.risk-app .results{justify-content:center;padding:28px 32px}
+.risk-app .big{font-size:clamp(3rem,6vw,4.6rem)}
+.gauge{position:relative;height:14px;border-radius:99px;background:linear-gradient(90deg,#DDEFE6 0 15%,#F3F6E6 15% 40%,#FBEFD9 40%);margin-top:14px;overflow:hidden}
+.gauge i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;transition:width .25s ease}
+.gauge i.lo{background:var(--sage)}.gauge i.mid{background:#C9E265}.gauge i.hi{background:var(--forest)}
+.gauge span{position:absolute;top:0;bottom:0;width:2px;background:#fff}
+.verdict{font-size:1rem;margin-top:4px}
+.loaded{font-size:.82rem;color:var(--muted);margin-top:-4px}
+.clickhint{font-size:.76rem;font-weight:700;color:var(--forest);background:#F0F7D8;padding:4px 10px;border-radius:99px}
+tr.clickrow{cursor:pointer;transition:background .15s}
+tr.clickrow:hover td,tr.clickrow:focus td{background:#F3F9E2}
+@media (max-width:860px){.risk-app .app-body{grid-template-columns:1fr}.risk-app .inputs{border-right:0;border-bottom:1px solid var(--hair)}}
+@media (max-width:520px){.risk-app .inputs{grid-template-columns:1fr}.risk-app .rowfields{grid-template-columns:1fr;gap:0}}
 </style>
 </head>
 <body>
@@ -510,11 +531,43 @@ h2 .accent,.hero h1 .accent{font-family:'Instrument Serif',Georgia,serif;font-st
   <div class="wrap">
     <div class="wide-head">
       <div class="reveal"><div class="eyebrow">02 / After the season</div><h2>Find the next route for <em class="accent">unsold stock.</em></h2></div>
-      <p class="lede reveal">Spot the lines likely to stop selling while there is still time to act, then review resale, donation and reprocessing routes for each batch.</p>
+      <p class="lede reveal">Spot the lines likely to stop selling while there is still time to act, then review resale, donation and reprocessing routes for each batch. Try the real model below.</p>
     </div>
-    <div class="annots reveal"><span class="ann">Batch details</span><span class="ann">Stall risk</span><span class="ann">What actually happened</span></div>
+    <div class="app risk-app reveal" id="riskTool" aria-label="Stall-risk prototype">
+      <div class="app-bar">
+        <div><b>Stall risk</b> <span class="crumb">/ Score a line from its first 12 weeks</span></div>
+        <span class="tag">Real open retail data · not fashion</span>
+      </div>
+      <div class="app-body">
+        <form class="inputs" onsubmit="return false">
+          <p class="group">First 12 weeks on sale</p>
+          <label class="field"><span>Units a week, weeks 1–4 <output id="rAVal"></output></span><input id="rA" type="range" min="0" max="300" step="1" value="40"></label>
+          <label class="field"><span>Units a week, weeks 9–12 <output id="rBVal"></output></span><input id="rB" type="range" min="0" max="300" step="1" value="15"></label>
+          <label class="field"><span>Weeks with no sales <output id="rZVal"></output></span><input id="rZ" type="range" min="0" max="11" step="1" value="2"></label>
+          <label class="field"><span>Different customers <output id="rCVal"></output></span><input id="rC" type="range" min="1" max="200" step="1" value="30"></label>
+          <label class="field"><span>Launch price <output id="rPVal"></output></span><input id="rP" type="range" min="0.3" max="15" step="0.05" value="2.95"></label>
+          <label class="field"><span>Biggest markdown so far <output id="rMVal"></output></span><input id="rM" type="range" min="0" max="60" step="5" value="0"></label>
+          <div class="rowfields">
+            <label class="field"><span>Launch month</span><select id="rMonth"><option value="1">Jan</option><option value="2">Feb</option><option value="3" selected>Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select></label>
+            <label class="check"><input id="rXmas" type="checkbox"> Christmas product</label>
+          </div>
+        </form>
+        <div class="results" aria-live="polite">
+          <div>
+            <div class="ann">Chance it stops selling in weeks 12–25</div>
+            <div class="big" id="rOut">–<small>%</small></div>
+            <div class="gauge" aria-hidden="true"><i id="rBar"></i><span style="left:15%"></span><span style="left:40%"></span></div>
+            <div class="legend"><span>Low</span><span>Medium</span><span>High</span></div>
+          </div>
+          <p class="verdict" id="rVerdict"></p>
+          <p class="loaded" id="rLoaded">Tip: click a line in the table below to load its real first 12 weeks.</p>
+        </div>
+      </div>
+      <div class="app-foot"><span>Same model as the table: ROC AUC 0.81 on 423 later launches.</span><button class="btn btn-line btn-sm" id="rReset" type="button">Reset</button></div>
+    </div>
+    <div class="annots reveal" style="margin-top:34px"><span class="ann">Batch details</span><span class="ann">Stall risk</span><span class="ann">What actually happened</span></div>
     <div class="panel reveal">
-      <div class="panel-head"><b>Lines at risk after 12 weeks on sale</b><span class="tag">Real open retail data</span></div>
+      <div class="panel-head"><b>Lines at risk after 12 weeks on sale</b><span class="clickhint">Click a line to load it above ↑</span><span class="tag">Real open retail data</span></div>
       <div class="scroll">
         <table class="data" id="riskTable">
           <thead><tr><th>Line</th><th>Launched</th><th class="num">Units / week, first 12 wks</th><th class="num">Stall risk</th><th class="num">Units / week, wks 12–25</th><th>Outcome</th></tr></thead>
@@ -697,6 +750,7 @@ h2 .accent,.hero h1 .accent{font-family:'Instrument Serif',Georgia,serif;font-st
 <script src="forecast.js"></script>
 <script src="model.js"></script>
 <script src="data/stock.js"></script>
+<script src="data/stall_model.js"></script>
 <script>
 (() => {
   'use strict';
@@ -767,6 +821,47 @@ h2 .accent,.hero h1 .accent{font-family:'Instrument Serif',Georgia,serif;font-st
     catch (_) { toast('Copy is not available here'); }
   });
 
+
+  // ---- Stall-risk tool: the real model, running in the browser ----
+  const SM = window.STALL_MODEL;
+  function stallProb(x){
+    let s = 0;
+    for (const t of SM.trees){ let n = 0; while (t.l[n] !== -1) n = Math.fround(x[t.f[n]]) <= t.t[n] ? t.l[n] : t.r[n]; s += t.v[n]; }
+    return 1/(1+Math.exp(-(SM.init + SM.lr*s)));
+  }
+  let rx = null;   // exact feature vector when a real line is loaded
+  function formX(){
+    const a=+$('rA').value, b=+$('rB').value, c=+$('rC').value;
+    return [(a+b)/2, (b+1)/(a+1), +$('rZ').value/12, c, Math.round(c*1.3), 0.02, +$('rM').value/100, +$('rP').value, +$('rMonth').value, $('rXmas').checked?1:0];
+  }
+  function riskRender(){
+    $('rAVal').textContent=$('rA').value; $('rBVal').textContent=$('rB').value; $('rZVal').textContent=$('rZ').value+' of 12';
+    $('rCVal').textContent=$('rC').value; $('rPVal').textContent='£'+(+$('rP').value).toFixed(2); $('rMVal').textContent=$('rM').value+'%';
+    if (!SM) return;
+    const p = stallProb(rx || formX()), pc = Math.round(p*100);
+    $('rOut').innerHTML = pc+'<small>%</small>';
+    $('rBar').style.width = Math.max(2,pc)+'%';
+    $('rBar').className = p>=0.4?'hi':p>=0.15?'mid':'lo';
+    $('rVerdict').innerHTML = p>=0.4 ? '<b>High risk.</b> Sales look likely to collapse. Worth planning a route for this stock now.'
+      : p>=0.15 ? '<b>Medium risk.</b> Keep an eye on it over the next few weeks.' : '<b>Low risk.</b> This line looks set to keep selling.';
+  }
+  if (SM){
+    ['rA','rB','rZ','rC','rP','rM','rMonth','rXmas'].forEach(id => $(id).addEventListener('input', () => { rx = null; $('rLoaded').textContent='Your inputs. Click a line in the table to load a real one.'; riskRender(); }));
+    $('rReset').addEventListener('click', () => { rx=null; [['rA',40],['rB',15],['rZ',2],['rC',30],['rP',2.95],['rM',0],['rMonth',3]].forEach(([k,v])=>$(k).value=v); $('rXmas').checked=false; $('rLoaded').textContent='Tip: click a line in the table below to load its real first 12 weeks.'; riskRender(); });
+    riskRender();
+  }
+  function loadRow(r){
+    if (!SM || !r.x) return;
+    rx = r.x.slice();
+    const u=r.x[0], t=r.x[1], a=Math.max(0,(2*u+1-t)/(1+t)), b=Math.max(0,t*(a+1)-1);
+    $('rA').value=Math.round(a); $('rB').value=Math.round(b); $('rZ').value=Math.round(r.x[2]*12); $('rC').value=Math.round(r.x[3]);
+    $('rP').value=r.x[7]; $('rM').value=Math.round(r.x[6]*100/5)*5; $('rMonth').value=r.x[8]; $('rXmas').checked=!!r.x[9];
+    $('rLoaded').innerHTML = 'Loaded <b></b> (real data). It actually <b></b>.';
+    const bs=$('rLoaded').querySelectorAll('b'); bs[0].textContent=r.name; bs[1].textContent=r.stalled?'stopped selling':'kept selling';
+    riskRender();
+    $('riskTool').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth', block:'center'});
+  }
+
   // Real model output: lines scored after 12 weeks, next to what happened.
   const S = window.TF_STOCK;
   if (S) {
@@ -778,6 +873,9 @@ h2 .accent,.hero h1 .accent{font-family:'Instrument Serif',Georgia,serif;font-st
         `<td class="num">${r.early_units_wk}</td><td class="num"><span class="riskbar" aria-hidden="true"><i class="${hi?'hi':'lo'}" style="width:${Math.max(4,Math.round(r.risk*100))}%"></i></span><span class="risk ${hi?'hi':'lo'}">${Math.round(r.risk*100)}%</span></td>`+
         `<td class="num">${r.late_units_wk}</td><td class="${r.stalled?'out-yes':'out-no'}">${r.stalled?'Stopped selling':'Kept selling'}</td>`;
       tr.querySelector('b').textContent = r.name;
+      tr.tabIndex = 0; tr.className = 'clickrow'; tr.title = 'Load this line into the stall-risk tool';
+      tr.addEventListener('click', () => loadRow(r));
+      tr.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); loadRow(r); } });
       tb.appendChild(tr);
     });
     $('riskFoot').insertAdjacentText('afterbegin', `Model ROC AUC ${S.auc} on ${S.test_skus} later launches (simple sales-trend rule: ${S.rule_auc}). `);
