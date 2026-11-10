@@ -495,6 +495,12 @@ html,body{overflow-x:clip}
   .proof div{padding:20px 0 4px}
   .contact .form{padding:20px}
 }
+
+.showall{display:none}
+@media (max-width:640px){
+  #riskTable.collapsed tbody tr:nth-child(n+5){display:none}
+  .showall{display:block;width:calc(100% - 32px);margin:10px 16px 4px;font:inherit;font-weight:800;font-size:.88rem;padding:11px;border-radius:10px;border:1.5px solid var(--forest);background:#fff;color:var(--forest);cursor:pointer}
+}
 </style>
 </head>
 <body>
@@ -691,11 +697,12 @@ html,body{overflow-x:clip}
     <div class="panel reveal">
       <div class="panel-head"><b>Lines at risk after 12 weeks on sale</b><span class="clickhint">Click a line to load it above ↑</span><span class="tag">Real open retail data</span></div>
       <div class="scroll">
-        <table class="data stack" id="riskTable">
+        <table class="data stack collapsed" id="riskTable">
           <thead><tr><th>Line</th><th>Launched</th><th class="num">Units / week, first 12 wks</th><th class="num">Stall risk</th><th class="num">Units / week, wks 12–25</th><th>Outcome</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
+      <button type="button" class="showall" id="showAll">Show all 8 lines</button>
       <div class="panel-foot" id="riskFoot">Scored on later launches the model never saw. Data: UCI Online Retail II, a UK online retailer (CC BY 4.0), not a fashion customer. <a href="https://github.com/catliugit/ThreadFutures/tree/main/src/stock">src/stock</a></div>
     </div>
     <div class="routes reveal" aria-label="Recovery options, planned workflow">
@@ -703,25 +710,6 @@ html,body{overflow-x:clip}
       <div><h3 style="margin-top:34px">Donation</h3><p>Record the offer, the receiving organisation and its response.</p></div>
       <div><h3 style="margin-top:34px">Reprocessing</h3><p>A last resort, with the reason and the operator's statement kept on file.</p></div>
     </div>
-  </div>
-</section>
-
-<!-- STORY 3: EVIDENCE (quiet) -->
-<section>
-  <div class="wrap quiet reveal">
-    <div class="eyebrow">03 / Keep the record</div>
-    <h2>Keep the evidence with the decision.</h2>
-    <p class="lede">Organise batch-level records so teams can trace what was considered, what was chosen and which documents support the outcome.</p>
-    <p style="margin-top:18px"><span class="tag plan">Planned workflow</span></p>
-    <div class="record" aria-label="Fields in a planned decision record">
-      <div><span>Batch reference</span><b>TF-2026-0142</b></div>
-      <div><span>Units and weight</span><b>2,400 · 610 kg</b></div>
-      <div><span>Routes considered</span><b>Resale, donation</b></div>
-      <div><span>Route chosen</span><b>Off-price partner</b></div>
-      <div><span>Supporting documents</span><b>Offer, transfer note</b></div>
-      <div><span>Disclosure category</span><b>Prepared for reuse</b></div>
-    </div>
-    <p style="margin-top:14px;font-size:.82rem;color:var(--muted)">Illustrative data.</p>
   </div>
 </section>
 
@@ -758,19 +746,6 @@ html,body{overflow-x:clip}
             <div class="mini-s">Feed what stalled back into next season's buying.</div></div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- AUDIENCE -->
-<section class="on-white">
-  <div class="wrap">
-    <div class="eyebrow">Who it's for</div>
-    <h2 style="margin-top:16px;max-width:15em">Made for the teams responsible for what remains.</h2>
-    <div class="aud">
-      <div><h3>Sustainability and compliance</h3><p>Keep a clearer trail of stock outcomes and supporting records.</p></div>
-      <div><h3>Operations and production</h3><p>See potential cutting waste before the run begins.</p></div>
-      <div><h3>Inventory and merchandising</h3><p>Compare options for stock that has not sold, and see which lines are slowing.</p></div>
     </div>
   </div>
 </section>
@@ -872,6 +847,7 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
     <div class="eyebrow">Questions</div>
     <h2 style="margin-top:16px">Before you ask.</h2>
     <div class="faq">
+      <details open><summary>Who is it for?</summary><p><b>Sustainability and compliance teams</b> who need a clearer trail of stock outcomes. <b>Operations and production teams</b> who want to see cutting waste before a run begins. <b>Inventory and merchandising teams</b> comparing options for stock that has not sold.</p></details>
       <details><summary>Is the product live?</summary><p>Not yet. The forecasting demo and the stock analytics are working prototypes. The routing and evidence workflows are being designed with early partners.</p></details>
       <details><summary>Is the forecast based on real factory data?</summary><p>No. It is trained on 8,000 simulated cutting runs, calibrated to published industry ranges. A pilot would test it against real weighed offcuts.</p></details>
       <details><summary>Does the EU rule apply to UK brands?</summary><p>It can, if they place clothing or footwear on the EU market and count as a large company. Medium-sized companies follow from July 2030. Check the specifics with your advisers; this is general information, not legal advice.</p></details>
@@ -1106,6 +1082,9 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
   const stp = $('stepper');
   if (stp){ stp.addEventListener('mouseenter', pause); stp.addEventListener('mouseleave', play); stp.addEventListener('focusin', pause);
     if ('IntersectionObserver' in window){ new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? (show(cur), play()) : pause()), {threshold:.4}).observe(stp); } else { show(0); } }
+
+  const sa = $('showAll');
+  if (sa) sa.addEventListener('click', () => { const t = $('riskTable'), c = t.classList.toggle('collapsed'); sa.textContent = c ? 'Show all 8 lines' : 'Show fewer'; });
 
   // Contact: Netlify Forms, with an email fallback.
   const intro = 'Hi Cathy, I came across Thread Futures and would like to talk about ';
