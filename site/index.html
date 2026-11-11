@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thread Futures | See the waste before it happens</title>
-<meta name="description" content="Software for fashion teams: forecast fabric offcuts before cutting, spot lines likely to go unsold, and keep a clearer record of what happens to stock.">
-<meta property="og:title" content="Thread Futures">
-<meta property="og:description" content="Forecast fabric offcuts, spot unsold stock early, and keep the record of what happens next.">
+<title>Thread Futures | Unsold stock, routed and proven</title>
+<meta name="description" content="Thread Futures helps fashion brands deal with unsold stock now that the EU bans destroying it. It spots lines about to stop selling, routes each unsold batch to the outlet that recovers the most money, and keeps the proof the regulator asks for.">
+<meta property="og:title" content="Thread Futures | Unsold Stock Ledger for fashion brands">
+<meta property="og:description" content="The EU now bans destroying unsold clothes and shoes. Thread Futures spots lines about to stop selling, routes each unsold batch to the outlet that recovers the most, and keeps the proof.">
 <meta property="og:url" content="https://threadfutures.com/">
 <meta property="og:image" content="https://threadfutures.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -530,6 +530,34 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
   .links a{font-size:1.05rem}
   .faq summary{font-size:1rem;padding:4px 0}
 }
+/* ===== Ledger-first layout ===== */
+.what{margin-top:8px;padding-top:26px;border-top:1px solid var(--hair)}
+.what-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px;margin-bottom:18px}
+.what-h h2{font-size:clamp(1.6rem,2.8vw,2.2rem);margin-top:10px}
+.what-h p{color:var(--muted);font-size:1rem;max-width:30em}
+.ledger-steps{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ledger-steps li{display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.05);border:1px solid var(--hair);border-radius:14px;padding:22px 24px}
+.ledger-steps .n{font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.ledger-steps h3{font-size:1.4rem;line-height:1.15}
+.ledger-steps p{color:var(--muted);font-size:.95rem}
+.ledger-steps .tag{align-self:flex-start;margin-top:auto}
+.ledger-steps a{color:var(--lime);font-weight:800;font-size:.92rem}
+.what-foot{margin-top:16px;font-size:.92rem;color:var(--muted)}
+.what-foot a{color:var(--lime);font-weight:700}
+@media (max-width:860px){.ledger-steps{grid-template-columns:1fr}}
+.facts{display:grid;gap:0;margin-top:22px;font-size:.92rem}
+.facts div{display:grid;grid-template-columns:9em 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--hair)}
+.facts dt{font-weight:800}
+.facts dd{margin:0;color:var(--muted)}
+@media (max-width:520px){.facts div{grid-template-columns:1fr;gap:2px}}
+.onebrand{margin-top:48px;display:grid;grid-template-columns:minmax(0,.35fr) minmax(0,1fr);gap:12px 32px;align-items:start;padding:24px 26px;border:1px solid var(--hair);border-radius:14px}
+.onebrand p{font-size:1.02rem}
+.onebrand a{display:inline-block;margin-top:12px;color:var(--lime);font-weight:800}
+@media (max-width:760px){.onebrand{grid-template-columns:1fr}}
+.routes-note{margin-top:14px;font-size:.9rem;color:var(--muted);max-width:52em}
+.offcut-sec .wrap{position:relative;z-index:0}
+.offcut-sec .panel{margin-top:28px}
+.contact .btn-lime{margin-top:26px}
 </style>
 </head>
 <body>
@@ -543,150 +571,69 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
     </a>
     <button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu</button>
     <nav class="links" id="links" aria-label="Main">
-      <a href="#platform">Platform</a>
+      <a href="#ledger">Unsold Stock Ledger</a>
+      <a href="#offcuts">Offcut Forecast</a>
       <a href="#how">How it works</a>
       <a href="#why">Why it matters</a>
       <a href="#about">About</a>
-      <a class="btn btn-primary btn-sm" href="#demo">Try the prototype</a>
+      <a class="btn btn-primary btn-sm" href="#riskTool">Try the model</a>
     </nav>
   </div>
 </header>
 
 <main id="main">
-<!-- HERO: the working prototype is the star -->
+<!-- HERO: the Unsold Stock Ledger leads -->
 <section class="hero" id="top">
   <div class="wrap">
     <div class="hero-top">
       <div>
-        <a class="announce" href="#riskTool"><span class="new">New</span> The stall-risk model now runs in your browser <span aria-hidden="true">→</span></a>
-        <div class="eyebrow">Software for circular fashion</div>
-        <h1>See the waste<br><em class="accent">before it happens.</em></h1>
+        <a class="announce" href="#riskTool"><span class="new">New</span> Our stall-risk model now runs in your browser <span aria-hidden="true">→</span></a>
+        <div class="eyebrow">For fashion brands selling into the EU</div>
+        <h1>No unsold clothes<br><em class="accent">wasted.</em></h1>
       </div>
       <div>
-        <p class="lede">Forecast fabric offcuts, assess routes for unsold stock, and keep a clearer record of what happens next.</p>
+        <p class="lede">Thread Futures helps fashion brands deal with unsold stock now that the EU bans destroying it. It spots lines about to stop selling, routes each unsold batch to the outlet that recovers the most money, and keeps the proof the regulator asks for.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="#demo">Try the prototype</a>
-          <a class="btn btn-line" href="#how">See the workflow</a>
-        </div>
-        <div class="points">
-          <div><b>Before production</b><span>Offcuts forecast from the order</span></div>
-          <div><b>After the season</b><span>Lines at risk of going unsold</span></div>
-          <div><b>Keep the record</b><span>Evidence for each decision</span></div>
+          <a class="btn btn-primary" href="#riskTool">Try the stall-risk model</a>
+          <a class="btn btn-line" href="#contact">Help shape it: 20-minute call</a>
         </div>
       </div>
     </div>
-    <div class="live"><span class="pulse"><i aria-hidden="true"></i>Live prototype</span><span class="hint">Change any input: the forecast recalculates in your browser. Trained on simulated cutting runs.</span></div>
-    <div class="app hero-app" id="demo" aria-label="Offcut forecast prototype">
-      <div class="app-bar">
-        <div><b>Offcut forecast</b> <span class="crumb">/ Planned cutting run</span></div>
-        <span class="tag sim">Prototype · simulated production data</span>
+    <div class="what" id="what" aria-label="What the Unsold Stock Ledger does">
+      <div class="what-h">
+        <div><div class="eyebrow">What it is</div><h2>The Unsold Stock <em class="accent">Ledger.</em></h2></div>
+        <p>Since 19 July 2026, large brands selling clothes or shoes into the EU, UK brands included, may not destroy unsold stock, and must publish what they discard. The Ledger does three jobs.</p>
       </div>
-      <div class="app-body">
-        <form class="inputs" onsubmit="return false">
-          <p class="group">Quick start</p>
-          <div class="chips" id="offChips" role="group" aria-label="Example cutting runs">
-            <button type="button" data-p="tee,cotton,standard,18000,1.8,180">Jersey tees</button>
-            <button type="button" data-p="jeans,cotton_elastane,standard,12000,1.55,380">Denim jeans</button>
-            <button type="button" data-p="hoodie,cotton_poly,extended,20000,1.8,320">Fleece hoodies</button>
-            <button type="button" data-p="dress,polyester,narrow,8000,1.5,140">Woven dresses</button>
-          </div>
-          <p class="group">Planned cutting run</p>
-          <label class="field"><span>Style</span>
-            <select id="garment"><option value="tee">T-shirt, jersey</option><option value="hoodie">Hoodie, fleece</option><option value="shirt">Shirt, woven</option><option value="jeans">Jeans, denim</option><option value="dress">Dress, woven</option></select></label>
-          <label class="field"><span>Fabric type</span>
-            <select id="fibre"><option value="cotton">100% cotton</option><option value="polyester">100% polyester</option><option value="cotton_poly">Cotton/polyester blend</option><option value="cotton_elastane">Cotton with elastane</option></select></label>
-          <label class="field"><span>Size range</span>
-            <select id="sizemix"><option value="narrow">Core sizes (S–XL)</option><option value="standard" selected>Standard (XS–XXL)</option><option value="extended">Extended</option></select></label>
-          <label class="field"><span>Fabric length <output id="metresVal">18,000 m</output></span>
-            <input id="metres" type="range" min="2000" max="40000" step="500" value="18000"></label>
-          <label class="field"><span>Roll width <output id="widthVal">1.80 m</output></span>
-            <input id="width" type="range" min="1.2" max="2.2" step="0.05" value="1.8"></label>
-          <label class="field"><span>Fabric weight <output id="gsmVal">180 g/m²</output></span>
-            <input id="gsm" type="range" min="80" max="450" step="5" value="180"></label>
-        </form>
-        <div class="results" aria-live="polite">
-          <div>
-            <div class="ann">Estimated offcuts</div>
-            <div class="big" id="p50">–<small>kg</small></div>
-            <div class="range">Likely range <b id="range">–</b> (P10–P90) <span class="tip" tabindex="0" role="note" aria-label="P10 to P90 explained" data-tip="8 times out of 10 the real offcut weight should fall inside this range. P10 is the low estimate, P90 the high one.">?</span></div>
-          </div>
-          <div>
-            <div class="marker" aria-hidden="true"><svg id="markerSvg" viewBox="0 0 600 170" preserveAspectRatio="xMidYMid meet"></svg></div>
-            <div class="legend"><span><i class="sw cut"></i><span id="cutPct">Cut panels</span></span><span><i class="sw off"></i><span id="offPct">Offcuts</span></span></div>
-            <p class="marker-cap">Illustrative cutting plan. Offcut share follows the forecast.</p>
-          </div>
-          <div>
-            <div class="ann">Model comparison</div>
-            <table class="compare">
-              <tr class="me"><td>Model estimate (P50)</td><td id="cmpModel">–</td></tr>
-              <tr><td>Flat 15% rule of thumb</td><td id="cmpRule">–</td></tr>
-              <tr><td>Fabric in</td><td id="cmpIn">–</td></tr>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div class="callout" aria-hidden="true"><span class="dot">↗</span><span><b>Offcuts known</b><br>before cutting starts</span></div>
-      <div class="app-foot">
-        <span>Demo data, not a live customer result.</span>
-        <button class="btn btn-line btn-sm" id="copyBtn" type="button">Copy estimate</button>
-      </div>
+      <ol class="ledger-steps">
+        <li><span class="n">1 · Spot</span><h3>Lines about to stop selling</h3><p>Scores each line from its first 12 weeks of sales, while there is still time to sell it.</p><span class="tag">Built model · live below</span><a href="#riskTool">Try it ↓</a></li>
+        <li><span class="n">2 · Route</span><h3>The best legal outlet for each batch</h3><p>Compares off-price, resale, donation and reprocessing, with the expected money back from each.</p><span class="tag plan">Planned</span></li>
+        <li><span class="n">3 · Prove</span><h3>The evidence the regulator asks for</h3><p>Keeps the record of each decision and fills in the EU standard disclosure table, mandatory from 2 March 2027.</p><span class="tag plan">Planned</span></li>
+      </ol>
+      <p class="what-foot">For Heads of Operations at mid-market apparel and footwear brands, working with Sustainability and Legal. No customers yet: we're validating with UK brands now. <a href="#offcuts">Our second product, the Offcut Forecast, is a working prototype too ↓</a></p>
     </div>
   </div>
 </section>
 
-<!-- THE GAP -->
-<section class="gap on-white" id="platform">
-  <div class="wrap">
-    <div class="gap-grid">
-      <div class="reveal statement-wrap"><div class="eyebrow">The gap</div><p class="statement">Waste decisions start <em class="accent">long before disposal.</em> <span>Cutting plans create offcuts. Unsold stock builds up across seasons. The information needed to act is spread across teams, files and suppliers.</span></p></div>
-    </div>
-    <ol class="seq reveal">
-      <li><div class="k">Before the run</div><h3>The cutting plan</h3><p>Marker software reports planned efficiency, but the cutting room loses more: ends, splices, defects.</p></li>
-      <li><div class="k">After the season</div><h3>The unsold batch</h3><p>Lines that stopped selling sit in the warehouse until someone decides what happens to them.</p></li>
-      <li><div class="k">Afterwards</div><h3>The record</h3><p>What was considered, what was chosen, and which documents support it, usually rebuilt from email.</p></li>
-    </ol>
-  </div>
-</section>
 
-<!-- STORY 1: FORECASTING -->
-<section>
-  <div class="wrap split">
-    <div class="reveal">
-      <div class="eyebrow">01 / Before production</div>
-      <h2>Estimate the offcuts.</h2>
-      <p class="lede">Model expected fabric waste from planned cutting runs. Compare the estimate with a simple baseline and inspect the inputs behind it.</p>
-      <p class="truth">Prototype trained and evaluated on 8,000 simulated cutting runs. The first pilot goal is to stay within ±15% on real weighed output.</p>
-      <div class="cta-row"><a class="btn btn-primary" href="#demo">Try forecasting</a></div>
-    </div>
-    <div class="panel reveal">
-      <div class="panel-head"><b>Held-out test, 1,600 simulated runs</b><span class="tag sim">Simulated data</span></div>
-      <div class="scroll">
-        <table class="data stack">
-          <thead><tr><th>Method</th><th class="num">Mean error, offcut kg</th><th class="num">Runs within ±15%</th></tr></thead>
-          <tbody>
-            <tr><td data-label="Method">Marker efficiency alone</td><td class="num" data-label="Mean error">23.3%</td><td class="num" data-label="Within ±15%">11.1%</td></tr>
-            <tr><td data-label="Method">Flat 15% rule of thumb</td><td class="num" data-label="Mean error">20.3%</td><td class="num" data-label="Within ±15%">39.2%</td></tr>
-            <tr class="best"><td data-label="Method"><b>Model, order data only</b> (this demo)</td><td class="num" data-label="Mean error"><b>8.8%</b></td><td class="num" data-label="Within ±15%"><b>82.4%</b></td></tr>
-            <tr><td data-label="Method">Model, with planned marker</td><td class="num" data-label="Mean error">4.9%</td><td class="num" data-label="Within ±15%">96.7%</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="panel-foot">P10–P90 range covers 76.8% of outcomes (target 80%). Method and code: <a href="https://github.com/catliugit/ThreadFutures/tree/main/src/offcut">src/offcut</a></div>
-    </div>
-  </div>
-</section>
 
-<!-- STORY 2: UNSOLD STOCK (full-width interface) -->
-<section class="on-white">
+<!-- PRODUCT 1: UNSOLD STOCK LEDGER (first interactive section) -->
+<section class="on-white" id="ledger">
   <div class="wrap">
     <div class="wide-head">
-      <div class="reveal"><div class="eyebrow">02 / After the season</div><h2>Find the next route for <em class="accent">unsold stock.</em></h2></div>
-      <p class="lede reveal">Spot the lines likely to stop selling while there is still time to act, then review resale, donation and reprocessing routes for each batch. Try the real model below.</p>
+      <div class="reveal"><div class="eyebrow">01 / Unsold Stock Ledger · Step 1, Spot</div><h2>Find the lines <em class="accent">about to stop selling.</em></h2></div>
+      <div class="reveal">
+        <p class="lede">Spot the lines likely to stop selling while there is still time to act, then review resale, donation and reprocessing routes for each batch. Try the real model below.</p>
+        <dl class="facts">
+          <div><dt>Who it's for</dt><dd>Heads of Operations at apparel and footwear brands, with Sustainability and Legal &amp; Compliance.</dd></div>
+          <div><dt>What's real</dt><dd>The stall-risk model is built and runs in your browser, on real open retail data (UCI Online Retail II, a UK online retailer, <b>not fashion and not a customer</b>).</dd></div>
+          <div><dt>What's planned</dt><dd>Routing each batch, the evidence record and the EU disclosure export are <b>planned, not built</b>.</dd></div>
+        </dl>
+      </div>
     </div>
     <div class="app risk-app reveal" id="riskTool" aria-label="Stall-risk prototype">
       <div class="app-bar">
-        <div><b>Stall risk</b> <span class="crumb">/ Score a line from its first 12 weeks</span></div>
-        <span class="tag">Real open retail data · not fashion</span>
+        <div><b>Unsold Stock Ledger · Stall risk</b> <span class="crumb">/ Score a line from its first 12 weeks</span></div>
+        <span class="tag">Built model · real open retail data, not fashion</span>
       </div>
       <div class="app-body">
         <form class="inputs" onsubmit="return false">
@@ -739,6 +686,114 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
       <div><h3 style="margin-top:34px">Donation</h3><p>Record the offer, the receiving organisation and its response.</p></div>
       <div><h3 style="margin-top:34px">Reprocessing</h3><p>A last resort, with the reason and the operator's statement kept on file.</p></div>
     </div>
+    <p class="routes-note reveal">Steps 2 and 3, planned: route each batch to the outlet that recovers the most, keep an evidence record (offers, transfer notes, reasons), and export the EU standard disclosure table, mandatory from 2 March 2027.</p>
+  </div>
+</section>
+
+<!-- VISION: fashion wastes twice -->
+<section class="gap" id="platform">
+  <div class="wrap">
+    <div class="gap-grid">
+      <div class="reveal statement-wrap"><div class="eyebrow">Where this goes</div><p class="statement">Fashion wastes twice. <em class="accent">See the waste before it happens.</em> <span>Fabric is left on the cutting-room floor, and clothes nobody buys pile up after the season. We start with unsold stock because the law changed. The same engine then forecasts offcuts, earlier in the chain.</span></p></div>
+    </div>
+    <ol class="seq reveal">
+      <li><div class="k">After the season · Ledger</div><h3>The unsold batch</h3><p>Lines that stopped selling sit in the warehouse until someone decides what happens to them.</p></li>
+      <li><div class="k">Afterwards · Ledger</div><h3>The record</h3><p>What was considered, what was chosen, and which documents support it, usually rebuilt from email.</p></li>
+      <li><div class="k">Before the run · Offcut Forecast</div><h3>The cutting plan</h3><p>Marker software reports planned efficiency, but the cutting room loses more: ends, splices, defects.</p></li>
+    </ol>
+    <div class="onebrand reveal">
+      <div class="eyebrow">Why one company</div>
+      <div><p>Same customer: the fashion brand. Same data: styles, fabrics, quantities and sales. Same skill: forecasting waste from production and sales data. And one loop: what a brand over-buys and over-cuts teaches it to make less next season.</p>
+      <a href="#contact">Work at a brand or factory? Help shape it: 20-minute call →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECOND PRODUCT: OFFCUT FORECAST (live demo) -->
+<section class="offcut-sec on-white" id="offcuts">
+  <div class="wrap">
+    <div class="wide-head">
+      <div class="reveal"><div class="eyebrow">02 / Our second product · working prototype</div><h2>Offcut Forecast: <em class="accent">the same engine, earlier in the chain.</em></h2></div>
+      <div class="reveal">
+        <p class="lede">Before a cutting run, estimate how much fabric it will leave over. Brands can order less fabric and line up a buyer or recycler for the offcuts in advance.</p>
+        <dl class="facts">
+          <div><dt>What it is</dt><dd>A forecast of the kg of fabric a cutting run will leave over, with a P10–P90 range, from garment type, fabric, sizes and quantity.</dd></div>
+          <div><dt>Who it's for</dt><dd>Brand production and sourcing teams, and the cut-and-sew factories they work with.</dd></div>
+          <div><dt>Real vs simulated</dt><dd>The model is real and runs in your browser below. It was trained on 8,000 <b>simulated</b> cutting runs and tested on 1,600 more. It needs real factory data next. The first pilot goal is to stay within ±15% on real weighed output.</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="live"><span class="pulse"><i aria-hidden="true"></i>Live prototype</span><span class="hint"><b>Offcut Forecast.</b> Change any input: the forecast recalculates in your browser. Trained on simulated cutting runs.</span></div>
+    <div class="app hero-app" id="demo" aria-label="Offcut forecast prototype">
+      <div class="app-bar">
+        <div><b>Offcut Forecast</b> <span class="crumb">/ Planned cutting run</span></div>
+        <span class="tag sim">Prototype · simulated production data</span>
+      </div>
+      <div class="app-body">
+        <form class="inputs" onsubmit="return false">
+          <p class="group">Quick start</p>
+          <div class="chips" id="offChips" role="group" aria-label="Example cutting runs">
+            <button type="button" data-p="tee,cotton,standard,18000,1.8,180">Jersey tees</button>
+            <button type="button" data-p="jeans,cotton_elastane,standard,12000,1.55,380">Denim jeans</button>
+            <button type="button" data-p="hoodie,cotton_poly,extended,20000,1.8,320">Fleece hoodies</button>
+            <button type="button" data-p="dress,polyester,narrow,8000,1.5,140">Woven dresses</button>
+          </div>
+          <p class="group">Planned cutting run</p>
+          <label class="field"><span>Style</span>
+            <select id="garment"><option value="tee">T-shirt, jersey</option><option value="hoodie">Hoodie, fleece</option><option value="shirt">Shirt, woven</option><option value="jeans">Jeans, denim</option><option value="dress">Dress, woven</option></select></label>
+          <label class="field"><span>Fabric type</span>
+            <select id="fibre"><option value="cotton">100% cotton</option><option value="polyester">100% polyester</option><option value="cotton_poly">Cotton/polyester blend</option><option value="cotton_elastane">Cotton with elastane</option></select></label>
+          <label class="field"><span>Size range</span>
+            <select id="sizemix"><option value="narrow">Core sizes (S–XL)</option><option value="standard" selected>Standard (XS–XXL)</option><option value="extended">Extended</option></select></label>
+          <label class="field"><span>Fabric length <output id="metresVal">18,000 m</output></span>
+            <input id="metres" type="range" min="2000" max="40000" step="500" value="18000"></label>
+          <label class="field"><span>Roll width <output id="widthVal">1.80 m</output></span>
+            <input id="width" type="range" min="1.2" max="2.2" step="0.05" value="1.8"></label>
+          <label class="field"><span>Fabric weight <output id="gsmVal">180 g/m²</output></span>
+            <input id="gsm" type="range" min="80" max="450" step="5" value="180"></label>
+        </form>
+        <div class="results" aria-live="polite">
+          <div>
+            <div class="ann">Estimated offcuts</div>
+            <div class="big" id="p50">–<small>kg</small></div>
+            <div class="range">Likely range <b id="range">–</b> (P10–P90) <span class="tip" tabindex="0" role="note" aria-label="P10 to P90 explained" data-tip="8 times out of 10 the real offcut weight should fall inside this range. P10 is the low estimate, P90 the high one.">?</span></div>
+          </div>
+          <div>
+            <div class="marker" aria-hidden="true"><svg id="markerSvg" viewBox="0 0 600 170" preserveAspectRatio="xMidYMid meet"></svg></div>
+            <div class="legend"><span><i class="sw cut"></i><span id="cutPct">Cut panels</span></span><span><i class="sw off"></i><span id="offPct">Offcuts</span></span></div>
+            <p class="marker-cap">Illustrative cutting plan. Offcut share follows the forecast.</p>
+          </div>
+          <div>
+            <div class="ann">Model comparison</div>
+            <table class="compare">
+              <tr class="me"><td>Model estimate (P50)</td><td id="cmpModel">–</td></tr>
+              <tr><td>Flat 15% rule of thumb</td><td id="cmpRule">–</td></tr>
+              <tr><td>Fabric in</td><td id="cmpIn">–</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="callout" aria-hidden="true"><span class="dot">↗</span><span><b>Offcuts known</b><br>before cutting starts</span></div>
+      <div class="app-foot">
+        <span>Demo data, not a live customer result.</span>
+        <button class="btn btn-line btn-sm" id="copyBtn" type="button">Copy estimate</button>
+      </div>
+    </div>
+    <div class="panel reveal">
+      <div class="panel-head"><b>Held-out test, 1,600 simulated runs</b><span class="tag sim">Simulated data</span></div>
+      <div class="scroll">
+        <table class="data stack">
+          <thead><tr><th>Method</th><th class="num">Mean error, offcut kg</th><th class="num">Runs within ±15%</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Method">Marker efficiency alone</td><td class="num" data-label="Mean error">23.3%</td><td class="num" data-label="Within ±15%">11.1%</td></tr>
+            <tr><td data-label="Method">Flat 15% rule of thumb</td><td class="num" data-label="Mean error">20.3%</td><td class="num" data-label="Within ±15%">39.2%</td></tr>
+            <tr class="best"><td data-label="Method"><b>Model, order data only</b> (this demo)</td><td class="num" data-label="Mean error"><b>8.8%</b></td><td class="num" data-label="Within ±15%"><b>82.4%</b></td></tr>
+            <tr><td data-label="Method">Model, with planned marker</td><td class="num" data-label="Mean error">4.9%</td><td class="num" data-label="Within ±15%">96.7%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel-foot">P10–P90 range covers 76.8% of outcomes (target 80%). Method and code: <a href="https://github.com/catliugit/ThreadFutures/tree/main/src/offcut">src/offcut</a></div>
+    </div>
   </div>
 </section>
 
@@ -746,33 +801,35 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
 <section class="on-forest" id="how">
   <div class="wrap">
     <div class="eyebrow">How it works</div>
-    <h2 style="margin-top:16px;max-width:14em">One material story, from plan to outcome.</h2>
+    <h2 style="margin-top:16px;max-width:15em">Spot, route, prove. Then make less next season.</h2>
     <div class="stepper" id="stepper">
       <div class="steptabs" role="tablist" aria-label="How it works">
-        <button role="tab" aria-selected="true" aria-controls="sp1" id="st1" class="on"><span class="n">01</span><b>Enter production or inventory details</b><small>Start with the cutting plan or the unsold batch.</small><span class="tag">Prototype</span><i class="prog"></i></button>
-        <button role="tab" aria-selected="false" aria-controls="sp2" id="st2"><span class="n">02</span><b>Review estimates and options</b><small>See projected offcuts, or the lines most likely to stop selling.</small><span class="tag">Prototype</span><i class="prog"></i></button>
-        <button role="tab" aria-selected="false" aria-controls="sp3" id="st3"><span class="n">03</span><b>Record the next step</b><small>Keep decisions and supporting information together.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
-        <button role="tab" aria-selected="false" aria-controls="sp4" id="st4"><span class="n">04</span><b>Learn from patterns</b><small>Use recurring material and stock signals to inform the next season.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
+        <button role="tab" aria-selected="true" aria-controls="sp1" id="st1" class="on"><span class="n">01</span><b>Spot lines about to stall</b><small>Score each line from its first 12 weeks of sales.</small><span class="tag">Built model</span><i class="prog"></i></button>
+        <button role="tab" aria-selected="false" aria-controls="sp2" id="st2"><span class="n">02</span><b>Route each batch</b><small>Compare off-price, resale, donation and reprocessing, with expected money back.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
+        <button role="tab" aria-selected="false" aria-controls="sp3" id="st3"><span class="n">03</span><b>Prove it</b><small>Keep the evidence for each decision and the EU disclosure table together.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
+        <button role="tab" aria-selected="false" aria-controls="sp4" id="st4"><span class="n">04</span><b>Make less next season</b><small>What stalled feeds next season's buying. The Offcut Forecast (working prototype) applies the same engine to cutting runs.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
       </div>
       <div class="stage">
         <div class="sp on" role="tabpanel" id="sp1" aria-labelledby="st1">
-          <div class="mini"><div class="mini-h">Planned cutting run</div>
-            <div class="kv"><span>Style</span><b>T-shirt, jersey</b></div><div class="kv"><span>Fabric</span><b>100% cotton · 180 g/m²</b></div><div class="kv"><span>Length × width</span><b>18,000 m × 1.80 m</b></div></div>
           <div class="mini"><div class="mini-h">Unsold batch</div>
             <div class="kv"><span>Line</span><b>Hall Cabinet With 3 Drawers</b></div><div class="kv"><span>First 12 weeks</span><b>15.9 units a week</b></div><div class="kv"><span>Trend</span><b>Falling</b></div></div>
+          <div class="mini big"><div class="mini-h">Stall risk</div><div class="mini-n">98<small>%</small></div><div class="mini-s">High: plan a route now</div></div>
         </div>
         <div class="sp" role="tabpanel" id="sp2" aria-labelledby="st2" hidden>
-          <div class="mini big"><div class="mini-h">Estimated offcuts</div><div class="mini-n">961<small> kg</small></div><div class="mini-s">Likely 870–1,040 kg · rule of thumb 875 kg</div></div>
-          <div class="mini big"><div class="mini-h">Stall risk</div><div class="mini-n">98<small>%</small></div><div class="mini-s">High: plan a route now</div></div>
+          <div class="mini wide"><div class="mini-h">Route options <span class="tag plan">Planned</span></div>
+            <div class="kv"><span>Off-price and resale</span><b>Compare with the usual liquidator</b></div><div class="kv"><span>Donation</span><b>Record the offer and response</b></div><div class="kv"><span>Reprocessing</span><b>Last resort, reason on file</b></div></div>
         </div>
         <div class="sp" role="tabpanel" id="sp3" aria-labelledby="st3" hidden>
           <div class="mini wide"><div class="mini-h">Decision record <span class="tag plan">Planned</span></div>
-            <div class="kv"><span>Batch</span><b>TF-2026-0142 · 2,400 units</b></div><div class="kv"><span>Routes considered</span><b>Off-price, donation</b></div><div class="kv"><span>Chosen</span><b>Off-price partner</b></div><div class="kv"><span>Evidence</span><b>Offer, transfer note</b></div></div>
+            <div class="kv"><span>Batch</span><b>TF-2026-0142 · 2,400 units</b></div><div class="kv"><span>Routes considered</span><b>Off-price, donation</b></div><div class="kv"><span>Chosen</span><b>Off-price partner</b></div><div class="kv"><span>Evidence</span><b>Offer, transfer note</b></div><div class="kv"><span>EU disclosure table</span><b>Row ready to export</b></div></div>
         </div>
         <div class="sp" role="tabpanel" id="sp4" aria-labelledby="st4" hidden>
           <div class="mini wide"><div class="mini-h">Lines that stalled, by launch season <span class="tag plan">Illustrative</span></div>
             <div class="bars"><div style="--h:62%"><span>AW24</span></div><div style="--h:48%"><span>SS25</span></div><div style="--h:55%"><span>AW25</span></div><div style="--h:31%"><span>SS26</span></div></div>
             <div class="mini-s">Feed what stalled back into next season's buying.</div></div>
+          <div class="mini"><div class="mini-h">Planned cutting run</div>
+            <div class="kv"><span>Style</span><b>T-shirt, jersey</b></div><div class="kv"><span>Fabric</span><b>100% cotton · 180 g/m²</b></div><div class="kv"><span>Length × width</span><b>18,000 m × 1.80 m</b></div></div>
+          <div class="mini big"><div class="mini-h">Estimated offcuts</div><div class="mini-n">961<small> kg</small></div><div class="mini-s">Offcut Forecast · likely 870–1,040 kg · rule of thumb 875 kg</div></div>
         </div>
       </div>
     </div>
@@ -786,11 +843,11 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
     <h2 style="margin-top:16px;max-width:16em">Two kinds of waste, decided at different times.</h2>
     <div class="why-grid">
       <div class="reveal">
-        <h3>Offcuts happen at production</h3>
-        <p>Fabric left over from cutting is a material stream. Knowing its likely weight and fibre before the run makes it easier to plan a buyer for it.</p>
-        <h3 style="margin-top:28px">Unsold stock happens after it</h3>
-        <p>Finished products that don't sell carry their full cost. Under EU Regulation 2024/1781, large companies may no longer destroy unsold clothing and footwear from 19 July 2026, outside limited exceptions, and must disclose what they discard each year.</p>
+        <h3>Unsold stock: the law changed <span class="tag sim" style="vertical-align:3px">Ledger</span></h3>
+        <p>Finished products that don't sell carry their full cost. Under EU Regulation 2024/1781, large companies may no longer destroy unsold clothing and footwear from 19 July 2026, outside limited exceptions, and must disclose what they discard each year. The standard disclosure table is mandatory from 2 March 2027.</p>
         <p>Medium-sized companies follow from 2030. This is general information, not legal advice.</p>
+        <h3 style="margin-top:28px">Offcuts happen earlier, at production <span class="tag sim" style="vertical-align:3px">Offcut Forecast</span></h3>
+        <p>Fabric left over from cutting is a material stream. Knowing its likely weight and fibre before the run makes it easier to plan a buyer for it.</p>
       </div>
       <div class="quote reveal">
         <span class="tag sim">Retrieval prototype</span>
@@ -810,12 +867,12 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
 <section class="band-lime" id="build">
   <div class="wrap">
     <div class="wide-head">
-      <div><div class="eyebrow kicker">Status</div><h2>Built around a working prototype.</h2></div>
-      <p class="lede">The offcut forecast uses simulated garment-production data. The stock analytics run on real open retail data. Routing and evidence workflows are being designed with early partners.</p>
+      <div><div class="eyebrow kicker">Status</div><h2>A working model, and a second one behind it.</h2></div>
+      <p class="lede">The Ledger's stall-risk model runs on real open retail data (not fashion). The Offcut Forecast, our second product, uses simulated garment-production data. Routing, evidence and disclosure workflows are planned, not built. No customers yet.</p>
     </div>
     <div class="proof">
-      <div><strong class="count" data-to="8.8" data-dec="1" data-suf="%">8.8%</strong><p>mean error on offcut weight, vs 20.3% for the 15% rule of thumb (1,600 simulated runs)</p></div>
-      <div><strong class="count" data-to="0.81" data-dec="2">0.81</strong><p>ROC AUC for spotting lines about to stop selling, vs 0.60 for a simple sales-trend rule</p></div>
+      <div><strong class="count" data-to="0.81" data-dec="2">0.81</strong><p><b>Ledger:</b> ROC AUC for spotting lines about to stop selling, vs 0.60 for a simple sales-trend rule</p></div>
+      <div><strong class="count" data-to="8.8" data-dec="1" data-suf="%">8.8%</strong><p><b>Offcut Forecast:</b> mean error on offcut weight, vs 20.3% for the 15% rule of thumb (1,600 simulated runs)</p></div>
       <div><strong class="count" data-to="45" data-dec="0">45</strong><p>automated checks on the data and code, run on every change</p></div>
     </div>
     <div class="buildrow">
@@ -876,10 +933,11 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
     <div class="eyebrow">Questions</div>
     <h2 style="margin-top:16px">Before you ask.</h2>
     <div class="faq">
-      <details open><summary>Who is it for?</summary><p><b>Sustainability and compliance teams</b> who need a clearer trail of stock outcomes. <b>Operations and production teams</b> who want to see cutting waste before a run begins. <b>Inventory and merchandising teams</b> comparing options for stock that has not sold.</p></details>
-      <details><summary>Is the product live?</summary><p>Not yet. The forecasting demo and the stock analytics are working prototypes. The routing and evidence workflows are being designed with early partners.</p></details>
+      <details open><summary>Who is it for?</summary><p>The Unsold Stock Ledger is for <b>Heads of Operations</b> at mid-market apparel and footwear brands selling into the EU, working with <b>sustainability, legal and compliance teams</b> who need a clear trail of stock outcomes. Our second product, the Offcut Forecast, is for <b>production and sourcing teams</b> who want to see cutting waste before a run begins, and their factories.</p></details>
+      <details><summary>Is the product live?</summary><p>Not yet, and there are no customers yet. The Ledger's stall-risk model and the Offcut Forecast are working prototypes you can try on this page. Routing, the evidence record and the disclosure export are planned, not built. We're validating with UK brands now.</p></details>
       <details><summary>Is the forecast based on real factory data?</summary><p>No. It is trained on 8,000 simulated cutting runs, calibrated to published industry ranges. A pilot would test it against real weighed offcuts.</p></details>
       <details><summary>Does the EU rule apply to UK brands?</summary><p>It can, if they place clothing or footwear on the EU market and count as a large company. Medium-sized companies follow from July 2030. Check the specifics with your advisers; this is general information, not legal advice.</p></details>
+      <details><summary>Why start with unsold stock, not offcuts?</summary><p>Because the law changed: since July 2026 large brands selling into the EU can't destroy unsold clothes, and from March 2027 they must report what happens to them in a standard table. The same forecasting engine then works earlier in the chain, on fabric offcuts.</p></details>
       <details><summary>Do you buy or hold stock?</summary><p>No. Thread Futures is software. Stock moves directly between a brand and the organisation that takes it.</p></details>
     </div>
   </div>
@@ -889,9 +947,10 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
 <section class="on-forest" id="contact">
   <div class="wrap contact">
     <div>
-      <div class="eyebrow">Design partners</div>
+      <div class="eyebrow">Help shape it</div>
       <h2>Bring us a <em class="accent">real</em> material problem.</h2>
-      <p class="lede">We're looking to learn from fashion teams managing offcuts, unsold inventory and recovery decisions.</p>
+      <p class="lede">We're looking to learn from fashion teams managing unsold inventory, recovery decisions and offcuts. If you work in operations, sustainability, compliance, production or sourcing at a brand or factory, a 20-minute call would help shape what gets built.</p>
+      <a class="btn btn-lime" id="callBtn" href="#contact">Help shape it: 20-minute call</a><br>
       <a class="mail" id="mailBtn" href="#contact">Or email Cathy directly</a>
     </div>
     <form class="form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
@@ -916,10 +975,10 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
 <footer>
   <div class="wrap foot">
     <div>
-      <p><b style="color:var(--forest)">thread futures</b> · Software for fashion teams to forecast offcuts, spot unsold stock early and keep the record of what happens to it.</p>
+      <p><b style="color:var(--forest)">thread futures</b> · Software that helps fashion brands deal with unsold stock now that the EU bans destroying it: spot lines about to stop selling, route each batch, keep the proof. Second product: the Offcut Forecast.</p>
       <p style="margin-top:8px">Demo outputs are illustrative. Offcut forecasts use simulated data; stock analytics use UCI Online Retail II (CC BY 4.0). Regulation text © European Union, EUR-Lex.</p>
     </div>
-    <nav aria-label="Footer"><a href="#platform">Platform</a><a href="#how">How it works</a><a href="#why">Why it matters</a><a href="#build">Status</a><a href="#about">About</a><a href="investors.html">For investors</a><a href="reports/monitoring.html">Monitoring report</a><a href="https://github.com/catliugit/ThreadFutures">GitHub</a></nav>
+    <nav aria-label="Footer"><a href="#ledger">Unsold Stock Ledger</a><a href="#offcuts">Offcut Forecast</a><a href="#platform">Where this goes</a><a href="#how">How it works</a><a href="#why">Why it matters</a><a href="#build">Status</a><a href="#about">About</a><a href="investors.html">For investors</a><a href="reports/monitoring.html">Monitoring report</a><a href="https://github.com/catliugit/ThreadFutures">GitHub</a></nav>
   </div>
 </footer>
 
@@ -1128,6 +1187,7 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
   // Contact: Netlify Forms, with an email fallback.
   const intro = 'Hi Cathy, I came across Thread Futures and would like to talk about ';
   $('mailBtn').href = 'mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('Thread Futures')+'&body='+encodeURIComponent(intro);
+  $('callBtn').href = 'mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('Thread Futures: 20-minute call')+'&body='+encodeURIComponent('Hi Cathy, I work on operations / sustainability / production at [organisation] and would be happy to do a 20-minute call about how we handle unsold stock and offcuts today.');
   const f = $('contactForm');
   f.addEventListener('submit', async e => {
     e.preventDefault();

@@ -2,7 +2,12 @@
 
 [![ci](https://github.com/catliugit/ThreadFutures/actions/workflows/ci.yml/badge.svg)](https://github.com/catliugit/ThreadFutures/actions/workflows/ci.yml)
 
-**Software for fashion teams: forecast fabric offcuts before cutting, spot lines likely to go unsold, and keep a clearer record of what happens to stock.**
+**Thread Futures helps fashion brands deal with unsold stock now that the EU bans destroying it. It spots lines about to stop selling, routes each unsold batch to the outlet that recovers the most money, and keeps the proof the regulator asks for.**
+
+- **Unsold Stock Ledger (the main product).** Spot lines about to stop selling, route each unsold batch to its best legal outlet (off-price, resale, donation, reprocessing) with expected money back, and prove it with an evidence record and the EU disclosure table. *Status:* the stall-risk model is built and runs in the browser on real open retail data (not fashion); routing, the evidence record and the disclosure export are **planned, not built**.
+- **Offcut Forecast (second product).** The same forecasting engine, earlier in the chain: estimates the kg of fabric a cutting run will leave over (P10–P90) before it's cut. *Status:* working live prototype, trained on **simulated** cutting runs; needs real factory data.
+
+The longer view: fashion wastes twice, on the cutting-room floor and in clothes nobody buys. We start with unsold stock because the law changed.
 
 Website: [threadfutures.com](https://threadfutures.com) · Founder: Cathy Liu ([LinkedIn](https://www.linkedin.com/in/cathyqliu))
 
@@ -12,8 +17,8 @@ Website: [threadfutures.com](https://threadfutures.com) · Founder: Cathy Liu ([
 
 Two kinds of textile waste are decided at different times:
 
-- **Offcuts at production.** Cutting plans report planned efficiency, but cutting rooms lose more fabric than the plan shows. Knowing the likely weight before the run makes it easier to plan a buyer for it.
-- **Unsold stock after the season.** From 19 July 2026, large companies may no longer destroy unsold clothing and footwear in the EU, outside limited exceptions, and must disclose what they discard ([Regulation (EU) 2024/1781](https://eur-lex.europa.eu/eli/reg/2024/1781/oj), Articles 24–25). Spotting lines that are about to stop selling gives a brand time to act.
+- **Unsold stock after the season (Unsold Stock Ledger).** From 19 July 2026, large companies may no longer destroy unsold clothing and footwear in the EU, outside limited exceptions, and must disclose what they discard ([Regulation (EU) 2024/1781](https://eur-lex.europa.eu/eli/reg/2024/1781/oj), Articles 24–25). Spotting lines that are about to stop selling gives a brand time to act.
+- **Offcuts at production (Offcut Forecast, second product).** Cutting plans report planned efficiency, but cutting rooms lose more fabric than the plan shows. Knowing the likely weight before the run makes it easier to plan a buyer for it.
 
 ## What's in the repository
 
