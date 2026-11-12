@@ -18,7 +18,7 @@ Per quarter: ROC AUC, PR AUC, predicted vs actual stall rate (calibration). Drif
 SciPy, pandas, scikit-learn, HTML
 
 ## Result
-Ranking stays good in two of three quarters (AUC 0.81, 0.65, 0.84), but calibration drifts: for 2011 Q2 launches the model predicted 14% would stall and only 1.7% did, because those lines sold into the Christmas peak. Strong drift flagged on several features.
+Ranking stays good in two of three quarters (AUC 0.81, 0.65, 0.84), but calibration drifts: for 2011 Q2 launches the model predicted 13.6% would stall and only 1.7% did, because those lines sold into the Christmas peak. Strong drift flagged on several features.
 
 ## Honest limits
 Small quarterly samples (70 to 178 SKUs).

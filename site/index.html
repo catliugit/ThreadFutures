@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thread Futures | See the waste before it happens</title>
-<meta name="description" content="Software for fashion teams: forecast fabric offcuts before cutting, spot lines likely to go unsold, and keep a clearer record of what happens to stock.">
-<meta property="og:title" content="Thread Futures">
-<meta property="og:description" content="Forecast fabric offcuts, spot unsold stock early, and keep the record of what happens next.">
+<title>Thread Futures | Every unit a second life, and the proof</title>
+<meta name="description" content="Thread Futures is the trusted second-life desk for the stock nobody else will take: returns, damaged, broken size runs, old seasons and logo-heavy lines from brands selling into the EU. Every unit a second life, and a file proving where it went.">
+<meta property="og:title" content="Thread Futures | Every unit a second life, and the proof">
+<meta property="og:description" content="The second-life desk for the unsold fashion stock nobody else will take: graded, placed with vetted buyers and EU charities, and proven with a destination file per batch.">
 <meta property="og:url" content="https://threadfutures.com/">
 <meta property="og:image" content="https://threadfutures.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -530,6 +530,34 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
   .links a{font-size:1.05rem}
   .faq summary{font-size:1rem;padding:4px 0}
 }
+/* ===== Ledger-first layout ===== */
+.what{margin-top:8px;padding-top:26px;border-top:1px solid var(--hair)}
+.what-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px;margin-bottom:18px}
+.what-h h2{font-size:clamp(1.6rem,2.8vw,2.2rem);margin-top:10px}
+.what-h p{color:var(--muted);font-size:1rem;max-width:30em}
+.ledger-steps{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ledger-steps li{display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.05);border:1px solid var(--hair);border-radius:14px;padding:22px 24px}
+.ledger-steps .n{font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.ledger-steps h3{font-size:1.4rem;line-height:1.15}
+.ledger-steps p{color:var(--muted);font-size:.95rem}
+.ledger-steps .tag{align-self:flex-start;margin-top:auto}
+.ledger-steps a{color:var(--lime);font-weight:800;font-size:.92rem}
+.what-foot{margin-top:16px;font-size:.92rem;color:var(--muted)}
+.what-foot a{color:var(--lime);font-weight:700}
+@media (max-width:860px){.ledger-steps{grid-template-columns:1fr}}
+.facts{display:grid;gap:0;margin-top:22px;font-size:.92rem}
+.facts div{display:grid;grid-template-columns:9em 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--hair)}
+.facts dt{font-weight:800}
+.facts dd{margin:0;color:var(--muted)}
+@media (max-width:520px){.facts div{grid-template-columns:1fr;gap:2px}}
+.onebrand{margin-top:48px;display:grid;grid-template-columns:minmax(0,.35fr) minmax(0,1fr);gap:12px 32px;align-items:start;padding:24px 26px;border:1px solid var(--hair);border-radius:14px}
+.onebrand p{font-size:1.02rem}
+.onebrand a{display:inline-block;margin-top:12px;color:var(--lime);font-weight:800}
+@media (max-width:760px){.onebrand{grid-template-columns:1fr}}
+.routes-note{margin-top:14px;font-size:.9rem;color:var(--muted);max-width:52em}
+.offcut-sec .wrap{position:relative;z-index:0}
+.offcut-sec .panel{margin-top:28px}
+.contact .btn-lime{margin-top:26px}
 </style>
 </head>
 <body>
@@ -543,43 +571,311 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
     </a>
     <button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu</button>
     <nav class="links" id="links" aria-label="Main">
-      <a href="#platform">Platform</a>
+      <a href="#problem">The tail</a>
       <a href="#how">How it works</a>
-      <a href="#why">Why it matters</a>
-      <a href="#about">About</a>
-      <a class="btn btn-primary btn-sm" href="#demo">Try the prototype</a>
+      <a href="#file">What you get</a>
+      <a href="#why">Why now</a>
+      <a href="#built">Built so far</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary btn-sm" href="#contact">Talk to us</a>
     </nav>
   </div>
 </header>
 
 <main id="main">
-<!-- HERO: the working prototype is the star -->
+<!-- HERO: the second-life desk -->
 <section class="hero" id="top">
   <div class="wrap">
     <div class="hero-top">
       <div>
-        <a class="announce" href="#riskTool"><span class="new">New</span> The stall-risk model now runs in your browser <span aria-hidden="true">→</span></a>
-        <div class="eyebrow">Software for circular fashion</div>
-        <h1>See the waste<br><em class="accent">before it happens.</em></h1>
+        <a class="announce" href="#contact"><span class="new">From 16 Nov</span> Talking to brands, buyers and EU charities <span aria-hidden="true">→</span></a>
+        <div class="eyebrow">For fashion brands selling into the EU</div>
+        <h1>Every unit a second life, <em class="accent">and the proof.</em></h1>
       </div>
       <div>
-        <p class="lede">Forecast fabric offcuts, assess routes for unsold stock, and keep a clearer record of what happens next.</p>
+        <p class="lede">Thread Futures is the trusted second-life desk for the stock nobody else will take: returns, damaged, broken size runs, old seasons and logo-heavy lines from brands selling into the EU. We give every unit a second life through vetted buyers and EU charities we fund to say yes, and hand the brand a file proving where all of it went.</p>
+        <p class="hero-note">Honest status: the desk is <b>not operating yet</b> and there are <b>no customers yet</b>. We start validation interviews with brands, buyers, EU charities and warehouses on Monday 16 November 2026. We're independent and built for fashion: we work with whatever warehouse you already use, and we start with stock already sitting in EU warehouses so nothing has to cross the UK–EU border.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="#demo">Try the prototype</a>
-          <a class="btn btn-line" href="#how">See the workflow</a>
-        </div>
-        <div class="points">
-          <div><b>Before production</b><span>Offcuts forecast from the order</span></div>
-          <div><b>After the season</b><span>Lines at risk of going unsold</span></div>
-          <div><b>Keep the record</b><span>Evidence for each decision</span></div>
+          <a class="btn btn-primary" href="#contact">Help shape it: 20-minute call</a>
+          <a class="btn btn-line" href="#how">How it works</a>
         </div>
       </div>
     </div>
-    <div class="live"><span class="pulse"><i aria-hidden="true"></i>Live prototype</span><span class="hint">Change any input: the forecast recalculates in your browser. Trained on simulated cutting runs.</span></div>
-    <div class="app hero-app" id="demo" aria-label="Offcut forecast prototype">
+    <div class="what" id="what" aria-label="Grade, Place, Prove">
+      <div class="what-h">
+        <div><div class="eyebrow">How it works, per batch</div><h2>Grade · Place · <em class="accent">Prove.</em></h2></div>
+        <p>The brand sends the tail it can't sell. We handle it batch by batch, in the order the EU waste hierarchy asks for: reuse first, then donation, recycling only as a last resort.</p>
+      </div>
+      <ol class="ledger-steps">
+        <li><span class="n">1 · Grade</span><h3>Know what's really in the batch</h3><p>Real size breakdown, condition codes and fibre composition from the brand's tech packs, so buyers get a manifest that matches and recyclers know the fibres.</p><span class="tag plan">Planned</span></li>
+        <li><span class="n">2 · Place</span><h3>Give every unit a second life</h3><p>Contracted buyers first (brand stays anonymous), then curated donation to vetted EU charities with transport paid, and a licensed recycler only as a last resort.</p><span class="tag plan">Planned</span></li>
+        <li><span class="n">3 · Prove</span><h3>A destination file per batch</h3><p>Every unit, every step: kept 5 years, producible within 30 days of a request, with rows ready for the EU Article 24 disclosure table.</p><span class="tag plan">Planned</span></li>
+      </ol>
+      <p class="what-foot">For premium and mid-market brands led by clothing and footwear that are large under the EU rules and sell into the EU or Northern Ireland, starting with UK brands whose stock is already in EU warehouses. <a href="#file">See an illustrative destination file ↓</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROBLEM: the tail -->
+<section class="gap" id="problem">
+  <div class="wrap">
+    <div class="gap-grid">
+      <div class="reveal statement-wrap"><div class="eyebrow">The problem</div><p class="statement">The easy stock already sells. <em class="accent">The hard part is the tail.</em> <span>Returns, damaged goods, odd sizes and old seasons used to go to the shredder. Since 19 July 2026, large brands can't destroy unsold clothes and shoes in the EU, and that includes shredding them for recycling.</span></p></div>
+    </div>
+    <ol class="seq reveal">
+      <li><div class="k">Clean stock</div><h3>Off-price buys it directly</h3><p>TJX (TK Maxx) buys from around 21,000 vendors, takes partial size runs and pays promptly. First-quality stock doesn't need us.</p></li>
+      <li><div class="k">The tail · jobbers</div><h3>Cheap, and no trail</h3><p>Jobbers take whole lots cheaply, but can't say where the goods end up. Liquidation typically recovers around 5–20% of retail price.</p></li>
+      <li><div class="k">The tail · charities</div><h3>Willing, but can't afford it</h3><p>French charities refuse 15–20% of donations offered, mostly because they can't pay to move or store them.</p></li>
+    </ol>
+    <div class="onebrand reveal">
+      <div class="eyebrow">What we do about it</div>
+      <div><p>Thread Futures handles that tail. We grade it properly, sell it to contracted buyers who report where it goes, donate the rest to EU charities with the logistics paid, recycle only as a last resort, and hand the brand a destination file for every batch.</p>
+      <a href="#contact">Have a batch nobody would take? Help shape it: 20-minute call →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="on-forest" id="how">
+  <div class="wrap">
+    <div class="eyebrow">How it works</div>
+    <h2 style="margin-top:16px;max-width:15em">Grade, place, prove. Then make less next season.</h2>
+    <div class="stepper" id="stepper">
+      <div class="steptabs" role="tablist" aria-label="How it works">
+        <button role="tab" aria-selected="true" aria-controls="sp1" id="st1" class="on"><span class="n">01</span><b>Grade the batch</b><small>Size breakdown, condition codes and fibre composition from the brand's tech packs.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
+        <button role="tab" aria-selected="false" aria-controls="sp2" id="st2"><span class="n">02</span><b>Place it, in waste-hierarchy order</b><small>Contracted buyers, then funded donation to vetted EU charities, then a licensed recycler as a last resort.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
+        <button role="tab" aria-selected="false" aria-controls="sp3" id="st3"><span class="n">03</span><b>Prove it</b><small>A destination file per batch: every unit, every step, with disclosure rows ready.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
+        <button role="tab" aria-selected="false" aria-controls="sp4" id="st4"><span class="n">04</span><b>Make less next season</b><small>What sold where, and why it didn't sell at full price, goes back to the brand's buyers.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
+      </div>
+      <div class="stage">
+        <div class="sp on" role="tabpanel" id="sp1" aria-labelledby="st1">
+          <div class="mini wide"><div class="mini-h">Graded batch <span class="tag plan">Illustrative</span></div>
+            <div class="kv"><span>Batch</span><b>DEMO-0142 · 1,860 units</b></div><div class="kv"><span>Mix</span><b>Returns, broken size runs, AW24</b></div><div class="kv"><span>Condition</span><b>A 1,240 · B 450 · C 170</b></div><div class="kv"><span>Fibre</span><b>From tech packs, per style</b></div></div>
+        </div>
+        <div class="sp" role="tabpanel" id="sp2" aria-labelledby="st2" hidden>
+          <div class="mini wide"><div class="mini-h">Place, in order <span class="tag plan">Illustrative</span></div>
+            <div class="kv"><span>a. Contracted buyers</span><b>No destruction, no export as waste, channel limits, onward reporting</b></div><div class="kv"><span>b. EU charities</span><b>Pre-sorted lots, transport paid, offers and refusals logged</b></div><div class="kv"><span>c. Licensed recycler</span><b>Last resort, derogation statement handed over, receipt collected</b></div></div>
+        </div>
+        <div class="sp" role="tabpanel" id="sp3" aria-labelledby="st3" hidden>
+          <div class="mini wide"><div class="mini-h">Destination file <span class="tag plan">Illustrative</span></div>
+            <div class="kv"><span>Units given a second life</span><b>1,790 of 1,860</b></div><div class="kv"><span>Recycled under a documented exception</span><b>70, operator statement on file</b></div><div class="kv"><span>Destroyed</span><b>0</b></div><div class="kv"><span>Kept</span><b>5 years, producible within 30 days</b></div><div class="kv"><span>EU disclosure</span><b>Rows ready</b></div></div>
+        </div>
+        <div class="sp" role="tabpanel" id="sp4" aria-labelledby="st4" hidden>
+          <div class="mini wide"><div class="mini-h">Why it reached the tail, by season <span class="tag plan">Illustrative</span></div>
+            <div class="bars"><div style="--h:62%"><span>AW24</span></div><div style="--h:48%"><span>SS25</span></div><div style="--h:55%"><span>AW25</span></div><div style="--h:31%"><span>SS26</span></div></div>
+            <div class="mini-s">Feed what didn't sell back into next season's buying: buy less of this.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THE BRAND GETS -->
+<section class="on-white" id="file">
+  <div class="wrap">
+    <div class="wide-head">
+      <div class="reveal"><div class="eyebrow">What the brand gets</div><h2>One destination file <em class="accent">per batch.</em></h2></div>
+      <div class="reveal">
+        <p class="lede">The file is the product. A buyer or jobber can't produce it, and a chatbot can't create a charity's acceptance or a waste operator's statement after the fact.</p>
+        <dl class="facts">
+          <div><dt>What's in it</dt><dd>Every unit and every step: grading, each buyer, charity or operator, the contract terms and the documents collected at each handover.</dd></div>
+          <div><dt>How long</dt><dd>Kept 5 years and producible electronically within 30 days of a request, as the EU rules require.</dd></div>
+          <div><dt>Disclosure</dt><dd>Rows ready for the Article 24 disclosure table.</dd></div>
+          <div><dt>Status</dt><dd>The example below is <b>illustrative, not a real brand or batch</b>. The prototype is planned for 16–19 Nov 2026.</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="panel reveal">
+      <div class="panel-head"><b>Destination file · batch DEMO-0142 · 1,860 units</b><span class="tag plan">Illustrative · not a real brand</span></div>
+      <div class="scroll">
+        <table class="data stack">
+          <thead><tr><th>Step</th><th class="num">Units</th><th>Destination</th><th>Evidence on file</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Step"><b>a. Contracted buyer</b><br><span style="color:var(--muted);font-size:.8rem">Off-price, Germany</span></td><td class="num" data-label="Units">1,120</td><td data-label="Destination">Sold under contract, brand anonymous</td><td data-label="Evidence">Sale contract (no destruction, no export as waste), onward-destination report</td></tr>
+            <tr><td data-label="Step"><b>a. Contracted buyer</b><br><span style="color:var(--muted);font-size:.8rem">Resale partner, Netherlands</span></td><td class="num" data-label="Units">410</td><td data-label="Destination">Resold, labels removed where required</td><td data-label="Evidence">Sale contract, channel limits, onward-destination report</td></tr>
+            <tr><td data-label="Step"><b>b. Funded donation</b><br><span style="color:var(--muted);font-size:.8rem">3 EU social-economy entities</span></td><td class="num" data-label="Units">260</td><td data-label="Destination">Accepted, transport paid</td><td data-label="Evidence">Offer, acceptance and handover records per entity</td></tr>
+            <tr><td data-label="Step"><b>c. Licensed recycler</b><br><span style="color:var(--muted);font-size:.8rem">Last resort</span></td><td class="num" data-label="Units">70</td><td data-label="Destination">Recycled under a documented exception</td><td data-label="Evidence">Derogation statement handed over, operator's treatment statement</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel-foot">Illustrative example only. Headline metric: units given a second life (here 1,790 of 1,860, 96%) and the share never destroyed.</div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section id="who">
+  <div class="wrap">
+    <div class="eyebrow">Who it's for</div>
+    <h2 style="margin-top:16px;max-width:16em">Brands pay. Buyers buy. Charities get help to say yes.</h2>
+    <div class="aud">
+      <div class="reveal"><h3>For brands</h3><p>Hand over the tail you can't sell and get one destination file per batch. Your name stays anonymous until you approve a buyer. Logistics, repair, sorting and recycling are done by partners and passed through at cost. We don't buy stock.</p></div>
+      <div class="reveal"><h3>For buyers</h3><p>Off-price, stocklot and resale buyers get graded lots with manifests that match, in exchange for contract terms: no destruction, no export as waste, channel limits, and a report of where the goods went.</p></div>
+      <div class="reveal"><h3>For EU charities</h3><p>Vetted EU social-economy organisations get lots pre-sorted to their needs, with transport paid from the brand's fee. Hard-to-place stock comes with transport paid; curated, sellable lots may carry a small handling fee (we're testing this). Every offer and decision is logged for them.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOW -->
+<section class="on-white" id="why">
+  <div class="wrap">
+    <div class="eyebrow">Why now</div>
+    <h2 style="margin-top:16px;max-width:16em">The ban is live, fines start, and the evidence is the brand's job.</h2>
+    <div class="why-grid">
+      <div class="reveal">
+        <h3>The ban</h3>
+        <p>Under EU Regulation 2024/1781, large companies may not destroy unsold clothing and footwear from 19 July 2026; medium-sized companies follow from 19 July 2030. "Destruction" includes recycling and energy recovery unless one of the ten exceptions in Delegated Regulation (EU) 2026/296 applies.</p>
+        <p>The donation exception needs the goods to have been offered for at least 8 weeks, either directly to at least three suitable social-economy entities in the EU or on an easily accessible page of the brand's own website, and not accepted. UK charities don't count. Most brands won't want a public "unsold stock" page, so the discreet three-entity route is the brand-safe one.</p>
+        <h3 style="margin-top:28px">The fines</h3>
+        <p>Germany: up to €100,000 per destruction breach and €10,000 for disclosure breaches, from 1 November 2026. France (AGEC): up to €15,000.</p>
+        <h3 style="margin-top:28px">The evidence duties</h3>
+        <p>Brands must keep evidence for 5 years and provide it electronically within 30 days of a request, and hand a derogation statement to the waste operator. The disclosure duty already applies to large firms; the mandatory standard format (Implementing Regulation (EU) 2026/2) applies to financial years starting on or after 2 March 2027, so the first standard-format filings land around 2028–29 for calendar-year firms.</p>
+        <p>This is general information, not legal advice.</p>
+      </div>
+      <div class="quote reveal">
+        <span class="tag sim">Built: regulation search prototype</span>
+        <p class="q">"Can we destroy stock if a donation is refused?"</p>
+        <ol>
+          <li><b>Art 25(5)</b><span>Derogations may be set for reasons including non-acceptance of products offered for donation.</span></li>
+          <li><b>Art 24(1)</b><span>Operators that discard unsold products disclose numbers, weight and reasons each year.</span></li>
+          <li><b>Art 25(1)</b><span>From 19 July 2026, destruction of products listed in Annex VII is prohibited.</span></li>
+        </ol>
+        <p class="small">Paraphrased from the regulation by a search tool the founder built. It finds the right article in its top three results for 21 of 22 test questions. Not legal advice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATUS: what the founder has built -->
+<section class="band-lime" id="built">
+  <div class="wrap">
+    <div class="wide-head">
+      <div><div class="eyebrow kicker">Honest status</div><h2>What the founder has built.</h2></div>
+      <p class="lede">No customers yet. Validation interviews with brands, buyers and EU charities start Monday 16 November 2026. The models below show the founder can build; they are not the product and not a reason to buy. The stall-risk model uses real open retail data (not fashion). The Offcut Forecast is a parked earlier prototype on simulated data.</p>
+    </div>
+    <div class="proof">
+      <div><strong class="count" data-to="0.81" data-dec="2">0.81</strong><p><b>Stall-risk model:</b> ROC AUC for spotting lines about to stop selling, vs 0.60 for a simple sales-trend rule (real open retail data, not fashion)</p></div>
+      <div><strong class="count" data-to="21" data-dec="0" data-suf="/22">21/22</strong><p><b>Regulation search:</b> right article in the top three results for 21 of 22 test questions</p></div>
+      <div><strong class="count" data-to="45" data-dec="0">45</strong><p>automated checks on the data and code, run on every change</p></div>
+    </div>
+    <div class="buildrow">
+      <div class="log">
+        <div class="log-h">Recently shipped, and next</div>
+        <ol>
+          <li><time>9 Nov</time><span>Stall-risk model runs in the browser; click any line to score it</span></li>
+          <li><time>9 Nov</time><span>CI: every change runs the tests, builds the Docker image and calls the API</span></li>
+          <li><time>9 Nov</time><span>Monitoring report: drift and calibration by launch quarter</span></li>
+          <li><time>9 Nov</time><span>dbt models on 1.06m real sales lines, 22 data tests</span></li>
+          <li><time>16–19 Nov</time><span>Part 18: batch and destination file prototype (grading fields, donation offer and refusal log, buyer contract terms, waste-operator statements, hash-chained log, disclosure rows) <span class="tag plan">Planned</span></span></li>
+        </ol>
+      </div>
+      <div class="code" aria-label="Run the API yourself">
+        <div class="code-h"><span class="dots"><i></i><i></i><i></i></span><span>Run it yourself</span><button type="button" id="codeCopy">Copy</button></div>
+<pre id="codeBlock"><span class="c"># clone and start the API</span>
+git clone https://github.com/catliugit/ThreadFutures
+cd ThreadFutures && docker build -t threadfutures .
+docker run -p 8000:8000 threadfutures
+
+<span class="c"># score a line's first 12 weeks</span>
+curl -X POST localhost:8000/v1/stock/stall-risk \
+  -H "Content-Type: application/json" \
+  -d '{"early_units_per_week":27,"early_trend":0.4,
+       "early_zero_week_share":0.17,"early_customers":30,
+       "early_orders":39,"early_return_rate":0.02,
+       "early_max_markdown":0,"launch_list_price":2.95,
+       "launch_month":3,"is_seasonal_christmas":false}'</pre>
+      </div>
+    </div>
+    <p style="margin-top:26px;font-size:.92rem;color:var(--muted)">Code and method notes: <a href="https://github.com/catliugit/ThreadFutures" style="color:var(--forest);font-weight:800">github.com/catliugit/ThreadFutures</a></p>
+  </div>
+</section>
+
+<!-- BUILT 1: STALL-RISK MODEL (optional intake) -->
+<section class="on-white" id="stall">
+  <div class="wrap">
+    <div class="wide-head">
+      <div class="reveal"><div class="eyebrow">Built by the founder · possible optional intake</div><h2>Flag the tail early, <em class="accent">while it still has value.</em></h2></div>
+      <div class="reveal">
+        <p class="lede">A stall-risk model the founder built: it scores a line from its first 12 weeks of sales. In the desk it could become an optional intake, so the tail is placed while it can still recover money. It is not a reason to buy.</p>
+        <dl class="facts">
+          <div><dt>What's real</dt><dd>The model is built and runs in your browser, on real open retail data (UCI Online Retail II, a UK online retailer, <b>not fashion and not a customer</b>).</dd></div>
+          <div><dt>What it isn't</dt><dd>It isn't the product. The product is the desk and the destination file, which are <b>planned, not built</b>.</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="app risk-app reveal" id="riskTool" aria-label="Stall-risk prototype">
       <div class="app-bar">
-        <div><b>Offcut forecast</b> <span class="crumb">/ Planned cutting run</span></div>
-        <span class="tag sim">Prototype · simulated production data</span>
+        <div><b>Stall-risk model</b> <span class="crumb">/ Score a line from its first 12 weeks</span></div>
+        <span class="tag">Built model · real open retail data, not fashion</span>
+      </div>
+      <div class="app-body">
+        <form class="inputs" onsubmit="return false">
+          <p class="group">Quick start</p>
+          <div class="chips" id="riskChips" role="group" aria-label="Example product lines">
+            <button type="button" data-p="60,8,3,25,2.95,0,4,0">Fading launch</button>
+            <button type="button" data-p="30,35,0,60,1.65,0,2,0">Steady seller</button>
+            <button type="button" data-p="20,90,1,70,3.75,0,9,1">Christmas line</button>
+            <button type="button" data-p="40,15,2,30,4.95,30,6,0">Marked down</button>
+          </div>
+          <p class="group">First 12 weeks on sale</p>
+          <label class="field"><span>Units a week, weeks 1–4 <output id="rAVal"></output></span><input id="rA" type="range" min="0" max="300" step="1" value="40"></label>
+          <label class="field"><span>Units a week, weeks 9–12 <output id="rBVal"></output></span><input id="rB" type="range" min="0" max="300" step="1" value="15"></label>
+          <label class="field"><span>Weeks with no sales <output id="rZVal"></output></span><input id="rZ" type="range" min="0" max="11" step="1" value="2"></label>
+          <label class="field"><span>Different customers <output id="rCVal"></output></span><input id="rC" type="range" min="1" max="200" step="1" value="30"></label>
+          <label class="field"><span>Launch price <output id="rPVal"></output></span><input id="rP" type="range" min="0.3" max="15" step="0.05" value="2.95"></label>
+          <label class="field"><span>Biggest markdown so far <output id="rMVal"></output></span><input id="rM" type="range" min="0" max="60" step="5" value="0"></label>
+          <div class="rowfields">
+            <label class="field"><span>Launch month</span><select id="rMonth"><option value="1">Jan</option><option value="2">Feb</option><option value="3" selected>Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select></label>
+            <label class="check"><input id="rXmas" type="checkbox"> Christmas product</label>
+          </div>
+        </form>
+        <div class="results" aria-live="polite">
+          <div>
+            <div class="ann">Chance it stops selling in weeks 12–25 <span class="tip" tabindex="0" role="note" aria-label="Stall risk explained" data-tip="Stops selling means weekly sales in weeks 12 to 25 fall below 20% of the first 12 weeks. The model learnt this from real retail launches.">?</span></div>
+            <div class="big" id="rOut">–<small>%</small></div>
+            <div class="gauge" aria-hidden="true"><i id="rBar"></i><span style="left:15%"></span><span style="left:40%"></span></div>
+            <div class="legend"><span>Low</span><span>Medium</span><span>High</span></div>
+          </div>
+          <p class="verdict" id="rVerdict"></p>
+          <p class="loaded" id="rLoaded">Tip: click a line in the table below to load its real first 12 weeks.</p>
+        </div>
+      </div>
+      <div class="app-foot"><span>Same model as the table: ROC AUC 0.81 on 423 later launches <span class="tip" tabindex="0" role="note" aria-label="ROC AUC explained" data-tip="ROC AUC is how often the model ranks a line that stalled above one that didn't. 0.5 is a coin flip, 1.0 is perfect. A simple sales-halved rule scores 0.60.">?</span></span><button class="btn btn-line btn-sm" id="rReset" type="button">Reset</button></div>
+    </div>
+    <div class="annots reveal" style="margin-top:34px"><span class="ann">Line details</span><span class="ann">Stall risk</span><span class="ann">What actually happened</span></div>
+    <div class="panel reveal">
+      <div class="panel-head"><b>Lines at risk after 12 weeks on sale</b><span class="clickhint">Click a line to load it above ↑</span><span class="tag">Real open retail data, not fashion</span></div>
+      <div class="scroll">
+        <table class="data stack collapsed" id="riskTable">
+          <thead><tr><th>Line</th><th>Launched</th><th class="num">Units / week, first 12 wks</th><th class="num">Stall risk</th><th class="num">Units / week, wks 12–25</th><th>Outcome</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <button type="button" class="showall" id="showAll">Show all 8 lines</button>
+      <div class="panel-foot" id="riskFoot">Scored on later launches the model never saw. Data: UCI Online Retail II, a UK online retailer (CC BY 4.0), not a fashion customer. <a href="https://github.com/catliugit/ThreadFutures/tree/main/src/stock">src/stock</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILT 2: OFFCUT FORECAST (parked earlier prototype) -->
+<section class="offcut-sec" id="offcuts">
+  <div class="wrap">
+    <div class="wide-head">
+      <div class="reveal"><div class="eyebrow">Built by the founder · parked earlier prototype · simulated data</div><h2>Offcut Forecast: <em class="accent">an earlier idea, parked.</em></h2></div>
+      <div class="reveal">
+        <p class="lede">Before the second-life desk, the founder built a forecast of how much fabric a cutting run will leave over. It is parked: <b>not part of the offer</b>, and kept here as proof of build and a possible later module for the same brands.</p>
+        <dl class="facts">
+          <div><dt>What it is</dt><dd>A forecast of the kg of fabric a cutting run will leave over, with a P10–P90 range, from garment type, fabric, sizes and quantity.</dd></div>
+          <div><dt>Simulated data</dt><dd>The model runs in your browser below. It was trained on 8,000 <b>simulated</b> cutting runs and tested on 1,600 more. It has never seen real factory data.</dd></div>
+          <div><dt>Status</dt><dd><b>Parked.</b> Not being developed or sold.</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="live"><span class="pulse"><i aria-hidden="true"></i>Parked prototype</span><span class="hint"><b>Offcut Forecast.</b> Change any input: the forecast recalculates in your browser. Trained on simulated cutting runs only.</span></div>
+    <div class="app hero-app" id="demo" aria-label="Offcut forecast prototype, parked, simulated data">
+      <div class="app-bar">
+        <div><b>Offcut Forecast</b> <span class="crumb">/ Planned cutting run</span></div>
+        <span class="tag sim">Parked prototype · simulated data</span>
       </div>
       <div class="app-body">
         <form class="inputs" onsubmit="return false">
@@ -625,38 +921,10 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
           </div>
         </div>
       </div>
-      <div class="callout" aria-hidden="true"><span class="dot">↗</span><span><b>Offcuts known</b><br>before cutting starts</span></div>
       <div class="app-foot">
-        <span>Demo data, not a live customer result.</span>
+        <span>Parked prototype on simulated data, not a customer result.</span>
         <button class="btn btn-line btn-sm" id="copyBtn" type="button">Copy estimate</button>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- THE GAP -->
-<section class="gap on-white" id="platform">
-  <div class="wrap">
-    <div class="gap-grid">
-      <div class="reveal statement-wrap"><div class="eyebrow">The gap</div><p class="statement">Waste decisions start <em class="accent">long before disposal.</em> <span>Cutting plans create offcuts. Unsold stock builds up across seasons. The information needed to act is spread across teams, files and suppliers.</span></p></div>
-    </div>
-    <ol class="seq reveal">
-      <li><div class="k">Before the run</div><h3>The cutting plan</h3><p>Marker software reports planned efficiency, but the cutting room loses more: ends, splices, defects.</p></li>
-      <li><div class="k">After the season</div><h3>The unsold batch</h3><p>Lines that stopped selling sit in the warehouse until someone decides what happens to them.</p></li>
-      <li><div class="k">Afterwards</div><h3>The record</h3><p>What was considered, what was chosen, and which documents support it, usually rebuilt from email.</p></li>
-    </ol>
-  </div>
-</section>
-
-<!-- STORY 1: FORECASTING -->
-<section>
-  <div class="wrap split">
-    <div class="reveal">
-      <div class="eyebrow">01 / Before production</div>
-      <h2>Estimate the offcuts.</h2>
-      <p class="lede">Model expected fabric waste from planned cutting runs. Compare the estimate with a simple baseline and inspect the inputs behind it.</p>
-      <p class="truth">Prototype trained and evaluated on 8,000 simulated cutting runs. The first pilot goal is to stay within ±15% on real weighed output.</p>
-      <div class="cta-row"><a class="btn btn-primary" href="#demo">Try forecasting</a></div>
     </div>
     <div class="panel reveal">
       <div class="panel-head"><b>Held-out test, 1,600 simulated runs</b><span class="tag sim">Simulated data</span></div>
@@ -676,189 +944,15 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
   </div>
 </section>
 
-<!-- STORY 2: UNSOLD STOCK (full-width interface) -->
-<section class="on-white">
-  <div class="wrap">
-    <div class="wide-head">
-      <div class="reveal"><div class="eyebrow">02 / After the season</div><h2>Find the next route for <em class="accent">unsold stock.</em></h2></div>
-      <p class="lede reveal">Spot the lines likely to stop selling while there is still time to act, then review resale, donation and reprocessing routes for each batch. Try the real model below.</p>
-    </div>
-    <div class="app risk-app reveal" id="riskTool" aria-label="Stall-risk prototype">
-      <div class="app-bar">
-        <div><b>Stall risk</b> <span class="crumb">/ Score a line from its first 12 weeks</span></div>
-        <span class="tag">Real open retail data · not fashion</span>
-      </div>
-      <div class="app-body">
-        <form class="inputs" onsubmit="return false">
-          <p class="group">Quick start</p>
-          <div class="chips" id="riskChips" role="group" aria-label="Example product lines">
-            <button type="button" data-p="60,8,3,25,2.95,0,4,0">Fading launch</button>
-            <button type="button" data-p="30,35,0,60,1.65,0,2,0">Steady seller</button>
-            <button type="button" data-p="20,90,1,70,3.75,0,9,1">Christmas line</button>
-            <button type="button" data-p="40,15,2,30,4.95,30,6,0">Marked down</button>
-          </div>
-          <p class="group">First 12 weeks on sale</p>
-          <label class="field"><span>Units a week, weeks 1–4 <output id="rAVal"></output></span><input id="rA" type="range" min="0" max="300" step="1" value="40"></label>
-          <label class="field"><span>Units a week, weeks 9–12 <output id="rBVal"></output></span><input id="rB" type="range" min="0" max="300" step="1" value="15"></label>
-          <label class="field"><span>Weeks with no sales <output id="rZVal"></output></span><input id="rZ" type="range" min="0" max="11" step="1" value="2"></label>
-          <label class="field"><span>Different customers <output id="rCVal"></output></span><input id="rC" type="range" min="1" max="200" step="1" value="30"></label>
-          <label class="field"><span>Launch price <output id="rPVal"></output></span><input id="rP" type="range" min="0.3" max="15" step="0.05" value="2.95"></label>
-          <label class="field"><span>Biggest markdown so far <output id="rMVal"></output></span><input id="rM" type="range" min="0" max="60" step="5" value="0"></label>
-          <div class="rowfields">
-            <label class="field"><span>Launch month</span><select id="rMonth"><option value="1">Jan</option><option value="2">Feb</option><option value="3" selected>Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select></label>
-            <label class="check"><input id="rXmas" type="checkbox"> Christmas product</label>
-          </div>
-        </form>
-        <div class="results" aria-live="polite">
-          <div>
-            <div class="ann">Chance it stops selling in weeks 12–25 <span class="tip" tabindex="0" role="note" aria-label="Stall risk explained" data-tip="Stops selling means weekly sales in weeks 12 to 25 fall below 20% of the first 12 weeks. The model learnt this from real retail launches.">?</span></div>
-            <div class="big" id="rOut">–<small>%</small></div>
-            <div class="gauge" aria-hidden="true"><i id="rBar"></i><span style="left:15%"></span><span style="left:40%"></span></div>
-            <div class="legend"><span>Low</span><span>Medium</span><span>High</span></div>
-          </div>
-          <p class="verdict" id="rVerdict"></p>
-          <p class="loaded" id="rLoaded">Tip: click a line in the table below to load its real first 12 weeks.</p>
-        </div>
-      </div>
-      <div class="app-foot"><span>Same model as the table: ROC AUC 0.81 on 423 later launches <span class="tip" tabindex="0" role="note" aria-label="ROC AUC explained" data-tip="ROC AUC is how often the model ranks a line that stalled above one that didn't. 0.5 is a coin flip, 1.0 is perfect. A simple sales-halved rule scores 0.60.">?</span></span><button class="btn btn-line btn-sm" id="rReset" type="button">Reset</button></div>
-    </div>
-    <div class="annots reveal" style="margin-top:34px"><span class="ann">Batch details</span><span class="ann">Stall risk</span><span class="ann">What actually happened</span></div>
-    <div class="panel reveal">
-      <div class="panel-head"><b>Lines at risk after 12 weeks on sale</b><span class="clickhint">Click a line to load it above ↑</span><span class="tag">Real open retail data</span></div>
-      <div class="scroll">
-        <table class="data stack collapsed" id="riskTable">
-          <thead><tr><th>Line</th><th>Launched</th><th class="num">Units / week, first 12 wks</th><th class="num">Stall risk</th><th class="num">Units / week, wks 12–25</th><th>Outcome</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <button type="button" class="showall" id="showAll">Show all 8 lines</button>
-      <div class="panel-foot" id="riskFoot">Scored on later launches the model never saw. Data: UCI Online Retail II, a UK online retailer (CC BY 4.0), not a fashion customer. <a href="https://github.com/catliugit/ThreadFutures/tree/main/src/stock">src/stock</a></div>
-    </div>
-    <div class="routes reveal" aria-label="Recovery options, planned workflow">
-      <div><span class="tag plan">Planned workflow</span><h3 style="margin-top:10px">Off-price and resale</h3><p>Compare expected recovery for the batch with the brand's usual liquidator.</p></div>
-      <div><h3 style="margin-top:34px">Donation</h3><p>Record the offer, the receiving organisation and its response.</p></div>
-      <div><h3 style="margin-top:34px">Reprocessing</h3><p>A last resort, with the reason and the operator's statement kept on file.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="on-forest" id="how">
-  <div class="wrap">
-    <div class="eyebrow">How it works</div>
-    <h2 style="margin-top:16px;max-width:14em">One material story, from plan to outcome.</h2>
-    <div class="stepper" id="stepper">
-      <div class="steptabs" role="tablist" aria-label="How it works">
-        <button role="tab" aria-selected="true" aria-controls="sp1" id="st1" class="on"><span class="n">01</span><b>Enter production or inventory details</b><small>Start with the cutting plan or the unsold batch.</small><span class="tag">Prototype</span><i class="prog"></i></button>
-        <button role="tab" aria-selected="false" aria-controls="sp2" id="st2"><span class="n">02</span><b>Review estimates and options</b><small>See projected offcuts, or the lines most likely to stop selling.</small><span class="tag">Prototype</span><i class="prog"></i></button>
-        <button role="tab" aria-selected="false" aria-controls="sp3" id="st3"><span class="n">03</span><b>Record the next step</b><small>Keep decisions and supporting information together.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
-        <button role="tab" aria-selected="false" aria-controls="sp4" id="st4"><span class="n">04</span><b>Learn from patterns</b><small>Use recurring material and stock signals to inform the next season.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
-      </div>
-      <div class="stage">
-        <div class="sp on" role="tabpanel" id="sp1" aria-labelledby="st1">
-          <div class="mini"><div class="mini-h">Planned cutting run</div>
-            <div class="kv"><span>Style</span><b>T-shirt, jersey</b></div><div class="kv"><span>Fabric</span><b>100% cotton · 180 g/m²</b></div><div class="kv"><span>Length × width</span><b>18,000 m × 1.80 m</b></div></div>
-          <div class="mini"><div class="mini-h">Unsold batch</div>
-            <div class="kv"><span>Line</span><b>Hall Cabinet With 3 Drawers</b></div><div class="kv"><span>First 12 weeks</span><b>15.9 units a week</b></div><div class="kv"><span>Trend</span><b>Falling</b></div></div>
-        </div>
-        <div class="sp" role="tabpanel" id="sp2" aria-labelledby="st2" hidden>
-          <div class="mini big"><div class="mini-h">Estimated offcuts</div><div class="mini-n">961<small> kg</small></div><div class="mini-s">Likely 870–1,040 kg · rule of thumb 875 kg</div></div>
-          <div class="mini big"><div class="mini-h">Stall risk</div><div class="mini-n">98<small>%</small></div><div class="mini-s">High: plan a route now</div></div>
-        </div>
-        <div class="sp" role="tabpanel" id="sp3" aria-labelledby="st3" hidden>
-          <div class="mini wide"><div class="mini-h">Decision record <span class="tag plan">Planned</span></div>
-            <div class="kv"><span>Batch</span><b>TF-2026-0142 · 2,400 units</b></div><div class="kv"><span>Routes considered</span><b>Off-price, donation</b></div><div class="kv"><span>Chosen</span><b>Off-price partner</b></div><div class="kv"><span>Evidence</span><b>Offer, transfer note</b></div></div>
-        </div>
-        <div class="sp" role="tabpanel" id="sp4" aria-labelledby="st4" hidden>
-          <div class="mini wide"><div class="mini-h">Lines that stalled, by launch season <span class="tag plan">Illustrative</span></div>
-            <div class="bars"><div style="--h:62%"><span>AW24</span></div><div style="--h:48%"><span>SS25</span></div><div style="--h:55%"><span>AW25</span></div><div style="--h:31%"><span>SS26</span></div></div>
-            <div class="mini-s">Feed what stalled back into next season's buying.</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY IT MATTERS -->
-<section id="why">
-  <div class="wrap">
-    <div class="eyebrow">Why it matters</div>
-    <h2 style="margin-top:16px;max-width:16em">Two kinds of waste, decided at different times.</h2>
-    <div class="why-grid">
-      <div class="reveal">
-        <h3>Offcuts happen at production</h3>
-        <p>Fabric left over from cutting is a material stream. Knowing its likely weight and fibre before the run makes it easier to plan a buyer for it.</p>
-        <h3 style="margin-top:28px">Unsold stock happens after it</h3>
-        <p>Finished products that don't sell carry their full cost. Under EU Regulation 2024/1781, large companies may no longer destroy unsold clothing and footwear from 19 July 2026, outside limited exceptions, and must disclose what they discard each year.</p>
-        <p>Medium-sized companies follow from 2030. This is general information, not legal advice.</p>
-      </div>
-      <div class="quote reveal">
-        <span class="tag sim">Retrieval prototype</span>
-        <p class="q">"Can we destroy stock if a donation is refused?"</p>
-        <ol>
-          <li><b>Art 25(5)</b><span>Derogations may be set for reasons including non-acceptance of products offered for donation.</span></li>
-          <li><b>Art 24(1)</b><span>Operators that discard unsold products disclose numbers, weight and reasons each year.</span></li>
-          <li><b>Art 25(1)</b><span>From 19 July 2026, destruction of products listed in Annex VII is prohibited.</span></li>
-        </ol>
-        <p class="small">Paraphrased from the regulation. Search finds the right article in its top three results for 21 of 22 test questions.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section class="band-lime" id="build">
-  <div class="wrap">
-    <div class="wide-head">
-      <div><div class="eyebrow kicker">Status</div><h2>Built around a working prototype.</h2></div>
-      <p class="lede">The offcut forecast uses simulated garment-production data. The stock analytics run on real open retail data. Routing and evidence workflows are being designed with early partners.</p>
-    </div>
-    <div class="proof">
-      <div><strong class="count" data-to="8.8" data-dec="1" data-suf="%">8.8%</strong><p>mean error on offcut weight, vs 20.3% for the 15% rule of thumb (1,600 simulated runs)</p></div>
-      <div><strong class="count" data-to="0.81" data-dec="2">0.81</strong><p>ROC AUC for spotting lines about to stop selling, vs 0.60 for a simple sales-trend rule</p></div>
-      <div><strong class="count" data-to="45" data-dec="0">45</strong><p>automated checks on the data and code, run on every change</p></div>
-    </div>
-    <div class="buildrow">
-      <div class="log">
-        <div class="log-h">Recently shipped</div>
-        <ol>
-          <li><time>9 Nov</time><span>Stall-risk model runs in the browser; click any line to score it</span></li>
-          <li><time>9 Nov</time><span>CI: every change runs the tests, builds the Docker image and calls the API</span></li>
-          <li><time>9 Nov</time><span>Monitoring report: drift and calibration by launch quarter</span></li>
-          <li><time>9 Nov</time><span>dbt models on 1.06m real sales lines, 22 data tests</span></li>
-          <li><time>Next</time><span>Stock health dashboard and customer cohorts</span></li>
-        </ol>
-      </div>
-      <div class="code" aria-label="Run the API yourself">
-        <div class="code-h"><span class="dots"><i></i><i></i><i></i></span><span>Run it yourself</span><button type="button" id="codeCopy">Copy</button></div>
-<pre id="codeBlock"><span class="c"># clone and start the API</span>
-git clone https://github.com/catliugit/ThreadFutures
-cd ThreadFutures && docker build -t threadfutures .
-docker run -p 8000:8000 threadfutures
-
-<span class="c"># score a line's first 12 weeks</span>
-curl -X POST localhost:8000/v1/stock/stall-risk \
-  -H "Content-Type: application/json" \
-  -d '{"early_units_per_week":27,"early_trend":0.4,
-       "early_zero_week_share":0.17,"early_customers":30,
-       "early_orders":39,"early_return_rate":0.02,
-       "early_max_markdown":0,"launch_list_price":2.95,
-       "launch_month":3,"is_seasonal_christmas":false}'</pre>
-      </div>
-    </div>
-    <p style="margin-top:26px;font-size:.92rem;color:var(--muted)">Code and method notes: <a href="https://github.com/catliugit/ThreadFutures" style="color:var(--forest);font-weight:800">github.com/catliugit/ThreadFutures</a></p>
-  </div>
-</section>
-
 <!-- ABOUT -->
-<section id="about">
+<section class="on-white" id="about">
   <div class="wrap about">
     <img class="reveal" src="cathy-liu.jpg" alt="Cathy Liu, founder of Thread Futures" width="800" height="800" loading="lazy">
     <div class="reveal">
       <div class="eyebrow">Founder</div>
       <h2>Why I <em class="accent">care.</em></h2>
       <p class="about-lead">Over the last five years it feels like we've been buying more than ever. More clothes, more deliveries, more things worn twice and forgotten. What bothers me most is how normal it's become.</p>
-      <p>Perfectly good clothes get shredded or burned because that's cheaper than finding them a home, and most of us never hear about it. I don't think the answer is making people feel guilty. I think it's making the waste visible early enough to do something about it, and making the better option the easy one.</p>
+      <p>Perfectly good clothes get shredded or burned because that's cheaper than finding them a home, and most of us never hear about it. I don't think the answer is making people feel guilty. I think it's making the better option the easy one: finding every unit a second life, and being able to show where it went.</p>
       <p>I've spent my career turning messy data into things people can act on, and I studied AI because I wanted to understand the technology behind the decisions we're starting to hand over to it. Thread Futures is me pointing those skills at a problem I actually care about: using what we already have, instead of making more of what nobody buys.</p>
       <h3 class="about-k">A bit about me</h3>
       <p>I'm Cathy Liu, a data analyst from California, now based in London. I've worked across aviation, banking and healthcare for seven years, building treasury forecasts at Bank of Hawaii and workforce dashboards at Hawaiian Airlines. I recently finished an MSc in AI and Data Analytics at Northeastern University London, where my dissertation tested whether AI models ask the right questions before giving financial advice.</p>
@@ -871,16 +965,23 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
 </section>
 
 <!-- FAQ -->
-<section class="on-white" id="faq">
+<section id="faq">
   <div class="wrap" style="max-width:900px">
     <div class="eyebrow">Questions</div>
     <h2 style="margin-top:16px">Before you ask.</h2>
     <div class="faq">
-      <details open><summary>Who is it for?</summary><p><b>Sustainability and compliance teams</b> who need a clearer trail of stock outcomes. <b>Operations and production teams</b> who want to see cutting waste before a run begins. <b>Inventory and merchandising teams</b> comparing options for stock that has not sold.</p></details>
-      <details><summary>Is the product live?</summary><p>Not yet. The forecasting demo and the stock analytics are working prototypes. The routing and evidence workflows are being designed with early partners.</p></details>
-      <details><summary>Is the forecast based on real factory data?</summary><p>No. It is trained on 8,000 simulated cutting runs, calibrated to published industry ranges. A pilot would test it against real weighed offcuts.</p></details>
-      <details><summary>Does the EU rule apply to UK brands?</summary><p>It can, if they place clothing or footwear on the EU market and count as a large company. Medium-sized companies follow from July 2030. Check the specifics with your advisers; this is general information, not legal advice.</p></details>
-      <details><summary>Do you buy or hold stock?</summary><p>No. Thread Futures is software. Stock moves directly between a brand and the organisation that takes it.</p></details>
+      <details open><summary>Who is it for?</summary><p>First, premium and mid-market brands led by clothing and footwear that count as "large" under the EU rules and sell into the EU or Northern Ireland, starting with UK-headquartered brands that hold stock in EU warehouses, plus EU brands. Handbags and small leather goods appear to fall outside the ban, so bag-led brands aren't our first focus. Medium-sized firms are covered from July 2030; small and micro firms are exempt. Stock sold only in Great Britain is out of scope today.</p></details>
+      <details id="eu-stock"><summary>Why start with stock already in the EU?</summary><p>Since Brexit, moving goods from the UK into the EU means customs paperwork, duties and delays, and that eats into what tail stock is worth. Otrium closed its UK site in 2023 for that reason and came back in 2025 serving the UK from the Netherlands. So we start with one warehouse in one or two EU countries, and handle the stock where it already sits.</p></details>
+      <details id="who-else"><summary>Don't waste companies and big warehouses already do this?</summary><p>Some do parts of it. PreZero ReValue, part of a large waste group, takes ownership of overstock and resells it abroad. Big fashion warehouses such as Bleckmann have their own repair and resale arms for their clients. We're independent and built for fashion: the brand keeps control, we work with any warehouse, place each batch across buyers, EU charities and (only as a last resort) recyclers, grade by size, condition and fibre, and give one file across all of it, with rows ready for the EU disclosure table. We'd rather partner with mid-size warehouses than compete with them.</p></details>
+      <details id="no-label"><summary>Will we get a label or logo to show customers?</summary><p>No. Since September 2026, EU law bans sustainability labels that aren't backed by an independent certification scheme, and not destroying stock is now a legal duty for large brands, so it can't be sold as a special green feature. What we give you is evidence your lawyers and auditors can rely on. Later, an accredited inspection body could audit the file. Have your own lawyer check any public claim.</p></details>
+      <details id="why-not-tkmaxx"><summary>Why not just call TK Maxx?</summary><p>For clean, first-quality stock, you should. TJX buys directly from around 21,000 vendors, takes partial size runs and pays promptly, and jobbers will take whole lots after one email. We don't compete for that stock.</p><p>We handle the tail they won't take, or take cheaply with no trail: returns, damaged goods, broken size runs, old seasons and logo-heavy lines. And we hand you the destination file that an off-price chain or jobber doesn't produce.</p></details>
+      <details id="why-not-chatgpt"><summary>Why not just use ChatGPT?</summary><p>A general AI assistant (ChatGPT, Claude, Copilot) can explain the regulation, analyse a stock file or draft a disclosure template, and much of the software the founder has built could be reproduced that way. That's why software isn't what we sell.</p><p>What a chatbot can't do: contract buyers, grade goods physically, fund a charity's transport, hold money, or create a charity's acceptance or a waste operator's statement after the fact. The destination file is made of records created at each handover. We use AI underneath; it isn't the product.</p></details>
+      <details id="legal-advice"><summary>Is this legal advice?</summary><p>No. Everything on this site is general information, not legal advice. Check your obligations with your own advisers. Some questions, such as whether a brand is liable if a buyer later destroys goods, are not settled; we plan to have a lawyer review contract terms, and we write no-destruction and destination-reporting clauses into sale contracts.</p></details>
+      <details><summary>Is it live?</summary><p>Not yet, and there are no customers yet. Validation interviews with brands, buyers, EU charities and a few mid-size warehouses start on 16 November 2026. The destination file prototype is planned for 16–19 November. The models on this page are what the founder has built so far, shown as proof of build.</p></details>
+      <details><summary>Do UK charities count for the donation exception?</summary><p>No. The donation exception needs goods offered for at least 8 weeks to at least three suitable social-economy entities in the EU (or on a public page of the brand's own website) and not accepted. That's why our donation network is EU-based.</p></details>
+      <details><summary>Do you buy or hold stock?</summary><p>No. We don't buy stock. The brand pays us; buyers pay for goods; charities pay little or nothing. Logistics, repair, sorting and recycling are done by partners and passed through at cost.</p></details>
+      <details><summary>What will it cost?</summary><p>Not set yet; we'll test it in paid pilots. The working idea is a monthly subscription for a season's tail (roughly £1–2k a month, depending on volume), with a commission on money recovered on top. The way in is a paid pilot: one batch for a fixed fee of £2–4k plus commission. Logistics, repair and recycling are passed through at cost.</p></details>
+      <details><summary>What happened to the Offcut Forecast?</summary><p>It's parked. It was an earlier prototype trained on simulated data and isn't part of the offer. It stays on this page as proof of build.</p></details>
     </div>
   </div>
 </section>
@@ -889,9 +990,10 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
 <section class="on-forest" id="contact">
   <div class="wrap contact">
     <div>
-      <div class="eyebrow">Design partners</div>
-      <h2>Bring us a <em class="accent">real</em> material problem.</h2>
-      <p class="lede">We're looking to learn from fashion teams managing offcuts, unsold inventory and recovery decisions.</p>
+      <div class="eyebrow">Help shape it</div>
+      <h2>Bring us the batch <em class="accent">nobody would take.</em></h2>
+      <p class="lede">From 16 November we're talking to three groups: brands with a tail of unsold stock, off-price, stocklot and resale buyers, and EU charities and social-economy organisations. A 20-minute call helps shape what gets built.</p>
+      <a class="btn btn-lime" id="callBtn" href="#contact">Help shape it: 20-minute call</a><br>
       <a class="mail" id="mailBtn" href="#contact">Or email Cathy directly</a>
     </div>
     <form class="form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
@@ -903,9 +1005,9 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
       </div>
       <div class="row">
         <label>Organisation<input id="fOrg" name="organisation" type="text" autocomplete="organization"></label>
-        <label>Your team<select id="fTeam" name="team"><option value="">Choose</option><option>Sustainability or compliance</option><option>Operations or production</option><option>Inventory or merchandising</option><option>Resale, outlet or charity</option><option>Investor or programme</option><option>Other</option></select></label>
+        <label>You are<select id="fTeam" name="team"><option value="">Choose</option><option>Brand: operations or supply chain</option><option>Brand: sustainability or compliance</option><option>Off-price, stocklot or resale buyer</option><option>Charity or social-economy organisation (EU)</option><option>Investor or programme</option><option>Other</option></select></label>
       </div>
-      <label>What's the problem?<textarea id="fMsg" name="message" required placeholder="For example: we send end-of-season stock to two liquidators and aren't sure how we'll report it."></textarea></label>
+      <label>What's the problem?<textarea id="fMsg" name="message" required placeholder="For example: we have 2,000 returns and odd sizes from last season that our jobber won't take, and no idea how we'd prove where they went."></textarea></label>
       <button class="btn btn-primary" type="submit" id="fSubmit">Talk to us</button>
       <p class="hint">We'll reply by email. Nothing is shared with anyone else.</p>
     </form>
@@ -916,13 +1018,12 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
 <footer>
   <div class="wrap foot">
     <div>
-      <p><b style="color:var(--forest)">thread futures</b> · Software for fashion teams to forecast offcuts, spot unsold stock early and keep the record of what happens to it.</p>
-      <p style="margin-top:8px">Demo outputs are illustrative. Offcut forecasts use simulated data; stock analytics use UCI Online Retail II (CC BY 4.0). Regulation text © European Union, EUR-Lex.</p>
+      <p><b style="color:var(--forest)">thread futures</b> · The second-life desk for the stock nobody else will take. Every unit a second life, and the proof. Not operating yet; validating from 16 November 2026.</p>
+      <p style="margin-top:8px">Destination file examples are illustrative. The stall-risk model uses UCI Online Retail II (CC BY 4.0), not fashion data. The Offcut Forecast is a parked prototype on simulated data. Regulation text © European Union, EUR-Lex. General information, not legal advice.</p>
     </div>
-    <nav aria-label="Footer"><a href="#platform">Platform</a><a href="#how">How it works</a><a href="#why">Why it matters</a><a href="#build">Status</a><a href="#about">About</a><a href="investors.html">For investors</a><a href="reports/monitoring.html">Monitoring report</a><a href="https://github.com/catliugit/ThreadFutures">GitHub</a></nav>
+    <nav aria-label="Footer"><a href="#problem">The tail</a><a href="#how">How it works</a><a href="#file">What you get</a><a href="#who">Who it's for</a><a href="#why">Why now</a><a href="#built">Built so far</a><a href="#faq">FAQ</a><a href="investors.html">For investors</a><a href="reports/monitoring.html">Monitoring report</a><a href="https://github.com/catliugit/ThreadFutures">GitHub</a></nav>
   </div>
 </footer>
-
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <button class="toTop" id="toTop" type="button" aria-label="Back to top">↑</button>
 
@@ -1021,7 +1122,7 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
     (window.__tween ? window.__tween($('rOut'), pc, '<small>%</small>') : ($('rOut').innerHTML = pc+'<small>%</small>'));
     $('rBar').style.width = Math.max(2,pc)+'%';
     $('rBar').className = p>=0.4?'hi':p>=0.15?'mid':'lo';
-    $('rVerdict').innerHTML = p>=0.4 ? '<b>High risk.</b> Sales look likely to collapse. Worth planning a route for this stock now.'
+    $('rVerdict').innerHTML = p>=0.4 ? '<b>High risk.</b> Sales look likely to collapse. Worth planning where this stock goes now.'
       : p>=0.15 ? '<b>Medium risk.</b> Keep an eye on it over the next few weeks.' : '<b>Low risk.</b> This line looks set to keep selling.';
   }
   if (SM){
@@ -1085,7 +1186,7 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
   const bar = $('scrollBar');
   const onScroll = () => { const h = document.documentElement; bar.style.width = (100*h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight)).toFixed(2)+'%'; };
   addEventListener('scroll', onScroll, {passive:true}); onScroll();
-  const navLinks = {}; document.querySelectorAll('#links a[href^="#"]').forEach(a => navLinks[a.getAttribute('href').slice(1)] = a);
+  const navLinks = {}; document.querySelectorAll('#links a[href^="#"]:not(.btn)').forEach(a => navLinks[a.getAttribute('href').slice(1)] = a);
   if ('IntersectionObserver' in window){
     const so = new IntersectionObserver(es => es.forEach(e => { const a = navLinks[e.target.id]; if (a && e.isIntersecting){ Object.values(navLinks).forEach(x=>x.classList.remove('active')); a.classList.add('active'); } }), {rootMargin:'-45% 0px -50% 0px'});
     Object.keys(navLinks).forEach(id => { const el = document.getElementById(id); if (el) so.observe(el); });
@@ -1128,6 +1229,7 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
   // Contact: Netlify Forms, with an email fallback.
   const intro = 'Hi Cathy, I came across Thread Futures and would like to talk about ';
   $('mailBtn').href = 'mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('Thread Futures')+'&body='+encodeURIComponent(intro);
+  $('callBtn').href = 'mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('Thread Futures: 20-minute call')+'&body='+encodeURIComponent('Hi Cathy, I work at [organisation] (a brand / a buyer / an EU charity) and would be happy to do a 20-minute call about how we handle the unsold stock nobody else will take.');
   const f = $('contactForm');
   f.addEventListener('submit', async e => {
     e.preventDefault();
