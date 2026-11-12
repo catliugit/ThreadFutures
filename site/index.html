@@ -1144,7 +1144,7 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
   const bar = $('scrollBar');
   const onScroll = () => { const h = document.documentElement; bar.style.width = (100*h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight)).toFixed(2)+'%'; };
   addEventListener('scroll', onScroll, {passive:true}); onScroll();
-  const navLinks = {}; document.querySelectorAll('#links a[href^="#"]').forEach(a => navLinks[a.getAttribute('href').slice(1)] = a);
+  const navLinks = {}; document.querySelectorAll('#links a[href^="#"]:not(.btn)').forEach(a => navLinks[a.getAttribute('href').slice(1)] = a);
   if ('IntersectionObserver' in window){
     const so = new IntersectionObserver(es => es.forEach(e => { const a = navLinks[e.target.id]; if (a && e.isIntersecting){ Object.values(navLinks).forEach(x=>x.classList.remove('active')); a.classList.add('active'); } }), {rootMargin:'-45% 0px -50% 0px'});
     Object.keys(navLinks).forEach(id => { const el = document.getElementById(id); if (el) so.observe(el); });
