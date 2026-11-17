@@ -1,6 +1,6 @@
 # Thread Futures: all parts
 
-One file per part. Parts 1 to 10 are built and public at https://github.com/catliugit/ThreadFutures: they are the founder's technical proof, not the product. Parts 11 to 18 are planned. Part 18, the batch and destination file prototype, is the first build of the second-life desk's product (Grade · Place · Prove) and is next. Part 1 (Offcut Forecast) is a parked earlier idea on simulated data.
+One file per part. Parts 1 to 10 are built and public at https://github.com/catliugit/ThreadFutures: they are the founder's technical proof, not the product. Parts 11 to 18 are planned. Part 18, the batch and destination file prototype, is the first build of the service's batch report (check, sell or donate or recycle, report) and is next. Part 1 (Offcut Forecast) is a parked earlier idea on simulated data.
 
 | # | Part | Status | Label |
 |---|---|---|---|
