@@ -10,7 +10,7 @@
 
 How do I turn a raw spreadsheet of 1.07 million invoice lines into trusted, tested tables that every other part of the project reads from?
 
-A fashion brand cares because every number it reports, from "units sold this week" to the EU disclosure of discarded stock, needs one agreed definition. If the dashboard, the model and the compliance report each calculate revenue slightly differently, nobody trusts any of them.
+A fashion brand cares because every number it reports, from "units sold this week" to a record of where unsold stock went, needs one agreed definition. If the dashboard, the model and the compliance report each calculate revenue slightly differently, nobody trusts any of them.
 
 ---
 

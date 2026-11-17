@@ -226,18 +226,18 @@ From `models/stall_metrics.json`. Train 896 SKUs, test 423 later launches, test 
 |---|---|---|---|
 | ROC AUC | **0.8118** | 0.5994 | 0.5 |
 | PR AUC | **0.5312** | 0.3138 | about 0.106 (base rate) |
-| Precision in top 20% | **34.5%** | 8.3% | 10.6% |
+| Precision in top 20% | **32.1%** | 20.2% | 10.6% |
 | Brier score | 0.0874 | n/a | about 0.095 if always predicting the base rate |
 
-Feature importance: early_trend 0.1959, early_customers 0.1634, launch_list_price 0.154, early_units_per_week 0.1386, launch_month 0.107, early_zero_week_share 0.0753, early_orders 0.0598, early_return_rate 0.041, is_seasonal_christmas 0.0367, early_max_markdown 0.0282.
+Feature importance: early_trend 0.2005, early_customers 0.1817, launch_list_price 0.1519, early_units_per_week 0.1287, launch_month 0.1076, early_zero_week_share 0.0637, early_orders 0.0592, early_return_rate 0.0386, is_seasonal_christmas 0.038, early_max_markdown 0.0301.
 
-MLflow run ID: `5dd66097c6e54d829c5e8004c37580fa`.
+MLflow run ID: `588d9d4399eb4ce0be3deed3809a0b84` (registered as "stall-risk" version 2, after the 9 Nov 2026 baseline fix; version 1 was run `5dd66097c6e54d829c5e8004c37580fa`).
 
 **How to read it:**
 
 - AUC 0.81: pick a stalled and a healthy product at random, and 81% of the time the model ranks the stalled one higher.
-- Top 20%: if a merchandiser reviews the 20% of lines the model flags, about 1 in 3 really will stall, versus about 1 in 9 at random. That's about three times the base rate.
-- PR AUC 0.51 vs a base rate of 0.11: strong given how rare stalls are.
+- Top 20%: if a merchandiser reviews the 20% of lines the model flags, about 1 in 3 really will stall, versus about 1 in 5 for the rule and about 1 in 9 at random. That's about three times the base rate.
+- PR AUC 0.53 vs a base rate of 0.11: strong given how rare stalls are.
 - Trend matters most, which makes sense, but it isn't enough alone: customers, price and launch month add a lot.
 - `launch_month` being important is a warning: seasonality is in play, which part 06 confirms.
 
@@ -246,7 +246,7 @@ MLflow run ID: `5dd66097c6e54d829c5e8004c37580fa`.
 ## 5. What went wrong or surprised me, and what it taught me
 
 ### The model ranks well but over-predicts later
-Monitoring (part 06) found that for 2011 Q2 launches the model predicted a 14% stall rate (13.9%) and only 1.7% actually stalled, because those lines sold into the Christmas peak. Ranking was still good (AUC 0.79), but the probabilities were too high. That's a calibration problem, and the fix is planned as part 15.
+Monitoring (part 06) found that for 2011 Q2 launches the model predicted a 13.6% stall rate and only 1.7% actually stalled, because those lines sold into the Christmas peak. Ranking was still good (AUC 0.84), but the probabilities were too high. That's a calibration problem, and the fix is planned as part 15.
 
 A read-only check while writing this guide shows why: the stall rate in the training set is 27.6% versus 10.6% in the test set. The model learned from a period where stalling was much more common. That also explains why the Brier score is only modestly better than predicting the base rate.
 
@@ -271,7 +271,7 @@ Without `LAST_LAUNCH`, products launched late in 2011 would look stalled simply 
 - **Real open data, not fashion and not a customer.** Gift and homeware retail has different seasons and life cycles from fashion.
 - Small test set (423 SKUs, about 45 stalls), so the metrics have real uncertainty. I haven't reported confidence intervals on the AUC; bootstrapping the test set would give them.
 - Over-predicts for spring launches heading into Christmas (part 06). Seasonality fix and calibration planned (part 15).
-- The baseline comparison needs rerunning with the corrected tie-break (section 5).
+- The baseline was rerun with the corrected tie-break on 9 Nov 2026 (section 5); the numbers above are from that run.
 - The 20% stall threshold and 12-week window are choices, not tuned to a business decision.
 - No hyperparameter search or cross-validation; one sensible configuration.
 - Feature importance is not causation.

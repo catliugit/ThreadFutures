@@ -186,8 +186,8 @@ The 175 + 70 + 178 SKUs add up to the 423 test SKUs in part 04.
 
 **How to read it:**
 
-- **Ranking holds in two of three quarters** (0.81 and 0.79). 2011Q1 drops to 0.62, but it has only 70 SKUs (about 5 stalls at 7.1%), so that AUC is very noisy.
-- **Calibration drifts badly.** The model over-predicts in every quarter, and the gap widens: 28% vs 21%, then 21% vs 7%, then 14% vs 1.7%. For 2011 Q2 launches, the model expected about 1 in 7 to stall and only about 1 in 60 did. Those spring lines' weeks 12 to 25 ran into the Christmas season (from late summer onwards), when sales rise instead of collapsing.
+- **Ranking holds in two of three quarters** (0.81 and 0.84). 2011Q1 drops to 0.65, but it has only 70 SKUs (about 5 stalls at 7.1%), so that AUC is very noisy.
+- **Calibration drifts badly.** The model over-predicts in every quarter, and the gap widens: 27% vs 21%, then 20% vs 7%, then 14% vs 1.7%. For 2011 Q2 launches, the model expected about 1 in 7 to stall and only about 1 in 60 did. Those spring lines' weeks 12 to 25 ran into the Christmas season (from late summer onwards), when sales rise instead of collapsing.
 - **Inputs shifted a lot.** Later launches sold more per week, to more customers, with fewer zero weeks than the training launches.
 - **launch_month PSI is huge by construction.** Each test quarter contains only three months, while training covers many months, so this "drift" is expected. It's still useful: it tells you the model is being asked about months it saw less of.
 
@@ -195,7 +195,7 @@ The 175 + 70 + 178 SKUs add up to the 423 test SKUs in part 04.
 
 ## 5. What went wrong or surprised me, and what it taught me
 
-### Over-prediction for 2011 Q2: 14% predicted vs 1.7% actual
+### Over-prediction for 2011 Q2: 13.6% predicted vs 1.7% actual
 This was the big finding. The model still ranked well, so a simple AUC check would have said "fine". Only the calibration check showed it was over-confident about stalling for lines selling into Christmas. A read-only check while writing this guide adds context: 27.6% of training launches stalled versus 10.6% of test launches, so the model learned in a higher-stall world.
 
 **What it taught me:** monitor calibration, not just ranking. And monitoring is useful because it tells you exactly what to fix next: a seasonal feature (weeks to Christmas) and recalibration on recent data. That's planned as part 15.

@@ -3,7 +3,7 @@
 **Status:** Built · **Label:** Real data (markdowns) + simulated pilot  
 
 ## In one line
-Asks two questions: do markdowns actually clear stock, and how big would a routing pilot need to be to prove Thread Futures recovers more money than a liquidator?
+Asks two questions: do markdowns actually sell more units, and how many batches a fair comparison would need to show that selling through Thread Futures returns more money to a brand than a liquidator?
 
 ## Why it matters
 Brands will only pay if the recovery uplift is proven.

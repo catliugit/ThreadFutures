@@ -18,7 +18,7 @@ stock: retail dbt stall experiment monitor regsearch
 retail:        ## download UCI Online Retail II and land it as Parquet (bronze)
 	$(PY) -m stock.ingest
 
-dbt:           ## silver + gold models and 28 data tests
+dbt:           ## silver + gold models and 22 data tests
 	cd dbt && DBT_PROFILES_DIR=. dbt build
 
 stall:         ## train the stall-risk model, tracked in MLflow

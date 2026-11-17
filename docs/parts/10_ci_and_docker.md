@@ -6,7 +6,7 @@
 On every push, GitHub Actions runs the tests, builds the Docker image and calls the running API.
 
 ## Why it matters
-Shows the work runs anywhere, not just on one laptop. Docker and CI/CD appear across DS and ML job ads.
+Shows the work runs anywhere, not just on one laptop. Part of the founder's technical proof, not the product; the batch report prototype (part 18) will be tested and built the same way.
 
 ## Data
 n/a
@@ -18,7 +18,7 @@ Two jobs: test (install pinned dependencies, run pytest) and docker (docker buil
 GitHub Actions, Docker, pytest, curl
 
 ## Result
-First run passed on 9 Nov 2026: tests green, image built, API answered a forecast request.
+First run passed on 9 Nov 2026: tests green, image built, API answered a forecast request. Latest check, 17 Nov 2026: the five most recent runs are green; the log shows 23 tests passed and the container answered the forecast request.
 
 ## Honest limits
 Image is built in CI but not yet pushed to a registry.

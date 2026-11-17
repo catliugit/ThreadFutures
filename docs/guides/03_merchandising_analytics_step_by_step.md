@@ -133,7 +133,7 @@ From `_marts.yml`: `stock_code` unique and not null; `abc_class` in A/B/C; `xyz_
 ### ABC classification
 **Definition:** rank products by contribution (here, revenue) and split by cumulative share. It's the Pareto idea: a small share of products makes most of the money.
 **Worked example:** five products with revenue 50, 30, 10, 6, 4 (total 100). Cumulative shares: 0.50, 0.80, 0.90, 0.96, 1.00. So the first two are A, the third is B (up to 0.95), and the last two are C.
-**Why it matters:** a stalling A line is an urgent revenue problem; a stalling C line may just need clearing.
+**Why it matters:** a stalling A line is an urgent revenue problem; a stalling C line may just need a markdown or a sale elsewhere.
 
 ### XYZ classification
 **Definition:** classify products by how predictable their demand is.

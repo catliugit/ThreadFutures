@@ -6,7 +6,7 @@
 Turns raw sales data into tested, documented tables that every other part reads from.
 
 ## Why it matters
-Every number in the product, from dashboards to the EU disclosure table, needs one trusted definition. dbt is also the standard tool for this kind of work.
+Every number needs one trusted definition. This part is proof of build, not the product; the same habits (layers, tests, reconciled totals) are what the planned batch report would rely on. dbt is also the standard tool for this kind of work.
 
 ## Data
 UCI Online Retail II: about 1.07m invoice lines from a UK online retailer, Dec 2009 to Dec 2011, CC BY 4.0. Not fashion and not a customer. 1.06m lines after cleaning.

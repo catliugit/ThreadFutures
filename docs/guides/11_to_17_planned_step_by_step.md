@@ -4,6 +4,8 @@
 
 Parts are ordered by priority. Effort estimates come from the subproject summaries.
 
+Parts 11 to 17 extend the founder's technical proof; they are not the product. Part 18, the batch report prototype (`docs/parts/18_batch_and_destination_file_prototype.md`), is the first build of the actual product and comes before these, after the validation interviews.
+
 | # | Part | Skills it adds | Effort | Done when |
 |---|---|---|---|---|
 | 11 | Stock health dashboard | Power BI, Looker, semantic layer, DAX | 1 day | Published dashboard link and a screenshot on the site |
@@ -160,7 +162,7 @@ Same feature table as DuckDB; row counts and a sample of values match.
 2. Add seasonal features to `features.py` (weeks to Christmas from launch, share of the outcome window in Q4).
 3. Retrain; log as a new MLflow run so it can be compared with run `5dd66097c6e54d829c5e8004c37580fa`.
 4. Hold out the most recent training launches as a calibration set; fit Platt and isotonic; compare Brier scores.
-5. Rerun `make monitor`; compare predicted vs actual stall rate per quarter with the current 28.4% vs 21.1%, 20.9% vs 7.1% and 13.9% vs 1.7%.
+5. Rerun `make monitor`; compare predicted vs actual stall rate per quarter with the current 27.2% vs 21.1%, 20.0% vs 7.1% and 13.6% vs 1.7% (from `models/monitoring.json`).
 6. Fix the PSI function for low-cardinality features while there (part 06 guide).
 7. Update `models/stall_metrics.json`, `models/monitoring.json`, the API bands if needed, and the README.
 

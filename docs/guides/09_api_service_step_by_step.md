@@ -207,7 +207,7 @@ The API tests are integration tests; most of `test_offcut.py` and `test_stock.py
 - **Endpoints:** `/health`, `/v1/offcuts/forecast`, `/v1/stock/stall-risk`, `/v1/regulation/search`.
 - **Bad inputs return 422**, tested for an unknown garment, a gsm of 5 and a launch month of 13.
 
-**The test count.** The README and summaries say **22** tests. The test files in the repo today contain **23**: 6 in `test_api.py`, 12 in `test_offcut.py`, 5 in `test_stock.py`. pytest's cache lists the same 23 node IDs, and `pytest --collect-only` collects 23. The git history explains it: `test_browser_stall_model_matches_sklearn` was added in commit `c2d6285` ("Interactive stall-risk tool", 23:24 on 9 Nov 2026), after the CI commits (`1bc9206`, `cbd22be`, 22:40). So 22 was right for the first CI run, and 23 is right now. I haven't seen the CI log for the later commit, so check the Actions page shows it green, then report "23 automated tests".
+**The test count.** The README and summaries say **22** tests. The test files in the repo today contain **23**: 6 in `test_api.py`, 12 in `test_offcut.py`, 5 in `test_stock.py`. pytest's cache lists the same 23 node IDs, and `pytest --collect-only` collects 23. The git history explains it: `test_browser_stall_model_matches_sklearn` was added in commit `c2d6285` ("Interactive stall-risk tool", 23:24 on 9 Nov 2026), after the CI commits (`1bc9206`, `cbd22be`, 22:40). So 22 was right for the first CI run, and 23 is right now. Checked on 17 Nov 2026: the CI log of the latest run on main reports "23 passed, 1 warning in 4.00s", so report "23 automated tests".
 
 ---
 
