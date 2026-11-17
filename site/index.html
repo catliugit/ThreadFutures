@@ -3,18 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thread Futures | Every unit a second life, and the proof</title>
-<meta name="description" content="Thread Futures is the trusted second-life desk for the stock nobody else will take: returns, damaged, broken size runs, old seasons and logo-heavy lines from brands selling into the EU. Every unit a second life, and a file proving where it went.">
-<meta property="og:title" content="Thread Futures | Every unit a second life, and the proof">
-<meta property="og:description" content="The second-life desk for the unsold fashion stock nobody else will take: graded, placed with vetted buyers and EU charities, and proven with a destination file per batch.">
+<title>Thread Futures | We clear fashion brands' unsold stock without destroying it</title>
+<meta name="description" content="Since July 2026, large brands can't destroy unsold clothes in the EU. We sell, donate or recycle what they can't sell, and give them a record of where every item went.">
+<meta property="og:title" content="Thread Futures | We clear fashion brands' unsold stock without destroying it">
+<meta property="og:description" content="Since July 2026, large brands can't destroy unsold clothes in the EU. We sell, donate or recycle what they can't sell, and give them a record of where every item went.">
 <meta property="og:url" content="https://threadfutures.com/">
 <meta property="og:image" content="https://threadfutures.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Thread Futures | We clear fashion brands' unsold stock without destroying it">
+<meta name="twitter:description" content="Since July 2026, large brands can't destroy unsold clothes in the EU. We sell, donate or recycle what they can't sell, and give them a record of where every item went.">
+<meta name="twitter:image" content="https://threadfutures.com/og-image.png">
+<meta property="og:image:alt" content="thread futures wordmark: Every unit a second life, and the proof.">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://threadfutures.com/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23173D35'/%3E%3Cpath d='M7 11h18M7 16h18M7 21h18' stroke='%23D7EF91' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23173D35'/%3E%3Ctext x='16' y='25' text-anchor='middle' font-family='Georgia,Times New Roman,serif' font-style='italic' font-size='28' fill='%23D7EF91'%3Et%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -64,7 +68,7 @@ h3{font-size:1.12rem;letter-spacing:-.01em;line-height:1.3}
 .nav{position:sticky;top:0;z-index:50;background:rgba(247,247,241,.92);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--hair)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.08rem;letter-spacing:-.02em;text-decoration:none;color:var(--forest)}
-.logo svg{width:28px;height:28px}
+.logo{gap:0}.logo .wm-a{font-weight:800}.logo .wm-b{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:1.22em;color:var(--lime);margin-left:.22em;letter-spacing:0}
 .links{display:flex;align-items:center;gap:28px;font-size:.92rem;font-weight:600}
 .links a{text-decoration:none}
 .links a:not(.btn):hover{color:var(--forest);text-decoration:underline;text-underline-offset:4px}
@@ -280,7 +284,6 @@ body{background:var(--bg);color:var(--text)}
 :focus-visible{outline-color:var(--lime)}
 .nav{background:rgba(23,61,53,.94);border-bottom-color:var(--hair)}
 .logo{color:var(--text)}
-.logo svg rect{fill:#D7EF91}.logo svg path{stroke:#173D35}
 .links a:not(.btn):hover{color:var(--lime)}
 .menu{color:var(--text);border-color:var(--text)}
 @media (max-width:860px){.links{background:var(--bg)}}
@@ -307,7 +310,7 @@ footer b{color:var(--lime)!important}
 /* ===== Hero: the prototype is the star ===== */
 .hero{padding:56px 0 72px}
 .hero-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:end;margin-bottom:40px}
-.hero-top h1{margin:16px 0 0;font-size:clamp(2.6rem,5.4vw,4.8rem)}
+.hero-top h1{margin:16px 0 0;font-size:clamp(2.4rem,4.3vw,3.9rem)}
 .hero-top .cta-row{margin-top:22px}
 .live{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-bottom:14px}
 .live .pulse{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:var(--forest);font-weight:800;font-size:.86rem;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border-radius:99px}
@@ -535,16 +538,16 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
 .what-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px;margin-bottom:18px}
 .what-h h2{font-size:clamp(1.6rem,2.8vw,2.2rem);margin-top:10px}
 .what-h p{color:var(--muted);font-size:1rem;max-width:30em}
-.ledger-steps{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.ledger-steps li{display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.05);border:1px solid var(--hair);border-radius:14px;padding:22px 24px}
-.ledger-steps .n{font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
-.ledger-steps h3{font-size:1.4rem;line-height:1.15}
-.ledger-steps p{color:var(--muted);font-size:.95rem}
-.ledger-steps .tag{align-self:flex-start;margin-top:auto}
-.ledger-steps a{color:var(--lime);font-weight:800;font-size:.92rem}
+.steps3{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.steps3 li{display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.05);border:1px solid var(--hair);border-radius:14px;padding:22px 24px}
+.steps3 .n{font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.steps3 h3{font-size:1.4rem;line-height:1.15}
+.steps3 p{color:var(--muted);font-size:.95rem}
+.steps3 .tag{align-self:flex-start;margin-top:auto}
+.steps3 a{color:var(--lime);font-weight:800;font-size:.92rem}
 .what-foot{margin-top:16px;font-size:.92rem;color:var(--muted)}
 .what-foot a{color:var(--lime);font-weight:700}
-@media (max-width:860px){.ledger-steps{grid-template-columns:1fr}}
+@media (max-width:860px){.steps3{grid-template-columns:1fr}}
 .facts{display:grid;gap:0;margin-top:22px;font-size:.92rem}
 .facts div{display:grid;grid-template-columns:9em 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--hair)}
 .facts dt{font-weight:800}
@@ -558,6 +561,27 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
 .offcut-sec .wrap{position:relative;z-index:0}
 .offcut-sec .panel{margin-top:28px}
 .contact .btn-lime{margin-top:26px}
+
+/* v6 additions */
+.hero-like{margin-top:14px;font-size:.98rem;color:var(--lime);font-weight:600}
+.tagline{margin-top:16px;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:1.1rem;color:var(--muted)}
+.note-ill{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;font-size:.92rem;color:var(--muted);margin-top:14px}
+.batchstats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 28px}
+.batchstats div{border:1px solid var(--hair);border-radius:14px;padding:18px 20px}
+.batchstats strong{display:block;font-size:clamp(2rem,3.4vw,2.8rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;color:var(--text)}
+.batchstats .hl{background:var(--lime);border-color:var(--lime)}.batchstats .hl strong,.batchstats .hl p{color:var(--forest)}
+.batchstats p{font-size:.88rem;color:var(--muted);margin-top:6px}
+@media (max-width:860px){.batchstats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.data .sub{color:var(--muted);font-size:.8rem}
+.mock{margin:36px 0 0}
+.mock img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--hair);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.mock figcaption{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:12px;font-size:.88rem;color:var(--muted)}
+.price .pnum{display:block;font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-.02em;color:var(--lime);margin-bottom:6px}
+.facts a{color:var(--lime);font-weight:700}
+.earlier-divider{background:var(--bg-3,#0F2A23);padding:56px 0 40px;border-top:1px dashed var(--hair)}
+.earlier-divider p{margin-top:10px;max-width:46em;color:var(--muted)}
+.foot-logo{display:inline-flex;font-size:1.08rem}
+#earlier{scroll-margin-top:72px}
 </style>
 </head>
 <body>
@@ -565,17 +589,14 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
 
 <header class="nav"><div class="scrollbar" aria-hidden="true"><i id="scrollBar"></i></div>
   <div class="wrap nav-in">
-    <a class="logo" href="#top" aria-label="Thread Futures home">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#173D35"/><path d="M7 11h18M7 16h18M7 21h18" stroke="#D7EF91" stroke-width="2.4" stroke-linecap="round"/></svg>
-      thread futures
-    </a>
+    <a class="logo" href="#top" aria-label="Thread Futures home"><span class="wm-a">thread</span> <span class="wm-b">futures</span></a>
     <button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu</button>
     <nav class="links" id="links" aria-label="Main">
-      <a href="#problem">The tail</a>
       <a href="#how">How it works</a>
-      <a href="#file">What you get</a>
-      <a href="#why">Why now</a>
-      <a href="#built">Built so far</a>
+      <a href="#example">Example</a>
+      <a href="#pricing">Who pays</a>
+      <a href="#vision">Where this goes</a>
+      <a href="#about">About</a>
       <a href="#faq">FAQ</a>
       <a class="btn btn-primary btn-sm" href="#contact">Talk to us</a>
     </nav>
@@ -583,136 +604,127 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
 </header>
 
 <main id="main">
-<!-- HERO: the second-life desk -->
+<!-- HERO -->
 <section class="hero" id="top">
   <div class="wrap">
     <div class="hero-top">
       <div>
-        <a class="announce" href="#contact"><span class="new">From 16 Nov</span> Talking to brands, buyers and EU charities <span aria-hidden="true">→</span></a>
+        <a class="announce" href="#status"><span class="new">Pre-launch</span> Talking to brands, buyers and charities now <span aria-hidden="true">→</span></a>
         <div class="eyebrow">For fashion brands selling into the EU</div>
-        <h1>Every unit a second life, <em class="accent">and the proof.</em></h1>
+        <h1>We clear fashion brands' unsold stock <em class="accent">without destroying it.</em></h1>
       </div>
       <div>
-        <p class="lede">Thread Futures is the trusted second-life desk for the stock nobody else will take: returns, damaged, broken size runs, old seasons and logo-heavy lines from brands selling into the EU. We give every unit a second life through vetted buyers and EU charities we fund to say yes, and hand the brand a file proving where all of it went.</p>
-        <p class="hero-note">Honest status: the desk is <b>not operating yet</b> and there are <b>no customers yet</b>. We start validation interviews with brands, buyers, EU charities and warehouses on Monday 16 November 2026. We're independent and built for fashion: we work with whatever warehouse you already use, and we start with stock already sitting in EU warehouses so nothing has to cross the UK–EU border.</p>
+        <p class="lede">Since July 2026, large brands can't destroy unsold clothes in the EU. We sell, donate or recycle what they can't sell, and give them a record of where every item went.</p>
+        <p class="hero-like">Like Phenix (about €20m revenue in France, for food and household goods), built for fashion.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="#contact">Help shape it: 20-minute call</a>
-          <a class="btn btn-line" href="#how">How it works</a>
+          <a class="btn btn-primary" href="#contact">Talk to us: 20-minute call</a>
+          <a class="btn btn-line" href="#example">See an example batch</a>
         </div>
+        <p class="hero-note">Honest status: pre-launch, <b>no customers yet</b>. Since 16 November 2026 we've been talking to brands, resale buyers, EU charities and warehouses to test the idea.</p>
+        <p class="tagline">Every unit a second life, and the proof.</p>
       </div>
     </div>
-    <div class="what" id="what" aria-label="Grade, Place, Prove">
+    <div class="what" id="how" aria-label="How it works">
       <div class="what-h">
-        <div><div class="eyebrow">How it works, per batch</div><h2>Grade · Place · <em class="accent">Prove.</em></h2></div>
-        <p>The brand sends the tail it can't sell. We handle it batch by batch, in the order the EU waste hierarchy asks for: reuse first, then donation, recycling only as a last resort.</p>
+        <div><div class="eyebrow">How it works, for each batch</div><h2>Three steps.</h2></div>
+        <p>We coordinate, match and keep the record. Partners do the physical work: warehouses grade, buyers collect, charities receive, recyclers process. We never buy stock.</p>
       </div>
-      <ol class="ledger-steps">
-        <li><span class="n">1 · Grade</span><h3>Know what's really in the batch</h3><p>Real size breakdown, condition codes and fibre composition from the brand's tech packs, so buyers get a manifest that matches and recyclers know the fibres.</p><span class="tag plan">Planned</span></li>
-        <li><span class="n">2 · Place</span><h3>Give every unit a second life</h3><p>Contracted buyers first (brand stays anonymous), then curated donation to vetted EU charities with transport paid, and a licensed recycler only as a last resort.</p><span class="tag plan">Planned</span></li>
-        <li><span class="n">3 · Prove</span><h3>A destination file per batch</h3><p>Every unit, every step: kept 5 years, producible within 30 days of a request, with rows ready for the EU Article 24 disclosure table.</p><span class="tag plan">Planned</span></li>
+      <ol class="steps3">
+        <li><span class="n">1 · Grade</span><h3>Check what's in the batch</h3><p>A partner warehouse grades every item: size, condition, and fibre from the brand's own product specs. Lots finally match their paperwork.</p></li>
+        <li><span class="n">2 · Place</span><h3>Find every item a home</h3><p>Resale buyers first, who agree not to destroy it and tell us where it goes next (the brand stays anonymous until it approves them). Then EU charities, with the transport paid. Recycling only as a last resort.</p></li>
+        <li><span class="n">3 · Report</span><h3>One record per batch</h3><p>Every item and every handover, recorded as it happens. Kept 5 years, ready within 30 days if a regulator asks, with rows for the EU disclosure.</p></li>
       </ol>
-      <p class="what-foot">For premium and mid-market brands led by clothing and footwear that are large under the EU rules and sell into the EU or Northern Ireland, starting with UK brands whose stock is already in EU warehouses. <a href="#file">See an illustrative destination file ↓</a></p>
+      <p class="what-foot">Starting with premium and mid-market UK brands whose stock is already in EU warehouses, so nothing has to cross the UK–EU border. <a href="#example">See an illustrative batch ↓</a></p>
     </div>
   </div>
 </section>
 
-<!-- THE PROBLEM: the tail -->
+<!-- THE PROBLEM -->
 <section class="gap" id="problem">
   <div class="wrap">
     <div class="gap-grid">
-      <div class="reveal statement-wrap"><div class="eyebrow">The problem</div><p class="statement">The easy stock already sells. <em class="accent">The hard part is the tail.</em> <span>Returns, damaged goods, odd sizes and old seasons used to go to the shredder. Since 19 July 2026, large brands can't destroy unsold clothes and shoes in the EU, and that includes shredding them for recycling.</span></p></div>
+      <div class="reveal statement-wrap"><div class="eyebrow">The problem</div><p class="statement">The easy stock already sells. <em class="accent">The rest has nowhere to go.</em> <span>TK Maxx and other off-price chains buy current, full-size-run stock directly from brands. The problem is everything else: returns, damaged goods, odd sizes and old seasons. Since 19 July 2026, large brands can't destroy it in the EU.</span></p></div>
     </div>
     <ol class="seq reveal">
-      <li><div class="k">Clean stock</div><h3>Off-price buys it directly</h3><p>TJX (TK Maxx) buys from around 21,000 vendors, takes partial size runs and pays promptly. First-quality stock doesn't need us.</p></li>
-      <li><div class="k">The tail · jobbers</div><h3>Cheap, and no trail</h3><p>Jobbers take whole lots cheaply, but can't say where the goods end up. Liquidation typically recovers around 5–20% of retail price.</p></li>
-      <li><div class="k">The tail · charities</div><h3>Willing, but can't afford it</h3><p>French charities refuse 15–20% of donations offered, mostly because they can't pay to move or store them.</p></li>
+      <li><div class="k">Jobbers</div><h3>Take it cheaply</h3><p>Liquidators take whole lots for around 5–20% of retail price, but can't say where the goods end up.</p></li>
+      <li><div class="k">Charities</div><h3>Willing, but can't afford it</h3><p>French charities turn down 15–20% of the donations they're offered, mostly because they can't pay to move or store them.</p></li>
+      <li><div class="k">Recyclers</div><h3>Now counts as destruction</h3><p>Under the EU rules, recycling unsold clothes counts as destroying them unless a documented legal exception applies.</p></li>
     </ol>
     <div class="onebrand reveal">
       <div class="eyebrow">What we do about it</div>
-      <div><p>Thread Futures handles that tail. We grade it properly, sell it to contracted buyers who report where it goes, donate the rest to EU charities with the logistics paid, recycle only as a last resort, and hand the brand a destination file for every batch.</p>
-      <a href="#contact">Have a batch nobody would take? Help shape it: 20-minute call →</a></div>
+      <div><p>We grade the stock, sell it to resale buyers who agree not to destroy it, donate the rest to EU charities with the transport paid, recycle only what's damaged beyond repair, and give the brand a record of where every item went.</p>
+      <a href="#contact">Have stock you can't place? Book a 20-minute call →</a></div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="on-forest" id="how">
-  <div class="wrap">
-    <div class="eyebrow">How it works</div>
-    <h2 style="margin-top:16px;max-width:15em">Grade, place, prove. Then make less next season.</h2>
-    <div class="stepper" id="stepper">
-      <div class="steptabs" role="tablist" aria-label="How it works">
-        <button role="tab" aria-selected="true" aria-controls="sp1" id="st1" class="on"><span class="n">01</span><b>Grade the batch</b><small>Size breakdown, condition codes and fibre composition from the brand's tech packs.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
-        <button role="tab" aria-selected="false" aria-controls="sp2" id="st2"><span class="n">02</span><b>Place it, in waste-hierarchy order</b><small>Contracted buyers, then funded donation to vetted EU charities, then a licensed recycler as a last resort.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
-        <button role="tab" aria-selected="false" aria-controls="sp3" id="st3"><span class="n">03</span><b>Prove it</b><small>A destination file per batch: every unit, every step, with disclosure rows ready.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
-        <button role="tab" aria-selected="false" aria-controls="sp4" id="st4"><span class="n">04</span><b>Make less next season</b><small>What sold where, and why it didn't sell at full price, goes back to the brand's buyers.</small><span class="tag plan">Planned</span><i class="prog"></i></button>
-      </div>
-      <div class="stage">
-        <div class="sp on" role="tabpanel" id="sp1" aria-labelledby="st1">
-          <div class="mini wide"><div class="mini-h">Graded batch <span class="tag plan">Illustrative</span></div>
-            <div class="kv"><span>Batch</span><b>DEMO-0142 · 1,860 units</b></div><div class="kv"><span>Mix</span><b>Returns, broken size runs, AW24</b></div><div class="kv"><span>Condition</span><b>A 1,240 · B 450 · C 170</b></div><div class="kv"><span>Fibre</span><b>From tech packs, per style</b></div></div>
-        </div>
-        <div class="sp" role="tabpanel" id="sp2" aria-labelledby="st2" hidden>
-          <div class="mini wide"><div class="mini-h">Place, in order <span class="tag plan">Illustrative</span></div>
-            <div class="kv"><span>a. Contracted buyers</span><b>No destruction, no export as waste, channel limits, onward reporting</b></div><div class="kv"><span>b. EU charities</span><b>Pre-sorted lots, transport paid, offers and refusals logged</b></div><div class="kv"><span>c. Licensed recycler</span><b>Last resort, derogation statement handed over, receipt collected</b></div></div>
-        </div>
-        <div class="sp" role="tabpanel" id="sp3" aria-labelledby="st3" hidden>
-          <div class="mini wide"><div class="mini-h">Destination file <span class="tag plan">Illustrative</span></div>
-            <div class="kv"><span>Units given a second life</span><b>1,790 of 1,860</b></div><div class="kv"><span>Recycled under a documented exception</span><b>70, operator statement on file</b></div><div class="kv"><span>Destroyed</span><b>0</b></div><div class="kv"><span>Kept</span><b>5 years, producible within 30 days</b></div><div class="kv"><span>EU disclosure</span><b>Rows ready</b></div></div>
-        </div>
-        <div class="sp" role="tabpanel" id="sp4" aria-labelledby="st4" hidden>
-          <div class="mini wide"><div class="mini-h">Why it reached the tail, by season <span class="tag plan">Illustrative</span></div>
-            <div class="bars"><div style="--h:62%"><span>AW24</span></div><div style="--h:48%"><span>SS25</span></div><div style="--h:55%"><span>AW25</span></div><div style="--h:31%"><span>SS26</span></div></div>
-            <div class="mini-s">Feed what didn't sell back into next season's buying: buy less of this.</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT THE BRAND GETS -->
-<section class="on-white" id="file">
+<!-- EXAMPLE BATCH -->
+<section class="on-white" id="example">
   <div class="wrap">
     <div class="wide-head">
-      <div class="reveal"><div class="eyebrow">What the brand gets</div><h2>One destination file <em class="accent">per batch.</em></h2></div>
+      <div class="reveal"><div class="eyebrow">Example batch · illustrative</div><h2>One batch of 1,840 returns, <em class="accent">step by step.</em></h2></div>
       <div class="reveal">
-        <p class="lede">The file is the product. A buyer or jobber can't produce it, and a chatbot can't create a charity's acceptance or a waste operator's statement after the fact.</p>
-        <dl class="facts">
-          <div><dt>What's in it</dt><dd>Every unit and every step: grading, each buyer, charity or operator, the contract terms and the documents collected at each handover.</dd></div>
-          <div><dt>How long</dt><dd>Kept 5 years and producible electronically within 30 days of a request, as the EU rules require.</dd></div>
-          <div><dt>Disclosure</dt><dd>Rows ready for the Article 24 disclosure table.</dd></div>
-          <div><dt>Status</dt><dd>The example below is <b>illustrative, not a real brand or batch</b>. The prototype is planned for 16–19 Nov 2026.</dd></div>
-        </dl>
+        <p class="lede">Batch TF-0142: 1,840 items of autumn/winter 2025 returns and broken size runs (knitwear and outerwear) from an unnamed premium brand, already in an EU warehouse.</p>
+        <p class="note-ill"><span class="tag plan">Illustrative</span> Example figures, not a real brand or a real batch. We have no customers yet.</p>
       </div>
     </div>
+    <div class="batchstats reveal" aria-label="Illustrative batch outcome">
+      <div><strong>1,210</strong><p>sold to resale buyers who agree not to destroy it</p></div>
+      <div><strong>530</strong><p>donated to EU charities, transport paid</p></div>
+      <div><strong>100</strong><p>recycled as a last resort (damaged beyond repair)</p></div>
+      <div class="hl"><strong>95%</strong><p>never destroyed: 1,740 of 1,840 items given a second life</p></div>
+    </div>
     <div class="panel reveal">
-      <div class="panel-head"><b>Destination file · batch DEMO-0142 · 1,860 units</b><span class="tag plan">Illustrative · not a real brand</span></div>
+      <div class="panel-head"><b>Batch TF-0142 · 1,840 items · where each one went</b><span class="tag plan">Illustrative · not a real brand</span></div>
       <div class="scroll">
         <table class="data stack">
-          <thead><tr><th>Step</th><th class="num">Units</th><th>Destination</th><th>Evidence on file</th></tr></thead>
+          <thead><tr><th>Step</th><th class="num">Items</th><th>Where it went</th><th>Record kept</th></tr></thead>
           <tbody>
-            <tr><td data-label="Step"><b>a. Contracted buyer</b><br><span style="color:var(--muted);font-size:.8rem">Off-price, Germany</span></td><td class="num" data-label="Units">1,120</td><td data-label="Destination">Sold under contract, brand anonymous</td><td data-label="Evidence">Sale contract (no destruction, no export as waste), onward-destination report</td></tr>
-            <tr><td data-label="Step"><b>a. Contracted buyer</b><br><span style="color:var(--muted);font-size:.8rem">Resale partner, Netherlands</span></td><td class="num" data-label="Units">410</td><td data-label="Destination">Resold, labels removed where required</td><td data-label="Evidence">Sale contract, channel limits, onward-destination report</td></tr>
-            <tr><td data-label="Step"><b>b. Funded donation</b><br><span style="color:var(--muted);font-size:.8rem">3 EU social-economy entities</span></td><td class="num" data-label="Units">260</td><td data-label="Destination">Accepted, transport paid</td><td data-label="Evidence">Offer, acceptance and handover records per entity</td></tr>
-            <tr><td data-label="Step"><b>c. Licensed recycler</b><br><span style="color:var(--muted);font-size:.8rem">Last resort</span></td><td class="num" data-label="Units">70</td><td data-label="Destination">Recycled under a documented exception</td><td data-label="Evidence">Derogation statement handed over, operator's treatment statement</td></tr>
+            <tr><td data-label="Step"><b>Resale buyer</b><br><span class="sub">Off-price, Germany · grade A</span></td><td class="num" data-label="Items">720</td><td data-label="Where it went">Sold, brand anonymous until approved</td><td data-label="Record kept">Sale contract (no destruction, no export as waste), report of where it went next</td></tr>
+            <tr><td data-label="Step"><b>Resale buyer</b><br><span class="sub">Stocklot, Poland · grade A</span></td><td class="num" data-label="Items">300</td><td data-label="Where it went">Sold</td><td data-label="Record kept">Sale contract, onward report</td></tr>
+            <tr><td data-label="Step"><b>Resale buyer</b><br><span class="sub">Resale partner · grade B, repaired</span></td><td class="num" data-label="Items">190</td><td data-label="Where it went">Repaired and resold</td><td data-label="Record kept">Sale contract, onward report</td></tr>
+            <tr><td data-label="Step"><b>EU charity</b><br><span class="sub">France</span></td><td class="num" data-label="Items">310</td><td data-label="Where it went">Donated, transport paid</td><td data-label="Record kept">Offer, acceptance and handover records</td></tr>
+            <tr><td data-label="Step"><b>EU charity</b><br><span class="sub">Netherlands</span></td><td class="num" data-label="Items">220</td><td data-label="Where it went">Donated, transport paid</td><td data-label="Record kept">Offer, acceptance and handover records</td></tr>
+            <tr><td data-label="Step"><b>EU charity</b><br><span class="sub">Belgium</span></td><td class="num" data-label="Items">0</td><td data-label="Where it went">Declined</td><td data-label="Record kept">Offer and refusal logged (this counts as evidence too)</td></tr>
+            <tr><td data-label="Step"><b>Licensed recycler</b><br><span class="sub">Last resort · grade D</span></td><td class="num" data-label="Items">100</td><td data-label="Where it went">Recycled under a recorded legal exception</td><td data-label="Record kept">Legal exception statement and recycler's receipt</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="panel-foot">Illustrative example only. Headline metric: units given a second life (here 1,790 of 1,860, 96%) and the share never destroyed.</div>
+      <div class="panel-foot">Illustrative example only. Grades: A new 1,020 · B minor fault 430 · C worn return 290 · D damaged beyond repair 100.</div>
+    </div>
+    <figure class="mock reveal">
+      <img src="product-mockup.webp" alt="Product mock-up of the batch record for TF-0142 with example data: 95% never destroyed, 1,210 sold, 530 donated, 100 recycled, and a log of each handover" width="1600" height="1000" loading="lazy">
+      <figcaption><span class="tag plan">Product mock-up · example data</span> What the brand's record for this batch could look like. This is a design mock-up; the system is not built yet.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section id="who">
+  <div class="wrap">
+    <div class="eyebrow">Why each side takes part</div>
+    <h2 style="margin-top:16px;max-width:16em">Brands pay. Buyers buy. Charities get help to say yes.</h2>
+    <div class="aud">
+      <div class="reveal"><h3>Brands</h3><p>Hand over the stock you can't sell and get one record per batch. Your name stays hidden until you approve a buyer. Logistics, repair, sorting and recycling are done by partners and passed through at cost. We don't buy stock.</p></div>
+      <div class="reveal"><h3>Resale buyers</h3><p>Off-price, stocklot and resale buyers get graded lots that match their paperwork. In return they sign terms: no destruction, no export as waste, limits on where it's sold, and a report of where the goods went.</p></div>
+      <div class="reveal"><h3>EU charities</h3><p>Charities and social enterprises in the EU get lots sorted to their needs, with the transport paid from the brand's fee. Every offer and decision is logged.</p></div>
     </div>
   </div>
 </section>
 
-<!-- AUDIENCE -->
-<section id="who">
+<!-- WHO PAYS -->
+<section class="on-white" id="pricing">
   <div class="wrap">
-    <div class="eyebrow">Who it's for</div>
-    <h2 style="margin-top:16px;max-width:16em">Brands pay. Buyers buy. Charities get help to say yes.</h2>
-    <div class="aud">
-      <div class="reveal"><h3>For brands</h3><p>Hand over the tail you can't sell and get one destination file per batch. Your name stays anonymous until you approve a buyer. Logistics, repair, sorting and recycling are done by partners and passed through at cost. We don't buy stock.</p></div>
-      <div class="reveal"><h3>For buyers</h3><p>Off-price, stocklot and resale buyers get graded lots with manifests that match, in exchange for contract terms: no destruction, no export as waste, channel limits, and a report of where the goods went.</p></div>
-      <div class="reveal"><h3>For EU charities</h3><p>Vetted EU social-economy organisations get lots pre-sorted to their needs, with transport paid from the brand's fee. Hard-to-place stock comes with transport paid; curated, sellable lots may carry a small handling fee (we're testing this). Every offer and decision is logged for them.</p></div>
+    <div class="wide-head">
+      <div class="reveal"><div class="eyebrow">Who pays · hypothesis</div><h2>The brand pays. <em class="accent">We test the price in pilots.</em></h2></div>
+      <div class="reveal"><p class="lede">Pricing is a hypothesis we'll test with the first paid pilots. Nothing here is a quote.</p></div>
     </div>
+    <div class="aud price">
+      <div class="reveal"><span class="pnum">£2–4k</span><h3>Paid pilot</h3><p>One batch for a fixed fee, plus commission on money recovered. The way in.</p></div>
+      <div class="reveal"><span class="pnum">£1–2k / month</span><h3>Season subscription</h3><p>All of a season's leftover stock handled, plus 10–15% commission on money recovered.</p></div>
+      <div class="reveal"><span class="pnum">At cost</span><h3>Logistics and partners</h3><p>Transport, repair, sorting and recycling are passed through at cost. We never buy stock.</p></div>
+    </div>
+    <p class="note-ill" style="margin-top:28px"><span class="tag plan">Hypothesis</span> Illustrative: a £100m-revenue brand might get about £175k a year more back than its liquidator pays; we would earn a £12–24k subscription plus commission. Phenix earns about 80% of its revenue from subscriptions.</p>
   </div>
 </section>
 
@@ -746,12 +758,118 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
   </div>
 </section>
 
-<!-- STATUS: what the founder has built -->
+<!-- WHERE THIS GOES -->
+<section class="on-forest" id="vision">
+  <div class="wrap">
+    <div class="eyebrow">Where this goes</div>
+    <h2 style="margin-top:16px;max-width:18em">No finished garment should be destroyed.</h2>
+    <p class="lede" style="margin-top:14px;max-width:36em">We make the better option the easy one, then use what we learn to help brands make less.</p>
+    <ol class="steps3" style="margin-top:36px">
+      <li><span class="n">1 · Now, 2026–27</span><h3>Clear the stock</h3><p>The service we're starting with: paid pilots, then season subscriptions, starting with UK brands' stock already in EU warehouses.</p></li>
+      <li><span class="n">2 · Next, 2027–30</span><h3>Become the shared record</h3><p>The batch record becomes the common record of where fashion's surplus goes, shared by brands, buyers, charities and recyclers. Mid-size warehouses can offer it to their own clients. Standard-format disclosures arrive around 2028–29, and medium-sized brands join the ban from July 2030.</p></li>
+      <li><span class="n">3 · Long term</span><h3>Help brands make less</h3><p>Every batch records what didn't sell, where and why. Across many brands, that tells merchandising teams what to make less of next season. This is where my forecasting background helps most.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- STATUS -->
+<section class="on-white" id="status">
+  <div class="wrap">
+    <div class="wide-head">
+      <div class="reveal"><div class="eyebrow">Where we are today</div><h2>Pre-launch. <em class="accent">No customers yet.</em></h2></div>
+      <div class="reveal">
+        <dl class="facts">
+          <div><dt>Status</dt><dd>Pre-revenue, not yet incorporated, solo founder in London. No customers, signed buyers, charities or partners yet, and no batch handled.</dd></div>
+          <div><dt>Talking to</dt><dd>Since 16 November 2026: 15 brands, 5 resale buyers, 3–5 EU charities, 2–3 mid-size fashion warehouses and one lawyer.</dd></div>
+          <div><dt>Decision</dt><dd>On 10 February 2027 we decide: go, keep testing, narrow, or stop. If 11 of 15 brands say their current liquidator already covers it, we narrow or stop.</dd></div>
+          <div><dt>Built</dt><dd>The batch-record system is planned, not built; the screen above is a mock-up. Earlier software I built is <a href="#earlier">further down this page</a>.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about">
+    <img class="reveal" src="cathy-liu.jpg" alt="Cathy Liu, founder of Thread Futures" width="800" height="800" loading="lazy">
+    <div class="reveal">
+      <div class="eyebrow">Founder</div>
+      <h2>Why I <em class="accent">care.</em></h2>
+      <p class="about-lead">Over the last five years it feels like we've been buying more than ever. More clothes, more deliveries, more things worn twice and forgotten. What bothers me most is how normal it's become.</p>
+      <p>Perfectly good clothes get shredded or burned because that's cheaper than finding them a home, and most of us never hear about it. I don't think the answer is making people feel guilty. I think it's making the better option the easy one: finding every unit a second life, and being able to show where it went.</p>
+      <p>I've spent my career turning messy data into things people can act on, and I studied AI because I wanted to understand the technology behind the decisions we're starting to hand over to it. Thread Futures is me pointing those skills at a problem I actually care about: using what we already have, instead of making more of what nobody buys.</p>
+      <h3 class="about-k">A bit about me</h3>
+      <p>I'm Cathy Liu, a data analyst from California, now in London. I spent seven years building forecasts where mistakes cost real money: treasury at Bank of Hawaii, workforce at Hawaiian Airlines, then healthcare. I recently finished an MSc in AI and Data Analytics at Northeastern University London; my dissertation tested whether AI models ask the right questions before giving financial advice.</p>
+      <div class="links-row">
+        <a class="btn btn-line btn-sm" href="https://www.linkedin.com/in/cathyqliu" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-line btn-sm" href="mailto:cathyqliu1@gmail.com">Email Cathy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="on-white" id="faq">
+  <div class="wrap" style="max-width:900px">
+    <div class="eyebrow">Questions</div>
+    <h2 style="margin-top:16px">Before you ask.</h2>
+    <div class="faq">
+      <details open><summary>Who is it for?</summary><p>First, premium and mid-market brands led by clothing and footwear that count as "large" under the EU rules and sell into the EU or Northern Ireland, starting with UK brands that hold stock in EU warehouses, plus EU brands. Handbags and small leather goods appear to fall outside the ban, so bag-led brands aren't our first focus. Medium-sized firms are covered from July 2030; small and micro firms are exempt. Stock sold only in Great Britain is out of scope today.</p></details>
+      <details><summary>Is it live?</summary><p>Not yet. We're pre-launch with no customers yet. Since 16 November 2026 we've been talking to brands, resale buyers, EU charities and a few mid-size warehouses. The batch-record system is planned; the screen on this page is a mock-up with example data.</p></details>
+      <details><summary>Do you buy or hold stock?</summary><p>No. The brand pays us; buyers pay for goods; charities pay little or nothing. Logistics, repair, sorting and recycling are done by partners and passed through at cost.</p></details>
+      <details><summary>What will it cost?</summary><p>Not set yet; we'll test it in paid pilots. The working idea is a paid pilot (one batch, £2–4k plus commission), then a season subscription of roughly £1–2k a month plus 10–15% commission on money recovered. This is a hypothesis.</p></details>
+      <details id="why-not-tkmaxx"><summary>Why not just call TK Maxx?</summary><p>For clean, current stock in full size runs, you should. TJX buys directly from around 21,000 vendors. We don't compete for that stock.</p><p>We handle what they won't take, or what liquidators take cheaply with no record: returns, damaged goods, broken size runs and old seasons. And we give you the record of where it went.</p></details>
+      <details id="eu-stock"><summary>Why start with stock already in the EU?</summary><p>Since Brexit, moving goods from the UK into the EU means customs paperwork, duties and delays, which eat into what leftover stock is worth. Otrium closed its UK site in 2023 for that reason. So we start with stock already sitting in EU warehouses.</p></details>
+      <details id="who-else"><summary>Don't waste companies and big warehouses already do this?</summary><p>Some do parts of it. PreZero ReValue, part of a large waste group, takes ownership of overstock and resells it abroad. Big fashion warehouses such as Bleckmann have their own repair and resale arms for their own clients. We're independent and built for fashion: the brand keeps control, we work with any warehouse, place each batch across buyers, EU charities and (only as a last resort) recyclers, and give one record across all of it. We'd rather partner with mid-size warehouses than compete with them.</p></details>
+      <details><summary>Do UK charities count for the donation exception?</summary><p>No. The donation exception needs goods offered for at least 8 weeks to at least three suitable social-economy organisations in the EU (or on a public page of the brand's own website) and not accepted. That's why our charity network is EU-based.</p></details>
+      <details id="no-label"><summary>Will we get a label or logo to show customers?</summary><p>No. Since September 2026, EU law bans sustainability labels that aren't backed by an independent certification scheme, and not destroying stock is now a legal duty for large brands. What we give you is evidence your lawyers and auditors can rely on. Have your own lawyer check any public claim.</p></details>
+      <details id="why-not-chatgpt"><summary>Why not just use ChatGPT?</summary><p>A general AI assistant can explain the regulation, analyse a stock file or draft a disclosure template. Much of the software I built earlier could be reproduced that way, which is why software isn't what we sell.</p><p>What a chatbot can't do: contract buyers, grade goods physically, pay a charity's transport, or create a charity's acceptance or a recycler's receipt after the fact. The record is made of documents created at each handover.</p></details>
+      <details id="legal-advice"><summary>Is this legal advice?</summary><p>No. Everything on this site is general information, not legal advice. Some questions, such as whether a brand is liable if a buyer later destroys goods, are not settled; we plan to have a lawyer review contract terms, and we write no-destruction and reporting clauses into sale contracts.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="on-forest" id="contact">
+  <div class="wrap contact">
+    <div>
+      <div class="eyebrow">Talk to us</div>
+      <h2>Have unsold stock <em class="accent">you can't place?</em></h2>
+      <p class="lede">We're talking to brands with unsold stock, off-price, stocklot and resale buyers, and EU charities and social enterprises. A 20-minute call helps shape what we build.</p>
+      <a class="btn btn-lime" id="callBtn" href="#contact">Book a 20-minute call</a><br>
+      <a class="mail" id="mailBtn" href="#contact">Or email Cathy directly</a>
+    </div>
+    <form class="form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hidden-field"><label>Leave this empty <input name="bot-field"></label></p>
+      <div class="row">
+        <label>Your name<input id="fName" name="name" type="text" autocomplete="name" required></label>
+        <label>Email<input id="fEmail" name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <div class="row">
+        <label>Organisation<input id="fOrg" name="organisation" type="text" autocomplete="organization"></label>
+        <label>You are<select id="fTeam" name="team"><option value="">Choose</option><option>Brand: operations or supply chain</option><option>Brand: sustainability or compliance</option><option>Off-price, stocklot or resale buyer</option><option>Charity or social-economy organisation (EU)</option><option>Investor or programme</option><option>Other</option></select></label>
+      </div>
+      <label>What's the problem?<textarea id="fMsg" name="message" required placeholder="For example: we have 2,000 returns and odd sizes from last season that our liquidator won't take, and no idea how we'd show where they went."></textarea></label>
+      <button class="btn btn-primary" type="submit" id="fSubmit">Talk to us</button>
+      <p class="hint">We'll reply by email. Nothing is shared with anyone else.</p>
+    </form>
+  </div>
+</section>
+
+<!-- EARLIER TECHNICAL WORK -->
+<div id="earlier" class="earlier-divider">
+  <div class="wrap">
+    <div class="eyebrow">Earlier technical work (proof I can build)</div>
+    <p>Before settling on this service on 12 November 2026, I built software and models. They show I can build; <b>they are not the product</b> and not a reason to buy. Everything below is a separate, earlier project.</p>
+  </div>
+</div>
 <section class="band-lime" id="built">
   <div class="wrap">
     <div class="wide-head">
-      <div><div class="eyebrow kicker">Honest status</div><h2>What the founder has built.</h2></div>
-      <p class="lede">No customers yet. Validation interviews with brands, buyers and EU charities start Monday 16 November 2026. The models below show the founder can build; they are not the product and not a reason to buy. The stall-risk model uses real open retail data (not fashion). The Offcut Forecast is a parked earlier prototype on simulated data.</p>
+      <div><div class="eyebrow kicker">Earlier technical work</div><h2>What I've built so far.</h2></div>
+      <p class="lede">A stall-risk model on real open retail data (not fashion), a regulation search tool, a tested data pipeline and an API. A fabric-waste forecast on simulated data is parked. None of this is the service above.</p>
     </div>
     <div class="proof">
       <div><strong class="count" data-to="0.81" data-dec="2">0.81</strong><p><b>Stall-risk model:</b> ROC AUC for spotting lines about to stop selling, vs 0.60 for a simple sales-trend rule (real open retail data, not fashion)</p></div>
@@ -760,13 +878,13 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
     </div>
     <div class="buildrow">
       <div class="log">
-        <div class="log-h">Recently shipped, and next</div>
+        <div class="log-h">Shipped, and next</div>
         <ol>
           <li><time>9 Nov</time><span>Stall-risk model runs in the browser; click any line to score it</span></li>
           <li><time>9 Nov</time><span>CI: every change runs the tests, builds the Docker image and calls the API</span></li>
           <li><time>9 Nov</time><span>Monitoring report: drift and calibration by launch quarter</span></li>
           <li><time>9 Nov</time><span>dbt models on 1.06m real sales lines, 22 data tests</span></li>
-          <li><time>16–19 Nov</time><span>Part 18: batch and destination file prototype (grading fields, donation offer and refusal log, buyer contract terms, waste-operator statements, hash-chained log, disclosure rows) <span class="tag plan">Planned</span></span></li>
+          <li><time>Next</time><span>Batch-record prototype for the service (grading, buyer terms, charity offers and refusals, recycler statements, disclosure rows) <span class="tag plan">Planned</span></span></li>
         </ol>
       </div>
       <div class="code" aria-label="Run the API yourself">
@@ -794,12 +912,12 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
 <section class="on-white" id="stall">
   <div class="wrap">
     <div class="wide-head">
-      <div class="reveal"><div class="eyebrow">Built by the founder · possible optional intake</div><h2>Flag the tail early, <em class="accent">while it still has value.</em></h2></div>
+      <div class="reveal"><div class="eyebrow">Earlier technical work · real open retail data, not fashion</div><h2>Stall-risk model: <em class="accent">spot lines likely to stop selling.</em></h2></div>
       <div class="reveal">
-        <p class="lede">A stall-risk model the founder built: it scores a line from its first 12 weeks of sales. In the desk it could become an optional intake, so the tail is placed while it can still recover money. It is not a reason to buy.</p>
+        <p class="lede">A model I built that scores a product line from its first 12 weeks of sales. It is earlier work, shown as proof I can build. It is not the service and not a reason to buy.</p>
         <dl class="facts">
           <div><dt>What's real</dt><dd>The model is built and runs in your browser, on real open retail data (UCI Online Retail II, a UK online retailer, <b>not fashion and not a customer</b>).</dd></div>
-          <div><dt>What it isn't</dt><dd>It isn't the product. The product is the desk and the destination file, which are <b>planned, not built</b>.</dd></div>
+          <div><dt>What it isn't</dt><dd>It isn't the product. The service (clearing unsold stock with a record of where it went) is <b>planned, not built</b>.</dd></div>
         </dl>
       </div>
     </div>
@@ -861,9 +979,9 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
 <section class="offcut-sec" id="offcuts">
   <div class="wrap">
     <div class="wide-head">
-      <div class="reveal"><div class="eyebrow">Built by the founder · parked earlier prototype · simulated data</div><h2>Offcut Forecast: <em class="accent">an earlier idea, parked.</em></h2></div>
+      <div class="reveal"><div class="eyebrow">Earlier technical work · parked · simulated data</div><h2>Fabric offcut forecast: <em class="accent">an earlier idea, parked.</em></h2></div>
       <div class="reveal">
-        <p class="lede">Before the second-life desk, the founder built a forecast of how much fabric a cutting run will leave over. It is parked: <b>not part of the offer</b>, and kept here as proof of build and a possible later module for the same brands.</p>
+        <p class="lede">My first idea (early November 2026) was forecasting how much fabric a cutting run leaves over. It is parked: <b>not part of what Thread Futures offers</b>. It stays here only as proof I can build.</p>
         <dl class="facts">
           <div><dt>What it is</dt><dd>A forecast of the kg of fabric a cutting run will leave over, with a P10–P90 range, from garment type, fabric, sizes and quantity.</dd></div>
           <div><dt>Simulated data</dt><dd>The model runs in your browser below. It was trained on 8,000 <b>simulated</b> cutting runs and tested on 1,600 more. It has never seen real factory data.</dd></div>
@@ -943,85 +1061,16 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
     </div>
   </div>
 </section>
-
-<!-- ABOUT -->
-<section class="on-white" id="about">
-  <div class="wrap about">
-    <img class="reveal" src="cathy-liu.jpg" alt="Cathy Liu, founder of Thread Futures" width="800" height="800" loading="lazy">
-    <div class="reveal">
-      <div class="eyebrow">Founder</div>
-      <h2>Why I <em class="accent">care.</em></h2>
-      <p class="about-lead">Over the last five years it feels like we've been buying more than ever. More clothes, more deliveries, more things worn twice and forgotten. What bothers me most is how normal it's become.</p>
-      <p>Perfectly good clothes get shredded or burned because that's cheaper than finding them a home, and most of us never hear about it. I don't think the answer is making people feel guilty. I think it's making the better option the easy one: finding every unit a second life, and being able to show where it went.</p>
-      <p>I've spent my career turning messy data into things people can act on, and I studied AI because I wanted to understand the technology behind the decisions we're starting to hand over to it. Thread Futures is me pointing those skills at a problem I actually care about: using what we already have, instead of making more of what nobody buys.</p>
-      <h3 class="about-k">A bit about me</h3>
-      <p>I'm Cathy Liu, a data analyst from California, now based in London. I've worked across aviation, banking and healthcare for seven years, building treasury forecasts at Bank of Hawaii and workforce dashboards at Hawaiian Airlines. I recently finished an MSc in AI and Data Analytics at Northeastern University London, where my dissertation tested whether AI models ask the right questions before giving financial advice.</p>
-      <div class="links-row">
-        <a class="btn btn-line btn-sm" href="https://www.linkedin.com/in/cathyqliu" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn-line btn-sm" href="https://github.com/catliugit/ThreadFutures" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="wrap" style="max-width:900px">
-    <div class="eyebrow">Questions</div>
-    <h2 style="margin-top:16px">Before you ask.</h2>
-    <div class="faq">
-      <details open><summary>Who is it for?</summary><p>First, premium and mid-market brands led by clothing and footwear that count as "large" under the EU rules and sell into the EU or Northern Ireland, starting with UK-headquartered brands that hold stock in EU warehouses, plus EU brands. Handbags and small leather goods appear to fall outside the ban, so bag-led brands aren't our first focus. Medium-sized firms are covered from July 2030; small and micro firms are exempt. Stock sold only in Great Britain is out of scope today.</p></details>
-      <details id="eu-stock"><summary>Why start with stock already in the EU?</summary><p>Since Brexit, moving goods from the UK into the EU means customs paperwork, duties and delays, and that eats into what tail stock is worth. Otrium closed its UK site in 2023 for that reason and came back in 2025 serving the UK from the Netherlands. So we start with one warehouse in one or two EU countries, and handle the stock where it already sits.</p></details>
-      <details id="who-else"><summary>Don't waste companies and big warehouses already do this?</summary><p>Some do parts of it. PreZero ReValue, part of a large waste group, takes ownership of overstock and resells it abroad. Big fashion warehouses such as Bleckmann have their own repair and resale arms for their clients. We're independent and built for fashion: the brand keeps control, we work with any warehouse, place each batch across buyers, EU charities and (only as a last resort) recyclers, grade by size, condition and fibre, and give one file across all of it, with rows ready for the EU disclosure table. We'd rather partner with mid-size warehouses than compete with them.</p></details>
-      <details id="no-label"><summary>Will we get a label or logo to show customers?</summary><p>No. Since September 2026, EU law bans sustainability labels that aren't backed by an independent certification scheme, and not destroying stock is now a legal duty for large brands, so it can't be sold as a special green feature. What we give you is evidence your lawyers and auditors can rely on. Later, an accredited inspection body could audit the file. Have your own lawyer check any public claim.</p></details>
-      <details id="why-not-tkmaxx"><summary>Why not just call TK Maxx?</summary><p>For clean, first-quality stock, you should. TJX buys directly from around 21,000 vendors, takes partial size runs and pays promptly, and jobbers will take whole lots after one email. We don't compete for that stock.</p><p>We handle the tail they won't take, or take cheaply with no trail: returns, damaged goods, broken size runs, old seasons and logo-heavy lines. And we hand you the destination file that an off-price chain or jobber doesn't produce.</p></details>
-      <details id="why-not-chatgpt"><summary>Why not just use ChatGPT?</summary><p>A general AI assistant (ChatGPT, Claude, Copilot) can explain the regulation, analyse a stock file or draft a disclosure template, and much of the software the founder has built could be reproduced that way. That's why software isn't what we sell.</p><p>What a chatbot can't do: contract buyers, grade goods physically, fund a charity's transport, hold money, or create a charity's acceptance or a waste operator's statement after the fact. The destination file is made of records created at each handover. We use AI underneath; it isn't the product.</p></details>
-      <details id="legal-advice"><summary>Is this legal advice?</summary><p>No. Everything on this site is general information, not legal advice. Check your obligations with your own advisers. Some questions, such as whether a brand is liable if a buyer later destroys goods, are not settled; we plan to have a lawyer review contract terms, and we write no-destruction and destination-reporting clauses into sale contracts.</p></details>
-      <details><summary>Is it live?</summary><p>Not yet, and there are no customers yet. Validation interviews with brands, buyers, EU charities and a few mid-size warehouses start on 16 November 2026. The destination file prototype is planned for 16–19 November. The models on this page are what the founder has built so far, shown as proof of build.</p></details>
-      <details><summary>Do UK charities count for the donation exception?</summary><p>No. The donation exception needs goods offered for at least 8 weeks to at least three suitable social-economy entities in the EU (or on a public page of the brand's own website) and not accepted. That's why our donation network is EU-based.</p></details>
-      <details><summary>Do you buy or hold stock?</summary><p>No. We don't buy stock. The brand pays us; buyers pay for goods; charities pay little or nothing. Logistics, repair, sorting and recycling are done by partners and passed through at cost.</p></details>
-      <details><summary>What will it cost?</summary><p>Not set yet; we'll test it in paid pilots. The working idea is a monthly subscription for a season's tail (roughly £1–2k a month, depending on volume), with a commission on money recovered on top. The way in is a paid pilot: one batch for a fixed fee of £2–4k plus commission. Logistics, repair and recycling are passed through at cost.</p></details>
-      <details><summary>What happened to the Offcut Forecast?</summary><p>It's parked. It was an earlier prototype trained on simulated data and isn't part of the offer. It stays on this page as proof of build.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="on-forest" id="contact">
-  <div class="wrap contact">
-    <div>
-      <div class="eyebrow">Help shape it</div>
-      <h2>Bring us the batch <em class="accent">nobody would take.</em></h2>
-      <p class="lede">From 16 November we're talking to three groups: brands with a tail of unsold stock, off-price, stocklot and resale buyers, and EU charities and social-economy organisations. A 20-minute call helps shape what gets built.</p>
-      <a class="btn btn-lime" id="callBtn" href="#contact">Help shape it: 20-minute call</a><br>
-      <a class="mail" id="mailBtn" href="#contact">Or email Cathy directly</a>
-    </div>
-    <form class="form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-      <input type="hidden" name="form-name" value="contact">
-      <p class="hidden-field"><label>Leave this empty <input name="bot-field"></label></p>
-      <div class="row">
-        <label>Your name<input id="fName" name="name" type="text" autocomplete="name" required></label>
-        <label>Email<input id="fEmail" name="email" type="email" autocomplete="email" required></label>
-      </div>
-      <div class="row">
-        <label>Organisation<input id="fOrg" name="organisation" type="text" autocomplete="organization"></label>
-        <label>You are<select id="fTeam" name="team"><option value="">Choose</option><option>Brand: operations or supply chain</option><option>Brand: sustainability or compliance</option><option>Off-price, stocklot or resale buyer</option><option>Charity or social-economy organisation (EU)</option><option>Investor or programme</option><option>Other</option></select></label>
-      </div>
-      <label>What's the problem?<textarea id="fMsg" name="message" required placeholder="For example: we have 2,000 returns and odd sizes from last season that our jobber won't take, and no idea how we'd prove where they went."></textarea></label>
-      <button class="btn btn-primary" type="submit" id="fSubmit">Talk to us</button>
-      <p class="hint">We'll reply by email. Nothing is shared with anyone else.</p>
-    </form>
-  </div>
-</section>
 </main>
 
 <footer>
   <div class="wrap foot">
     <div>
-      <p><b style="color:var(--forest)">thread futures</b> · The second-life desk for the stock nobody else will take. Every unit a second life, and the proof. Not operating yet; validating from 16 November 2026.</p>
-      <p style="margin-top:8px">Destination file examples are illustrative. The stall-risk model uses UCI Online Retail II (CC BY 4.0), not fashion data. The Offcut Forecast is a parked prototype on simulated data. Regulation text © European Union, EUR-Lex. General information, not legal advice.</p>
+      <p><a class="logo foot-logo" href="#top"><span class="wm-a">thread</span> <span class="wm-b">futures</span></a></p>
+      <p style="margin-top:8px">We clear fashion brands' unsold stock without destroying it. Every unit a second life, and the proof. Pre-launch; no customers yet.</p>
+      <p style="margin-top:8px">The example batch and product screen are illustrative. Pricing is a hypothesis. Earlier technical work: the stall-risk model uses UCI Online Retail II (CC BY 4.0), not fashion data; the parked fabric-waste prototype uses simulated data. Regulation text © European Union, EUR-Lex. General information, not legal advice.</p>
     </div>
-    <nav aria-label="Footer"><a href="#problem">The tail</a><a href="#how">How it works</a><a href="#file">What you get</a><a href="#who">Who it's for</a><a href="#why">Why now</a><a href="#built">Built so far</a><a href="#faq">FAQ</a><a href="investors.html">For investors</a><a href="reports/monitoring.html">Monitoring report</a><a href="https://github.com/catliugit/ThreadFutures">GitHub</a></nav>
+    <nav aria-label="Footer"><a href="#how">How it works</a><a href="#example">Example batch</a><a href="#pricing">Who pays</a><a href="#vision">Where this goes</a><a href="#status">Where we are</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#earlier">Earlier technical work</a><a href="investors.html">For investors</a><a href="https://github.com/catliugit/ThreadFutures">GitHub</a></nav>
   </div>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
