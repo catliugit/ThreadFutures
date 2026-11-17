@@ -381,6 +381,15 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
   .cta-in > div:last-child{display:flex;flex-wrap:wrap;gap:12px;width:100%}
   .foot{grid-template-columns:1fr}
 }
+.team{display:block!important}
+.founder-full{grid-template-columns:240px minmax(0,1fr);align-items:start;padding:32px}
+.founder-full img{width:240px;height:240px}
+.founder-full .fbody{max-width:68ch}
+.founder-full h4{font-size:1.02rem;font-weight:800;margin:22px 0 8px;color:var(--forest)}
+.founder-full p{margin:0 0 12px;line-height:1.65}
+.founder-full p.lead{font-size:1.1rem;color:var(--ink)}
+.founder-full .hire{margin-top:16px;font-size:.95rem}
+@media (max-width:760px){.founder-full{grid-template-columns:1fr;padding:22px}.founder-full img{width:110px;height:110px;border-radius:50%}}
 </style>
 </head>
 <body>
@@ -549,13 +558,13 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
 <section class="light pricing" id="pricing">
   <div class="wrap pricing-grid">
     <div class="reveal">
-      <span class="eyebrow">Pricing · pilot price</span>
-      <h2>Simple pricing, <em class="a">mostly from sales.</em></h2>
-      <p class="price-note"><span class="ill">Hypothesis</span>Tested in pilots. Partner costs passed through at cost.</p>
+      <span class="eyebrow">Pricing</span>
+      <h2>Paid mostly <em class="a">from what we sell.</em></h2>
+      <p class="price-note">Pilot terms are agreed with each brand. <a href="mailto:cathyqliu1@gmail.com?subject=Thread%20Futures%3A%20pilot%20terms">Ask us for pilot terms</a></p>
     </div>
     <div class="prices">
-      <article class="price reveal"><small>First batch</small><div class="amt">£1,000</div><div class="plus">set-up fee + 15% of sales</div><p>One batch to try it. You keep ownership until it's sold.</p></article>
-      <article class="price dark reveal" style="--d:.1s"><small>Regular clients</small><div class="amt">£500–1.5k</div><div class="plus">a month + 10% of sales</div><p>Every season's leftover stock, priced by brand size.</p></article>
+      <article class="price reveal"><small>First batch</small><div class="amt" style="font-size:clamp(1.6rem,3vw,2.2rem)">Try one batch</div><div class="plus">A small set-up fee, then a share of what we sell</div><p>You keep ownership of the stock until it's sold.</p></article>
+      <article class="price dark reveal" style="--d:.1s"><small>Regular clients</small><div class="amt" style="font-size:clamp(1.6rem,3vw,2.2rem)">Season plan</div><div class="plus">Sized to your brand, plus a share of sales</div><p>Every season's leftover stock, handled the same way.</p></article>
     </div>
   </div>
 </section>
@@ -575,12 +584,19 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
       </ul>
     </div>
     <div class="team">
-      <article class="founder reveal">
+      <article class="founder founder-full reveal">
         <img src="cathy-liu-480.webp" alt="Cathy Liu, founder of Thread Futures" width="480" height="480" loading="lazy" decoding="async">
-        <div>
+        <div class="fbody">
           <small>Founder</small>
           <h3>Cathy Liu</h3>
-          <p>Seven years as a data analyst in banking, aviation and healthcare; MSc in AI. Ran her own marketing business and hosted meetups for two years.</p>
+          <h4>Why I care</h4>
+          <p class="lead">Over the last five years it feels like we've been buying more than ever. More clothes, more deliveries, more things worn twice and forgotten. What bothers me most is how normal it's become.</p>
+          <p>Perfectly good clothes get shredded or burned because that's cheaper than finding them a home, and most of us never hear about it. I don't think the answer is making people feel guilty. I think it's making the better option the easy one: finding every item a second life, and being able to show where it went.</p>
+          <p>I've spent my career turning messy data into things people can act on, and I studied AI because I wanted to understand the technology behind the decisions we're starting to hand over to it. Thread Futures is me pointing those skills at a problem I actually care about: using what we already have, instead of making more of what nobody buys.</p>
+          <h4>A bit about me</h4>
+          <p>I'm Cathy Liu, a data analyst from California, now in London. I spent seven years as a data analyst, building forecasts and analytics where mistakes cost real money: healthcare data at Gaine, treasury at Bank of Hawaii, then workforce analytics at Hawaiian Airlines. I recently finished an MSc in AI and Data Analytics (Merit) at Northeastern University London, where my dissertation tested whether AI models ask the right questions before giving financial advice, and I build projects constantly because I'm curious.</p>
+          <p>I've always enjoyed working with people. From September 2023 to August 2025 I ran Cat Liu Media, my own digital marketing business, where I found five clients myself, wrote every proposal and pitched myself as my own company, delivering Google Ads, Analytics and SEO work. I have also hosted meetup groups for two years. I'm extremely passionate about sustainability, and I want sustainable choices to become the norm.</p>
+          <p class="hire"><b>Looking for:</b> a co-founder with fashion operations experience.</p>
           <div class="row">
             <a class="lk" href="https://www.linkedin.com/in/cathyqliu" target="_blank" rel="noopener">LinkedIn</a>
             <a class="lk" href="mailto:cathyqliu1@gmail.com">Email</a>
@@ -588,15 +604,6 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
           </div>
         </div>
       </article>
-      <aside class="support reveal" style="--d:.1s">
-        <h3>Supported by</h3>
-        <ul>
-          <li>NU London Startup Hub</li>
-          <li>Barclays Eagle Labs Demo Directory</li>
-          <li>NatWest Digital Boost</li>
-        </ul>
-        <p class="hire"><b>Hiring:</b> a co-founder from fashion operations.</p>
-      </aside>
     </div>
   </div>
 </section>
