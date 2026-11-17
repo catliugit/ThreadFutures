@@ -6,7 +6,7 @@
 Puts the offcut forecast, stall risk and regulation search behind one web service.
 
 ## Why it matters
-Turns notebooks into something other systems can call. Deployment skills were the most common gap in the tracker.
+Turns notebooks into something other systems can call. Part of the founder's technical proof, not the product; the batch report prototype (part 18) will use the same FastAPI, validation and testing approach.
 
 ## Data
 Models saved by parts 1 and 4; regulation text from part 7.
@@ -18,7 +18,7 @@ FastAPI with Pydantic input validation. Endpoints: /health, /v1/offcuts/forecast
 FastAPI, Pydantic, uvicorn, pytest, httpx
 
 ## Result
-23 pytest tests passing across the offcut engine, stock analytics and API (bad inputs return 422).
+23 pytest tests (6 API, 12 offcut, 5 stock analytics) passing, confirmed in the CI run of 17 Nov 2026; bad inputs return 422.
 
 ## Honest limits
 Not deployed to a public cloud yet (part 17).

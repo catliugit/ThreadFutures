@@ -10,7 +10,7 @@
 
 Does the project run anywhere, not just on my laptop, and does every change get checked automatically?
 
-A fashion brand (or anyone hiring me) cares because a model that only works on one machine can't be handed over, deployed or trusted. Continuous integration proves on every push that the tests pass, the service builds into a container, and the container actually answers a real request.
+A fashion brand, a programme or an investor's technical adviser cares because a model that only works on one machine can't be handed over, deployed or trusted. Continuous integration proves on every push that the tests pass, the service builds into a container, and the container actually answers a real request.
 
 ---
 
@@ -203,7 +203,7 @@ Keys belong in the CI platform's encrypted secrets, never in the workflow file. 
 
 - **Per the summary and the commit history:** the first CI run passed on 9 Nov 2026: tests green, image built, API answered the forecast request. The commit after adding CI is titled "Docker build now verified in CI: update site and README" (`cbd22be`).
 - **Two jobs:** `test` (pytest) then `docker` (build, run, poll `/health`, POST a forecast).
-- **Tests run:** 22 at the time of the first CI run. The repo now has 23 (one more parity test was added in a later commit, `c2d6285`; see part 09). I haven't seen the CI log for the latest commit, so check the Actions page before quoting 23.
+- **Tests run:** 22 at the time of the first CI run. The repo now has 23 (one more parity test was added in a later commit, `c2d6285`; see part 09). Checked on 17 Nov 2026: the latest run on main reports "23 passed", and the smoke test returned `{"status":"ok"}` and a forecast with P50 960.7 kg (simulated data).
 - **Image contents:** the API code, two model files, the regulation corpus and the sample recycler list. No raw data, warehouse, tests or secrets.
 
 ---

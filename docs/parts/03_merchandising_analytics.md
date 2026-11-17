@@ -6,7 +6,7 @@
 Shows which lines are selling, slowing or stopped, with the classic merchandising views.
 
 ## Why it matters
-Unsold stock is a merchandising problem first. This is also the domain gap flagged by merchandising analyst roles (e.g. Aqilea).
+Unsold stock is a merchandising problem first: slowing and stopped lines are the stock a brand will later need a home for. Proof of build, not the product.
 
 ## Data
 dbt marts built in part 2.

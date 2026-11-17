@@ -1,6 +1,6 @@
 # Part 01: Offcut forecasting, step by step
 
-**Status:** Built · **Data label:** SIMULATED cutting runs (not factory data)
+**Status:** Built, now parked (an earlier idea, kept as proof of build; not part of the current resale service) · **Data label:** SIMULATED cutting runs (not factory data)
 **Code:** `src/offcut/` (simulate.py, garments.py, nesting.py, pipeline.py, train.py, export.py), `site/forecast.js`
 **Numbers from:** `models/metrics.json`, `data/staged/quality_report.json`
 
@@ -318,7 +318,7 @@ From `data/staged/quality_report.json`: 8,000 rows, no contract violations, mean
 **What it taught me:** when you move a model between languages, "nearly the same" is not the same. You need a parity test that proves the exported model gives the same answers as the original, especially at boundaries.
 
 ### The marker gap was bigger than I expected
-The marker misses about a quarter of the weighed volume in simulation (bias -4.4 pp on an average of about 19%). That's the case for the product: planning on the marker figure leaves a recycler short.
+The marker misses about a quarter of the weighed volume in simulation (bias -4.4 pp on an average of about 19%). Planning on the marker figure alone would leave a buyer of the offcuts short.
 
 ### Coverage slightly under target
 The P10 to P90 range covers 76.8%, not 80%. It's a small miss but a real one. A fix would be conformal calibration of the interval or slightly widening it, checked on held-out data.
@@ -327,8 +327,8 @@ The P10 to P90 range covers 76.8%, not 80%. It's a small miss but a real one. A 
 
 ## 6. Honest limits
 
-- **Simulated, not factory data.** The simulator is calibrated to published ranges (marker efficiency, roll lengths, selvedge widths), but it's still my model of reality. The first pilot goal is ±15% on real weighed offcuts.
-- **Not a customer.** No factory has used this yet.
+- **Simulated, not factory data.** The simulator is calibrated to published ranges (marker efficiency, roll lengths, selvedge widths), but it's still my model of reality. If the idea were picked up again, the first goal would be ±15% on real weighed offcuts.
+- **Not a customer, and parked.** No factory has used this.
 - The nesting is a rectangle approximation with a calibration factor, not commercial nesting software.
 - Five garment types and four fibres. A real factory has many more styles.
 - Coverage is 76.8% against an 80% target.

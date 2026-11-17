@@ -1,6 +1,6 @@
 # Thread Futures: all parts
 
-One file per part. Parts 1 to 10 are built and public at https://github.com/catliugit/ThreadFutures: they are the founder's technical proof, not the product. Parts 11 to 18 are planned. Part 18, the batch and destination file prototype, is the first build of the service's batch report (check, sell or donate or recycle, report) and is next. Part 1 (Offcut Forecast) is a parked earlier idea on simulated data.
+One file per part. Parts 1 to 10 are built and public at https://github.com/catliugit/ThreadFutures: they are the founder's technical proof, not the product. Parts 11 to 18 are planned. Part 18, the batch report prototype, is the first build of the actual product (check, sell or donate or recycle, report) and comes next, after the validation interviews. Part 1 (Offcut Forecast) is a parked earlier idea on simulated data.
 
 | # | Part | Status | Label |
 |---|---|---|---|
@@ -21,6 +21,6 @@ One file per part. Parts 1 to 10 are built and public at https://github.com/catl
 | 15 | [Seasonality fix](15_seasonality_fix.md) | Planned | Planned |
 | 16 | [Markdown pricing (Bayesian)](16_markdown_pricing_bayesian.md) | Planned | Planned |
 | 17 | [Azure deploy](17_azure_deploy.md) | Planned | Planned |
-| 18 | [Batch and destination file prototype](18_batch_and_destination_file_prototype.md) | Planned | Planned (Mon 16 – Thu 19 Nov 2026, next) |
+| 18 | [Batch report prototype](18_batch_and_destination_file_prototype.md) | Planned | Planned (next, after validation interviews) |
 
-Numbers come from the repo's models/*.json files and were last checked on 9 Nov 2026.
+Numbers come from the repo's models/*.json files and were last checked on 17 Nov 2026 (parts 7 to 10 against models/*.json, tests/ and the CI log of 17 Nov 2026: 23 tests passed).

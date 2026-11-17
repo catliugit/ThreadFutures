@@ -8,9 +8,9 @@
 
 ## 1. The question this stage answers
 
-Two questions. A: do markdowns actually clear stock, or would those products have sold anyway? B: if Thread Futures runs a pilot routing unsold stock to better buyers, how many batches would it need to prove it recovers more money than the brand's usual liquidator?
+Two questions. A: do markdowns actually sell more units, or would those products have sold anyway? B: if Thread Futures sells some of a brand's unsold batches to vetted buyers and the brand's usual liquidator takes the others, how many batches would it take to show we return more money?
 
-A fashion brand cares because markdowns cost margin, and it only makes sense to pay for a routing service if the uplift is proven, not just claimed. Both questions are about telling cause from coincidence.
+A fashion brand cares because markdowns cost margin, and it only makes sense to pay for a resale service if the extra money back is shown, not just claimed. Both questions are about telling cause from coincidence.
 
 ---
 
@@ -137,7 +137,7 @@ def pilot_design(seed: int = 3) -> dict:
 - Welch's t-test: compares the means without assuming equal variances.
 - Bootstrap: resample each arm with replacement 5,000 times, record the difference in means, and take the 2.5th and 97.5th percentiles as a 95% confidence interval.
 
-**Why simulate:** to check the analysis plan works end to end before any real pilot, and to show a buyer what the result would look like.
+**Why simulate:** to check the analysis plan works from start to finish before any real batches, and to show a buyer what the result would look like.
 
 ---
 
@@ -267,7 +267,7 @@ The 64 batches come straight from three numbers I chose. If the true SD were lar
 - Price changes may partly reflect wholesale order mix (list price is the mode of small-order prices, but wholesale share can still shift).
 - Only one markdown threshold (15%) and one window (4 weeks) tested.
 - Matching is on pre-period level only, not trend.
-- **Part B is simulated.** The 8p, 11p and 6p are planning assumptions. A real pilot replaces them.
+- **Part B is simulated.** The 8p, 11p and 6p are planning assumptions. Real batches would replace them; no stock has been sold yet.
 - The simulated pilot is one draw; another seed gives a different uplift and interval.
 
 ---

@@ -6,7 +6,7 @@
 Checks whether the stall-risk model is still accurate and whether new data still looks like the training data.
 
 ## Why it matters
-Models drift as seasons and ranges change. Forecast monitoring was a named requirement in the Relay application.
+Models drift as seasons and ranges change. Proof of build, not the product: it shows how any model behind the service would be kept honest.
 
 ## Data
 Later launch quarters the model never trained on (2010 Q4, 2011 Q1, 2011 Q2).

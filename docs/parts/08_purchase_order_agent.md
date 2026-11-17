@@ -6,7 +6,7 @@
 Reads a messy production order note, states its assumptions, and calls tested tools for every number.
 
 ## Why it matters
-Real orders arrive as emails and messages. The agent does the language work; code does the maths, so results are reproducible.
+Real orders arrive as emails and messages. The agent does the language work; code does the maths, so results are reproducible. Part of the founder's technical proof, not the product; the same pattern could later turn brands' messy stock lists into batch records for the batch report (part 18).
 
 ## Data
 Free-text order notes.
