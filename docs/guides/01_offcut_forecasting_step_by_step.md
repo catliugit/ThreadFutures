@@ -1,6 +1,6 @@
 # Part 01: Offcut forecasting, step by step
 
-**Status:** Built, now parked (an earlier idea, kept as proof of build; not part of the current resale service) · **Data label:** SIMULATED cutting runs (not factory data)
+**Status:** Built, parked. Earlier exploratory work for a previous idea (garment factories), not the product; kept as proof of build · **Data label:** SIMULATED cutting runs (not factory data)
 **Code:** `src/offcut/` (simulate.py, garments.py, nesting.py, pipeline.py, train.py, export.py), `site/forecast.js`
 **Numbers from:** `models/metrics.json`, `data/staged/quality_report.json`
 

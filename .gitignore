@@ -21,3 +21,6 @@ dbt/logs/
 dbt/dbt_packages/
 logs/
 models/_test_export.json
+
+# dbt writes an anonymous per-machine id here
+dbt/.user.yml

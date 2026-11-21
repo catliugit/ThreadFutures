@@ -1,6 +1,6 @@
 # Thread Futures part 01: Offcut forecasting
 
-**Status:** Built, now parked (an earlier idea, not part of the current resale service) · **Label:** Simulated data  
+**Status:** Built, parked. Earlier exploratory work for a previous idea (garment factories), not the product · **Label:** Simulated data  
 
 ## In one line
 Forecasts how many kilograms of fabric offcuts a planned cutting run will produce, as a low, likely and high range, before any fabric is cut.

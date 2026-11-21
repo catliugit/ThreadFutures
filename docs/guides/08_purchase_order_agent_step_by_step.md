@@ -1,6 +1,6 @@
 # Part 08: Purchase-order agent, step by step
 
-**Status:** Built · **Data label:** Prototype. The forecast it calls is trained on SIMULATED cutting runs (part 01). Recycler profiles are fictional samples.
+**Status:** Built, parked. Earlier exploratory work for a previous idea (garment factories), not the product · **Data label:** Prototype. The forecast it calls is trained on SIMULATED cutting runs (part 01). Recycler profiles are fictional samples.
 **Code:** `src/offcut/agent.py`, `src/offcut/service.py`, `src/offcut/grading.py`, `src/offcut/matching.py`, `data/recyclers_sample.json`
 **Tests:** `tests/test_offcut.py` (TestModelExport::test_service_plan, test_service_rejects_bad_order, TestGradingMatching)
 

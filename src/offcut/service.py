@@ -1,4 +1,6 @@
-"""End-to-end service: production order -> forecast -> graded lots -> recycler matches.
+"""Offcut planning service: production order -> forecast -> graded lots -> recycler matches.
+
+Earlier exploratory work for a previous idea (garment factories), not the product.
 
 Uses the exported JSON model (no scikit-learn needed at serving time), so the
 same model runs here, in the agent's tools, and in the browser.

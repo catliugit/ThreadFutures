@@ -1,6 +1,6 @@
 # Thread Futures part 08: Purchase-order agent
 
-**Status:** Built · **Label:** Prototype  
+**Status:** Built, parked. Earlier exploratory work for a previous idea (garment factories), not the product · **Label:** Prototype  
 
 ## In one line
 Reads a messy production order note, states its assumptions, and calls tested tools for every number.
