@@ -434,6 +434,36 @@ footer{background:#0F1817;color:var(--on-dark-2);padding:40px 0;font-size:.8rem}
 }
 .mk .n{width:auto;padding:0 12px;font-size:1.1rem}
 .step p a,.datanote p a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+/* AI & data advantage */
+.ai{background:radial-gradient(800px 420px at 100% 0%,rgba(25,127,112,.42),transparent 60%),var(--ink);color:#fff}
+.ai .sec-head .lede{color:var(--on-dark)}
+.ai .eyebrow{color:var(--lime)}
+.ai-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ai-col{border-radius:var(--r);padding:26px 24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14)}
+.ai-col.b{border:1px solid rgba(217,241,126,.55)}
+.ai-col.p{border:1.5px dashed rgba(181,217,200,.55)}
+.ai-col.l{border:1.5px dotted rgba(181,217,200,.45)}
+.ai-col h3{margin:14px 0 4px;font-size:1.2rem}
+.ai-col .sub{font-size:.8rem;color:var(--on-dark-2)}
+.ai-col ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:12px;font-size:.88rem;color:var(--on-dark)}
+.ai-col li{padding-left:16px;position:relative;line-height:1.5}
+.ai-col li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--mint)}
+.ai-col li b{color:#fff;font-weight:650}
+.sc{display:inline-block;font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:99px}
+.sc.b{background:var(--lime);color:var(--ink)}
+.sc.p{border:1px dashed var(--mint);color:var(--mint)}
+.sc.l{border:1px dotted var(--on-dark-2);color:var(--on-dark)}
+.moat{margin-top:14px;display:grid;grid-template-columns:auto 1fr;gap:18px 26px;align-items:start;border-radius:var(--r);padding:26px 28px;background:var(--lime);color:var(--ink)}
+.moat .k{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding-top:3px}
+.moat p{font-size:.95rem}
+.moat ul{margin:10px 0 0;padding-left:18px;font-size:.9rem}
+.moat li{margin:4px 0}
+.ai-qa{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ai-qa div{border-radius:var(--r);padding:22px 24px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03)}
+.ai-qa b{display:block;color:var(--lime);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.ai-qa p{font-size:.9rem;color:var(--on-dark)}
+@media(max-width:1040px){.ai-cols{grid-template-columns:1fr}}
+@media(max-width:760px){.moat{grid-template-columns:1fr;gap:8px;padding:22px}.ai-qa{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -443,7 +473,7 @@ footer{background:#0F1817;color:var(--on-dark-2);padding:40px 0;font-size:.8rem}
     <a class="brand" href="index.html" aria-label="Thread Futures home"><span class="wm-a">thread</span> <span class="wm-b">futures</span></a>
     <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="links">Menu</button>
     <nav class="links" id="links" aria-label="Main">
-      <a href="#brief">In brief</a><a href="#market">Market</a><a href="#model">Model</a><a href="#competition">Competition</a><a href="#ask">Ask</a><a href="#plan">Plan</a>
+      <a href="#brief">In brief</a><a href="#market">Market</a><a href="#model">Model</a><a href="#ai">AI &amp; data</a><a href="#competition">Competition</a><a href="#ask">Ask</a><a href="#plan">Plan</a>
       <a class="btn btn-lime btn-sm" href="index.html#contact">Contact us</a>
     </nav>
   </div>
@@ -529,6 +559,38 @@ footer{background:#0F1817;color:var(--on-dark-2);padding:40px 0;font-size:.8rem}
       <article class="step reveal"><div class="n">4</div><h3>A funded EU charity network</h3><p>Vetted entities with paid logistics are costly to rebuild.</p></article>
       <article class="step reveal"><div class="n">5</div><h3>Programmes, not deals</h3><p>Annual programmes; "bring your own buyer" still logged through us for a smaller fee.</p></article>
       <article class="step reveal"><div class="n">6</div><h3>Data back to the brand</h3><p>What sold where and why it didn't sell: buy less of this next season.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec ai" id="ai">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><div class="eyebrow">AI &amp; data advantage</div><h2>A service business that <span class="serif">gets smarter with every batch.</span></h2></div><p class="lede">People handle trust, contracts and the physical work. AI handles the work that grows with volume: reading stock lists, matching lots to buyers and drafting the records. Each batch also adds outcome data that no single brand holds. The labels below say honestly what exists today.</p></div>
+    <div class="ai-cols">
+      <article class="ai-col b reveal"><span class="sc b">Built · prototype</span><h3>Today</h3><p class="sub">Working prototypes from our earlier technical work</p><ul>
+        <li><b>Regulation search</b> over the EU ecodesign rules (ESPR): finds the passages that answer a question, and a check rejects any citation to a passage it did not retrieve.</li>
+        <li><b>Stall-risk model:</b> an early-warning approach that flags lines likely to stop selling. Proven on real UK retail data, not fashion (ROC AUC 0.81 vs 0.60 for a simple rule).</li>
+      </ul></article>
+      <article class="ai-col p reveal"><span class="sc p">In pilots · hand-run first</span><h3>Next</h3><p class="sub">Not built yet. Pilots run by hand first; AI is added where it saves hours</p><ul>
+        <li><b>Messy stock lists and photos into batch records:</b> a language model extracts SKU, size, condition and fibre.</li>
+        <li><b>Categorise items</b> and suggest a route: sale first, then donation, recycling last.</li>
+        <li><b>Match lots to buyers</b> using each buyer's acceptance rules.</li>
+        <li><b>Draft the batch report</b> and the rows for the EU disclosure table, for a person to review.</li>
+      </ul></article>
+      <article class="ai-col l reveal"><span class="sc l">Later · needs pilot data</span><h3>With scale</h3><p class="sub">Only possible once real batches have run</p><ul>
+        <li><b>Recovery-price prediction</b> for each lot, before it is offered.</li>
+        <li><b>Buyer routing optimisation</b> across the network.</li>
+        <li><b>Prevention insight</b> for brands: what not to make. This is our path to impact at 10 Mt CO₂e a year or more.</li>
+      </ul></article>
+    </div>
+    <div class="moat reveal"><div class="k">The moat</div><div><p><b>The data and the network, not the model.</b> Anyone can use the same AI models. What compounds is what only running the service produces:</p><ul>
+      <li>Outcome data across brands: what didn't sell, why, where it went and at what price.</li>
+      <li>A network of vetted buyers and charities, with their acceptance rules and prices.</li>
+      <li>The evidence trail made at each handover, which can't be rebuilt after the fact.</li>
+    </ul></div></div>
+    <div class="ai-qa">
+      <div class="reveal"><b>Why can't ChatGPT do this?</b><p>It can read a stock file. It can't find a buyer for 3,000 pairs of size 44–46 trainers this week, arrange the collection, or prove three donation offers were made. That knowledge sits with buyers and charities, and the evidence exists only if someone runs the process. We use the same models; what we add is the network, the handovers and the data they create.</p></div>
+      <div class="reveal"><b>Guardrails</b><p>A person reviews anything a brand signs off. We don't claim automation that doesn't exist: each step is marked built, in pilots or later. Brand data is handled under contract.</p></div>
     </div>
   </div>
 </section>
