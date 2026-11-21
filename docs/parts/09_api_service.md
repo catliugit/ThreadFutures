@@ -6,7 +6,7 @@
 Puts the offcut forecast, stall risk and regulation search behind one web service.
 
 ## Why it matters
-Turns notebooks into something other systems can call. Part of the founder's technical proof, not the product; the batch report prototype (part 18) will use the same FastAPI, validation and testing approach.
+Turns notebooks into something other systems can call. Part of the earlier, exploratory technical work, not the product; if the batch report prototype (part 18) is ever built, it would use the same FastAPI, validation and testing approach.
 
 ## Data
 Models saved by parts 1 and 4; regulation text from part 7.

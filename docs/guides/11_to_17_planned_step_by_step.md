@@ -4,7 +4,7 @@
 
 Parts are ordered by priority. Effort estimates come from the subproject summaries.
 
-Parts 11 to 17 extend the founder's technical proof; they are not the product. Part 18, the batch report prototype (`docs/parts/18_batch_and_destination_file_prototype.md`), is the first build of the actual product and comes before these, after the validation interviews.
+Parts 11 to 17 extend the earlier, exploratory technical work; they are not the product and none is scheduled. Part 18, the batch report prototype (`docs/parts/18_batch_and_destination_file_prototype.md`), would come before these, but it is planned, not built: nothing new is built before the Fri 26 Feb 2027 go / pivot / stop decision, and any early pilot runs by hand (spreadsheet and email).
 
 | # | Part | Skills it adds | Effort | Done when |
 |---|---|---|---|---|

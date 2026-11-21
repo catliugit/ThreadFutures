@@ -6,7 +6,7 @@
 On every push, GitHub Actions runs the tests, builds the Docker image and calls the running API.
 
 ## Why it matters
-Shows the work runs anywhere, not just on one laptop. Part of the founder's technical proof, not the product; the batch report prototype (part 18) will be tested and built the same way.
+Shows the work runs anywhere, not just on one laptop. Part of the earlier, exploratory technical work, not the product; if the batch report prototype (part 18) is ever built, it would be tested and built the same way.
 
 ## Data
 n/a

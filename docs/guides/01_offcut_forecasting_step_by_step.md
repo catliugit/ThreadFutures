@@ -349,7 +349,7 @@ make site       # copies models/pre_marker_model.json into site/model.js
 make test       # runs the pytest suite, including the export parity test
 ```
 
-Try one forecast end to end (forecast, graded lots, recycler matches):
+Try one full forecast run (forecast, graded lots, recycler matches):
 
 ```bash
 PYTHONPATH=src python -m offcut.service

@@ -60,7 +60,7 @@ class TestContract(unittest.TestCase):
         self.assertIn("offcut_ratio", problems)
 
 
-@unittest.skipUnless(MODEL.exists(), "run `make train` first")
+@unittest.skipUnless(MODEL.exists(), "run `make offcuts` first")
 class TestModelExport(unittest.TestCase):
     def test_json_matches_sklearn(self):
         """The exported JSON trees must reproduce scikit-learn's predictions."""

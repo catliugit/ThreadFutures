@@ -6,7 +6,7 @@
 Asks two questions: do markdowns actually sell more units, and how many batches a fair comparison would need to show that selling through Thread Futures returns more money to a brand than a liquidator?
 
 ## Why it matters
-Brands will only pay if the recovery uplift is proven.
+We believe brands will only pay if the recovery uplift is shown (to test).
 
 ## Data
 Markdowns: real weekly sales from part 2. Pilot: simulated, from stated planning assumptions.

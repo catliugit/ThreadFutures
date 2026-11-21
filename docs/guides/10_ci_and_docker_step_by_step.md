@@ -189,7 +189,7 @@ Running as an unprivileged user limits damage if the app is compromised. A stand
 Like `.gitignore`, but for what gets sent to Docker when building. Keeps images small and secrets out.
 
 ### Smoke test
-**Definition:** a quick end-to-end check that the system basically works ("does it turn on without smoke?"). Not a full test suite.
+**Definition:** a quick whole-system check that the system basically works ("does it turn on without smoke?"). Not a full test suite.
 
 ### Container registry
 **Definition:** a store for images (GitHub Container Registry, Docker Hub, Azure Container Registry), so other machines can pull and run them. Not used yet.
@@ -275,7 +275,7 @@ View CI runs at github.com/catliugit/ThreadFutures/actions (the badge at the top
 - **HEALTHCHECK:** Docker's liveness probe.
 - **EXPOSE / port mapping:** declared port / host-to-container port link.
 - **`.dockerignore`:** files excluded from the build.
-- **Smoke test:** quick end-to-end "does it work at all" check.
+- **Smoke test:** quick whole-system "does it work at all" check.
 - **Container registry:** a store for images.
 - **CI badge:** a status image showing the latest build result.
 - **Secret:** a credential stored encrypted, never in code.

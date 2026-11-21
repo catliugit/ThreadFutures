@@ -1,6 +1,6 @@
 # Thread Futures: step-by-step guides
 
-Parts 1 to 10 are the founder's technical proof that she can build, not the product (Thread Futures is a B2B resale service for fashion brands' unsold stock). Part 18, the batch report prototype, is the first build of the actual product; it is planned and described in `docs/parts/18_batch_and_destination_file_prototype.md`.
+Parts 1 to 10 are earlier, exploratory technical work, not the product (Thread Futures is a B2B resale service for fashion brands' unsold stock). Part 18, the batch report prototype, would be the first piece of product software; it is planned, not built, not being built before the Fri 26 Feb 2027 decision, and described in `docs/parts/18_batch_and_destination_file_prototype.md`.
 
 Each built part of Thread Futures explained from the ground up: the question it answers, the pipeline step by step with real code from this repo, every concept from scratch, the real results, what went wrong, honest limits, how to run it, and a glossary.
 

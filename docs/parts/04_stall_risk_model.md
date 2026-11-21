@@ -6,7 +6,7 @@
 From a line's first 12 weeks on sale, predicts whether its sales are about to collapse, which is the line most likely to end up as unsold stock.
 
 ## Why it matters
-Brands need to act while there is still time. This is the early-warning signal for the unsold-stock workflow.
+Brands need to act while there is still time. This is the early-warning signal for the unsold-stock workflow: an optional later idea, trained on non-fashion data and not validated for brands, and not being developed before the 26 Feb 2027 decision.
 
 ## Data
 1,319 SKUs whose launch is observed and whose outcome window is complete. Target: average weekly units in weeks 12 to 25 below 20% of the first 12 weeks.

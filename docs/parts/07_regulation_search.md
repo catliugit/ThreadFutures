@@ -6,7 +6,7 @@
 Finds the paragraph of EU law that answers a question about unsold products, and only accepts an AI answer if every citation is one of the passages it found.
 
 ## Why it matters
-Brands ask which exception applies to a batch. Answers must be traceable to the article, not invented. Part of the founder's technical proof, not the product; later it could check the legal references in a batch report (part 18).
+Brands ask which exception applies to a batch. Answers must be traceable to the article, not invented. Part of the earlier, exploratory technical work, not the product; later it could check the legal references in a batch report (part 18).
 
 ## Data
 Regulation (EU) 2024/1781 (ESPR): Articles 23 to 26, key Article 2 definitions, Annex VII. 22 passages. © European Union, EUR-Lex.
