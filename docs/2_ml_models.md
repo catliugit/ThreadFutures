@@ -571,7 +571,7 @@ df["split"] = (df["first_sale_week"] < pd.Timestamp(TRAIN_BEFORE)).map({True: "t
 - Line 3: **stalled** = late weekly sales below 20% of early weekly sales. Sold 50 a week early, then under 10 a week: stalled.
 - Line 4: train on launches before 1 October 2010, test on later launches.
 
-**Why time-based:** in real life you train on the past and predict the future. A random split would let the model learn from products launched after the ones it's tested on, which flatters it.
+**Why time-based:** in real life you train on the past and predict the future. A random split would let the model learn from products launched after the ones it's tested on, which flatters it. One gap remains: the split is by launch date only, with no embargo for the 26-week outcome window. A line launched in September 2010 is labelled from weeks 12 to 25, which run to about March 2011 and overlap the test period, so the result is slightly optimistic. Adding a 26-week gap before the test period would fix it.
 
 ##### Step 5. Train gradient boosting and a simple rule, tracked in MLflow
 
@@ -751,6 +751,7 @@ Without `LAST_LAUNCH`, products launched late in 2011 would look stalled simply 
 
 - **Real open data, not fashion and not a customer.** Gift and homeware retail has different seasons and life cycles from fashion.
 - Small test set (423 SKUs, about 45 stalls), so the metrics have real uncertainty. I haven't reported confidence intervals on the AUC; bootstrapping the test set would give them.
+- The time-based split has no embargo for the 26-week outcome window, so the test result is slightly optimistic (see step 4 above).
 - Over-predicts for spring launches heading into Christmas (part 06). Seasonality fix and calibration planned (part 15).
 - The baseline was rerun with the corrected tie-break on 9 Nov 2026 (section 5); the numbers above are from that run.
 - The 20% stall threshold and 12-week window are choices, not tuned to a business decision.

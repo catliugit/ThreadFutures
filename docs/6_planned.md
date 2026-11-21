@@ -310,7 +310,7 @@ The 2011 Q2 gap between predicted (14%) and actual (1.7%) stall rate shrinks.
 
 1. Fix the rule baseline tie-break sign in `train_stall.py` first (see part 04 guide), so comparisons are fair.
 2. Add seasonal features to `features.py` (weeks to Christmas from launch, share of the outcome window in Q4).
-3. Retrain; log as a new MLflow run so it can be compared with run `5dd66097c6e54d829c5e8004c37580fa`.
+3. Retrain; log as a new MLflow run so it can be compared with run `588d9d4399eb4ce0be3deed3809a0b84` (the current stall-risk run, version 2).
 4. Hold out the most recent training launches as a calibration set; fit Platt and isotonic; compare Brier scores.
 5. Rerun `make monitor`; compare predicted vs actual stall rate per quarter with the current 27.2% vs 21.1%, 20.0% vs 7.1% and 13.6% vs 1.7% (from `models/monitoring.json`).
 6. Fix the PSI function for low-cardinality features while there (part 06 guide).

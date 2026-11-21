@@ -34,7 +34,7 @@ We believe brands will only pay if the recovery uplift is shown (to test).
 Markdowns: real weekly sales from part 2. Pilot: simulated, from stated planning assumptions.
 
 ### Method
-Stacked difference-in-differences: 768 products whose list price first dropped 15% or more, each compared with the 5 never-marked-down products from the same launch cohort with the most similar pre-period sales, over the same calendar weeks (4 before, 4 after), with standard errors clustered by product. A placebo test on the pre-period checks parallel trends. Pilot: power analysis (Welch t-test), then one simulated pilot with a bootstrap confidence interval.
+Stacked difference-in-differences: 768 products whose list price first dropped 15% or more, each compared with the 5 never-marked-down products from the same launch cohort with the most similar pre-period sales, over the same calendar weeks (4 before, 4 after), with standard errors clustered by product. A placebo test on the pre-period checks parallel trends. Pilot: power analysis (pooled-variance two-sample t-test, statsmodels `TTestIndPower`), then one simulated pilot analysed with Welch's t-test and a bootstrap confidence interval.
 
 ### Tools
 statsmodels, SciPy, DuckDB, pandas, NumPy
@@ -581,10 +581,10 @@ The 175 + 70 + 178 SKUs add up to the 423 test SKUs in part 04.
 
 **How to read it:**
 
-- **Ranking holds in two of three quarters** (0.81 and 0.84). 2011Q1 drops to 0.65, but it has only 70 SKUs (about 5 stalls at 7.1%), so that AUC is very noisy.
+- **Ranking holds in 2010Q4** (0.81). 2011Q1 drops to 0.65, but it has only 70 SKUs (about 5 stalls at 7.1%), so that AUC is very noisy. The 0.84 in 2011Q2 rests on only about 3 stalls among 178 lines (1.7%), so AUC is not reliable for that quarter either.
 - **Calibration drifts badly.** The model over-predicts in every quarter, and the gap widens: 27% vs 21%, then 20% vs 7%, then 14% vs 1.7%. For 2011 Q2 launches, the model expected about 1 in 7 to stall and only about 1 in 60 did. Those spring lines' weeks 12 to 25 ran into the Christmas season (from late summer onwards), when sales rise instead of collapsing.
 - **Inputs shifted a lot.** Later launches sold more per week, to more customers, with fewer zero weeks than the training launches.
-- **launch_month PSI is huge by construction.** Each test quarter contains only three months, while training covers many months, so this "drift" is expected. It's still useful: it tells you the model is being asked about months it saw less of.
+- **launch_month PSI is huge by construction.** Each test quarter contains only three months, while training covers many months, so this "drift" is expected. It's still useful: training launches run only from January to September 2010, so in 2010Q4 the model is being asked about launch months (Oct–Dec) it never saw in training.
 
 ---
 

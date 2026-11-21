@@ -628,14 +628,14 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
     <div class="proof">
       <div><strong class="count" data-to="0.81" data-dec="2">0.81</strong><p><b>Stall-risk model:</b> ROC AUC for spotting lines about to stop selling, vs 0.60 for a simple sales-trend rule (real open retail data, not fashion)</p></div>
       <div><strong class="count" data-to="21" data-dec="0" data-suf="/22">21/22</strong><p><b>Regulation search:</b> right article in the top three results for 21 of 22 test questions</p></div>
-      <div><strong class="count" data-to="45" data-dec="0">45</strong><p>automated checks on the data and code, run on every change</p></div>
+      <div><strong class="count" data-to="23" data-dec="0">23</strong><p>automated tests run on every pull request; 22 dbt data tests run on each build</p></div>
     </div>
     <div class="buildrow">
       <div class="log">
         <div class="log-h">Shipped, and next</div>
         <ol>
           <li><time>9 Nov</time><span>Stall-risk model runs in the browser; click any line to score it</span></li>
-          <li><time>9 Nov</time><span>CI: every change runs the tests, builds the Docker image and calls the API</span></li>
+          <li><time>9 Nov</time><span>CI: every pull request runs the tests, builds the Docker image and calls the API</span></li>
           <li><time>9 Nov</time><span>Monitoring report: drift and calibration by launch quarter</span></li>
           <li><time>9 Nov</time><span>dbt models on 1.06m real sales lines, 22 data tests</span></li>
           <li><time>Later</time><span>Batch-record system for the service (item checks, buyer terms, charity offers and refusals, recycler statements, disclosure rows), built only after hand-run pilots show what is needed. Nothing new is being built before the go, pivot or stop decision on 26 Feb 2027 <span class="tag plan">Planned</span></span></li>
@@ -738,7 +738,7 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
         <p class="lede">This is <b>earlier exploratory work for a previous idea (garment factories), not the product</b>. My first idea (early November 2026) was forecasting how much fabric a cutting run leaves over; the related purchase-order agent in the code repository belongs to the same idea. Both are parked and stay here only as proof I can build.</p>
         <dl class="facts">
           <div><dt>What it is</dt><dd>A forecast of the kg of fabric a cutting run will leave over, with a P10–P90 range, from garment type, fabric, sizes and quantity.</dd></div>
-          <div><dt>Simulated data</dt><dd>The model runs in your browser below. It was trained on 8,000 <b>simulated</b> cutting runs and tested on 1,600 more. It has never seen real factory data.</dd></div>
+          <div><dt>Simulated data</dt><dd>The model runs in your browser below. It was trained on 6,400 <b>simulated</b> cutting runs and tested on 1,600 held-out runs (8,000 in total). It has never seen real factory data.</dd></div>
           <div><dt>Status</dt><dd><b>Parked.</b> Earlier work for a previous idea; not being developed or sold, and not part of the Thread Futures service.</dd></div>
         </dl>
       </div>

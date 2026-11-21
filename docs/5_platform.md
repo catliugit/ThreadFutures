@@ -1,6 +1,6 @@
 # 5. Platform
 
-How the models are served and checked: the FastAPI service (Part 09) and the CI and Docker build that tests it on every push (Part 10).
+How the models are served and checked: the FastAPI service (Part 09) and the CI and Docker build that tests it on every push to main and every pull request (Part 10).
 
 Thread Futures is a B2B resale service for fashion brands: we act as their sales team for stock they can't sell themselves, and give them the money from each sale plus a report of where every item went. The code described here is earlier, exploratory technical work, not the product. Nothing new is built before the go / pivot / stop decision on Fri 26 Feb 2027, and any early pilot runs by hand (spreadsheet and email). See [ARCHITECTURE.md](ARCHITECTURE.md) for how the parts fit together.
 
@@ -335,7 +335,7 @@ curl -s "http://127.0.0.1:8000/v1/regulation/search?q=when%20does%20the%20destru
 **Build state:** Built · **Data label:** Built 9 Nov 2026  
 
 ### In one line
-On every push, GitHub Actions runs the tests, builds the Docker image and calls the running API.
+On every push to main and every pull request, GitHub Actions runs the tests, builds the Docker image and calls the running API.
 
 ### Why it matters
 Shows the work runs anywhere, not just on one laptop. Part of the earlier, exploratory technical work, not the product; if the batch report prototype (part 18) is ever built, it would be tested and built the same way.
@@ -370,7 +370,7 @@ Image is built in CI but not yet pushed to a registry.
 
 Does the project run anywhere, not just on my laptop, and does every change get checked automatically?
 
-A fashion brand, a programme or an investor's technical adviser cares because a model that only works on one machine can't be handed over, deployed or trusted. Continuous integration proves on every push that the tests pass, the service builds into a container, and the container actually answers a real request.
+A fashion brand, a programme or an investor's technical adviser cares because a model that only works on one machine can't be handed over, deployed or trusted. Continuous integration proves on every push to main and every pull request that the tests pass, the service builds into a container, and the container actually answers a real request.
 
 ---
 
@@ -571,7 +571,7 @@ Keys belong in the CI platform's encrypted secrets, never in the workflow file. 
 #### 5. What went wrong or surprised me, and what it taught me
 
 ##### Docker verified only via CI
-I don't have Docker on my laptop, so I've never run the image locally. Instead, CI builds it and calls it on every push. That's honest and it works, but it has a cost: if the build breaks, I debug by pushing and reading logs, which is slow. I'd say that plainly rather than imply I run containers every day.
+I don't have Docker on my laptop, so I've never run the image locally. Instead, CI builds it and calls it on every push to main and every pull request. That's honest and it works, but it has a cost: if the build breaks, I debug by pushing and reading logs, which is slow. I'd say that plainly rather than imply I run containers every day.
 
 **What it taught me:** CI can be a substitute for local tooling, and it's arguably a better proof, because it runs on a clean machine every time.
 
