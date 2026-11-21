@@ -1,5 +1,7 @@
 """Offcut planning agent built on an LLM with tool use.
 
+Earlier exploratory work for a previous idea (garment factories), not the product.
+
 Give it a messy production-order note (an email, a WhatsApp message, a PO
 excerpt). It extracts the order, calls the forecasting, grading and matching
 tools, and drafts a short lot offer a factory could send to a recycler.

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thread Futures | We find new homes for the clothes fashion brands can't sell</title>
-<meta name="description" content="Thread Futures is a B2B resale service for fashion brands. We sell the stock brands can't sell themselves to vetted buyers, without the brand's name and under no-destruction contracts, and give them the money plus a report of where every item went.">
+<title>Thread Futures | B2B resale for fashion brands' unsold stock</title>
+<meta name="description" content="A B2B resale service for fashion brands: we sell the stock you can't sell yourselves to vetted buyers, without your name, and report where every item went.">
 <meta property="og:title" content="Thread Futures | We find new homes for the clothes fashion brands can't sell">
 <meta property="og:description" content="A B2B resale service for fashion brands: we sell unsold stock to vetted buyers, without the brand's name, and report where every item went. Since July 2026, larger brands selling into the EU can't destroy unsold clothes.">
 <meta property="og:url" content="https://threadfutures.com/">
@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="Thread Futures | We find new homes for the clothes fashion brands can't sell">
 <meta name="twitter:description" content="A B2B resale service for fashion brands: we sell unsold stock to vetted buyers, without the brand's name, and report where every item went. Since July 2026, larger brands selling into the EU can't destroy unsold clothes.">
 <meta name="twitter:image" content="https://threadfutures.com/og-image.png">
-<meta property="og:image:alt" content="thread futures wordmark: Every unit a second life, and the proof.">
+<meta property="og:image:alt" content="thread futures wordmark: We find new homes for the clothes fashion brands can't sell.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#173D35">
 <link rel="canonical" href="https://threadfutures.com/">
@@ -111,7 +111,7 @@ section{padding:120px 0;position:relative;scroll-margin-top:60px}
 .hero h1 em.a{display:inline}
 .sub{font-size:clamp(1.08rem,1.5vw,1.25rem);color:var(--muted);max-width:27em;line-height:1.5}
 .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-.hero-for{margin-top:28px;font-size:.86rem;color:var(--muted);display:flex;align-items:center;gap:10px}
+.hero-for{margin-top:28px;font-size:.86rem;color:var(--muted);max-width:30em}
 .hero-for b{color:var(--text);font-weight:700}
 
 /* flow visual */
@@ -295,6 +295,18 @@ section{padding:120px 0;position:relative;scroll-margin-top:60px}
 .cta-band .btn-ghost{color:var(--forest);box-shadow:inset 0 0 0 1.5px rgba(23,61,53,.4)}
 .cta-band .btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--forest)}
 .cta-band :focus-visible{outline-color:var(--forest)}
+.contact-grid{position:relative;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:48px;align-items:start}
+.cform{background:var(--paper);color:var(--ink);border-radius:var(--r);padding:28px;box-shadow:0 30px 60px -36px rgba(15,42,35,.55);display:grid;gap:16px}
+.frow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.fld{display:grid;gap:6px;min-width:0}
+.fld label{font-size:.88rem;font-weight:800;color:var(--forest)}
+.fld .opt{font-weight:600;color:var(--ink-2)}
+.fld input,.fld select,.fld textarea{width:100%;min-height:48px;font:inherit;font-size:1rem;color:var(--ink);background:#fff;border:1.5px solid var(--hair-l);border-radius:12px;padding:10px 14px}
+.fld textarea{resize:vertical;min-height:120px}
+.fld input:focus-visible,.fld select:focus-visible,.fld textarea:focus-visible{outline:3px solid var(--forest);outline-offset:1px;border-color:var(--forest)}
+.cform .consent{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+.cform .btn{justify-self:start}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
 
 /* footer */
 footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--muted)}
@@ -316,6 +328,7 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
 
 /* responsive */
 @media (max-width:1080px){
+  .contact-grid{grid-template-columns:1fr;gap:32px}
   .hero-grid{grid-template-columns:1fr;gap:48px;min-height:0}
   .hero h1{max-width:13em}
   .gets{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -378,7 +391,10 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
   .tab{padding:10px 13px;font-size:.88rem}
   .tab small{display:none}
   .cta-band .btn{flex:1 1 auto}
-  .cta-in > div:last-child{display:flex;flex-wrap:wrap;gap:12px;width:100%}
+  .contact-grid{grid-template-columns:1fr;gap:28px}
+  .frow{grid-template-columns:1fr}
+  .cform{padding:20px 16px}
+  .cform .btn{justify-self:stretch}
   .foot{grid-template-columns:1fr}
 }
 .team{display:block!important}
@@ -406,7 +422,7 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-lime btn-sm js-call" href="mailto:cathyqliu1@gmail.com?subject=Thread%20Futures%3A%2020-minute%20call">Talk to us</a>
+      <a class="btn btn-lime btn-sm" href="#contact">Talk to us</a>
       <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="links" aria-label="Open menu"><span></span></button>
     </div>
   </div>
@@ -418,14 +434,14 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <a class="pill" href="#about"><i aria-hidden="true"></i>Pre-launch · talking to brands now</a>
+      <a class="pill" href="#about"><i aria-hidden="true"></i>Pre-launch · partnering with our first brands</a>
       <h1>We find new homes for the clothes <em class="a">fashion brands can't sell.</em></h1>
       <p class="sub">We sell your returns and unsold stock to vetted buyers, without your name, and report where every item went.</p>
       <div class="ctas">
-        <a class="btn btn-lime js-call" href="mailto:cathyqliu1@gmail.com?subject=Thread%20Futures%3A%2020-minute%20call">Talk to us <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-lime" href="#contact">Talk to us <span class="arr" aria-hidden="true">→</span></a>
         <a class="btn btn-ghost" href="#how">See how it works</a>
       </div>
-      <p class="hero-for"><b>For fashion brands selling into the EU</b></p>
+      <p class="hero-for"><b>For fashion brands selling into the EU,</b> and the warehouses that hold their stock</p>
     </div>
 
     <figure class="flow" aria-label="Illustrative example: one batch of 1,840 unsold items. 1,210 sold to vetted buyers, 530 donated, 100 recycled. Batch report: 95% never destroyed.">
@@ -511,10 +527,10 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
       <p class="reveal">One batch from check to report. <span class="ill">Illustrative mock-up · example data</span></p>
     </div>
     <div class="tabs" role="tablist" aria-label="Product screens">
-      <button class="tab" role="tab" id="tab-check" aria-controls="p-check" aria-selected="true">Check</button>
-      <button class="tab" role="tab" id="tab-sell" aria-controls="p-sell" aria-selected="false" tabindex="-1">Sell</button>
-      <button class="tab" role="tab" id="tab-report" aria-controls="p-report" aria-selected="false" tabindex="-1">Report</button>
-      <button class="tab" role="tab" id="tab-insight" aria-controls="p-insight" aria-selected="false" tabindex="-1">Insight<small>later</small></button>
+      <button class="tab" type="button" role="tab" id="tab-check" aria-controls="p-check" aria-selected="true">Check</button>
+      <button class="tab" type="button" role="tab" id="tab-sell" aria-controls="p-sell" aria-selected="false" tabindex="-1">Sell</button>
+      <button class="tab" type="button" role="tab" id="tab-report" aria-controls="p-report" aria-selected="false" tabindex="-1">Report</button>
+      <button class="tab" type="button" role="tab" id="tab-insight" aria-controls="p-insight" aria-selected="false" tabindex="-1">Insight<small>later</small></button>
     </div>
     <div class="device reveal">
       <div class="device-bar" aria-hidden="true"><i></i><i></i><i></i><span>Batch TF-0142 · example</span></div>
@@ -546,9 +562,9 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
       <div class="reveal"><span class="eyebrow">What brands get</span><h2>More back. <em class="a">Less risk.</em></h2></div>
     </div>
     <div class="gets">
-      <article class="get hl reveal"><div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 7.5A5 5 0 0 0 8 10v8"/><path d="M6 13h8"/><path d="M6 18h12"/></svg></div><h3>Money back</h3><p>More than a liquidator pays, because each item finds its best buyer.</p></article>
+      <article class="get hl reveal"><div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 7.5A5 5 0 0 0 8 10v8"/><path d="M6 13h8"/><path d="M6 18h12"/></svg></div><h3>Money back</h3><p>Aiming to beat what a liquidator pays, because each item goes to the buyer who values it most.</p></article>
       <article class="get reveal" style="--d:.08s"><div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Brand protected</h3><p>Sold without your name, with limits on where it's resold.</p></article>
-      <article class="get reveal" style="--d:.16s"><div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0z"/><path d="m19 7-3 7a3 3 0 0 0 6 0z"/></svg></div><h3>Fines avoided</h3><p>A complete record, ready if a regulator asks.</p></article>
+      <article class="get reveal" style="--d:.16s"><div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0z"/><path d="m19 7-3 7a3 3 0 0 0 6 0z"/></svg></div><h3>Lower fine risk</h3><p>A complete record, ready if a regulator asks.</p></article>
       <article class="get reveal" style="--d:.24s"><div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Insight</h3><p>See what didn't sell and why, so you make less.</p></article>
     </div>
   </div>
@@ -560,10 +576,10 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
     <div class="reveal">
       <span class="eyebrow">Pricing</span>
       <h2>Paid mostly <em class="a">from what we sell.</em></h2>
-      <p class="price-note">Pilot terms are agreed with each brand. <a href="mailto:cathyqliu1@gmail.com?subject=Thread%20Futures%3A%20pilot%20terms">Ask us for pilot terms</a></p>
+      <p class="price-note">Pilot terms are agreed with each brand. <a href="#contact">Ask us for pilot terms</a></p>
     </div>
     <div class="prices">
-      <article class="price reveal"><small>First batch</small><div class="amt" style="font-size:clamp(1.6rem,3vw,2.2rem)">Try one batch</div><div class="plus">A small set-up fee, then a share of what we sell</div><p>You keep ownership of the stock until it's sold.</p></article>
+      <article class="price reveal"><small>First batch</small><div class="amt" style="font-size:clamp(1.6rem,3vw,2.2rem)">Try one batch</div><div class="plus">A hand-run pilot on one batch, on terms agreed with you</div><p>You keep ownership of the stock until it's sold.</p></article>
       <article class="price dark reveal" style="--d:.1s"><small>Regular clients</small><div class="amt" style="font-size:clamp(1.6rem,3vw,2.2rem)">Season plan</div><div class="plus">Sized to your brand, plus a share of sales</div><p>Every season's leftover stock, handled the same way.</p></article>
     </div>
   </div>
@@ -578,24 +594,24 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
     <div class="status reveal">
       <span class="st"><i aria-hidden="true"></i>Pre-launch</span>
       <ul>
-        <li><b>No customers yet</b></li>
-        <li>Talking to brands, buyers, charities and warehouses since 16 Nov 2026</li>
-        <li><b>Nearly 200</b> named contacts</li>
+        <li><b>Founded in London in 2026</b></li>
+        <li>Now onboarding our first pilot brands</li>
+        <li>Talking with brands, warehouses, buyers and EU charities</li>
       </ul>
     </div>
     <div class="team">
       <article class="founder founder-full reveal">
-        <img src="cathy-liu-480.webp" alt="Cathy Liu, founder of Thread Futures" width="480" height="480" loading="lazy" decoding="async">
+        <img src="cathy-liu-480.webp" alt="Cathy Liu, building Thread Futures" width="480" height="480" loading="lazy" decoding="async">
         <div class="fbody">
-          <small>Founder</small>
+          <small>Building Thread Futures</small>
           <h3>Cathy Liu</h3>
           <h4>Why I care</h4>
-          <p class="lead">Over the last five years it feels like we've been buying more than ever, and what bothers me most is how normal it's become. Perfectly good clothes get shredded or burned because that's cheaper than finding them a home. I don't think the answer is making people feel guilty. I think it's making the better option the easy one: finding every item a second life, and being able to show where it went.</p>
+          <p class="lead">Over the last five years it feels like we've been buying more than ever, and what bothers me most is how normal it's become. Perfectly good clothes get shredded or burned because that's cheaper than finding them a home. I don't think the answer is making people feel guilty. I think it's making the better option the easy one: finding every item a new home, and being able to show where it went.</p>
           <h4>A bit about me</h4>
           <p>I'm Cathy Liu, a data analyst from California, now in London. I spent seven years building forecasts and analytics where mistakes cost real money, at Gaine, Bank of Hawaii and Hawaiian Airlines, and recently finished an MSc in AI and Data Analytics (Merit) at Northeastern University London. I build projects constantly because I'm curious, and I've always enjoyed working with people: I ran my own digital marketing business, Cat Liu Media, finding five clients myself, and I've hosted meetup groups for two years. Thread Futures is me pointing those skills at a problem I actually care about, because I want sustainable choices to become the norm.</p>
           <div class="row">
             <a class="lk" href="https://www.linkedin.com/in/cathyqliu" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="lk" href="mailto:cathyqliu1@gmail.com">Email</a>
+            <a class="lk" href="#contact">Get in touch</a>
             <a class="lk" href="work.html">Technical work →</a>
           </div>
         </div>
@@ -610,12 +626,12 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
     <div class="side reveal">
       <span class="eyebrow">FAQ</span>
       <h2>Good <em class="a">questions.</em></h2>
-      <p>Something else? <a href="mailto:cathyqliu1@gmail.com">Email us</a>.</p>
+      <p>Something else? <a href="#contact">Send us a message</a>.</p>
     </div>
     <div class="faq reveal">
       <details><summary>How is this different from Phenix and others?<span class="pm" aria-hidden="true"></span></summary><div class="ans">
         <p>Phenix (about €20m revenue in France) does something similar for food and household goods; we're built for fashion. Otrium and B-Stock sell excess stock that's easy to sell, Trove runs branded resale, and PreZero ReValue buys stock and exports it.</p>
-        <p>We handle the leftover stock they won't take, don't take ownership of it, and give one record across every route.</p></div></details>
+        <p>We handle the leftover stock they won't take, the brand keeps ownership of the stock until it is sold, and we keep one record across every route.</p></div></details>
       <details><summary>Why not just use a liquidator?<span class="pm" aria-hidden="true"></span></summary><div class="ans">
         <p>Liquidators typically return around 5–20% of retail value (a rough industry estimate) and can't say where the goods end up. Because every item is checked, we can sell it to the buyer who will pay most, under no-destruction contracts, with a record you can show.</p></div></details>
       <details><summary>Do you buy the stock?<span class="pm" aria-hidden="true"></span></summary><div class="ans">
@@ -623,27 +639,46 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
       <details><summary>Is the brand liable if a buyer destroys the goods?<span class="pm" aria-hidden="true"></span></summary><div class="ans">
         <p>This isn't settled yet. Every buyer signs no-destruction and reporting terms, and we plan to have a lawyer review those contracts. This is general information, not legal advice.</p></div></details>
       <details><summary>Why not just use ChatGPT?<span class="pm" aria-hidden="true"></span></summary><div class="ans">
-        <p>A chatbot can explain the rules or analyse a stock file. It can't contract buyers, check goods physically, pay a charity's transport or produce a recycler's receipt. The record is made of documents created at each handover.</p></div></details>
+        <p>A chatbot can explain the rules or analyse a stock file. It can't contract buyers, check goods physically, pay a charity's transport or produce a recycler's receipt. The record is made of documents created at each handover. We do use AI where it saves time, such as reading stock lists and drafting reports, and a person reviews anything you sign off.</p></div></details>
       <details><summary>Who is it for?<span class="pm" aria-hidden="true"></span></summary><div class="ans">
         <p>Larger fashion brands selling into the EU, starting with premium and mid-market UK brands whose stock is already in EU warehouses, so nothing has to cross the border. Medium-sized brands join the ban in July 2030.</p></div></details>
       <details><summary>Who are you?<span class="pm" aria-hidden="true"></span></summary><div class="ans">
-        <p>Thread Futures is pre-launch, started in London in November 2026 by Cathy Liu. There are no customers or signed partners yet. Since 16 November we've been interviewing brands, buyers, EU charities and warehouses, and on 10 February 2027 we'll decide whether to go ahead, narrow or stop.</p>
+        <p>Thread Futures was founded in London in 2026 by Cathy Liu. We're pre-launch and now onboarding our first pilot brands, and we're talking with brands, warehouses, buyers and EU charities about how unsold stock is handled today.</p>
         <p>Cathy spent seven years as a data analyst (Gaine, Bank of Hawaii, Hawaiian Airlines), holds an MSc in AI and Data Analytics from Northeastern University London, and ran Cat Liu Media, her own digital marketing business.</p></div></details>
     </div>
   </div>
 </section>
 
-<!-- 9. FINAL CTA -->
+<!-- 9. CONTACT -->
 <section class="cta-band" id="contact">
-  <div class="wrap cta-in">
+  <div class="wrap contact-grid">
     <div class="reveal">
       <h2>Have stock you can't sell? <em class="a">Let's talk.</em></h2>
-      <p>A 20-minute call. Brands, buyers, charities and warehouses welcome.</p>
+      <p>Tell us a little about you and we'll reply to arrange a 20-minute call. Brands, warehouses, buyers, charities and investors welcome.</p>
     </div>
-    <div class="reveal ctas" style="margin-top:0">
-      <a class="btn btn-dark js-call" href="mailto:cathyqliu1@gmail.com?subject=Thread%20Futures%3A%2020-minute%20call">Book a 20-minute call <span class="arr" aria-hidden="true">→</span></a>
-      <a class="btn btn-ghost" href="mailto:cathyqliu1@gmail.com?subject=Thread%20Futures">Email us</a>
-    </div>
+    <form class="cform reveal" name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hp" aria-hidden="true"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <div class="frow">
+        <div class="fld"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="fld"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="frow">
+        <div class="fld"><label for="cf-org">Organisation <span class="opt">(optional)</span></label><input id="cf-org" name="organisation" type="text" autocomplete="organization"></div>
+        <div class="fld"><label for="cf-role">I'm a…</label>
+          <select id="cf-role" name="role" required>
+            <option value="" selected disabled>Choose one</option>
+            <option>Brand</option>
+            <option>Warehouse or 3PL</option>
+            <option>Buyer</option>
+            <option>Investor</option>
+            <option>Other</option>
+          </select></div>
+      </div>
+      <div class="fld"><label for="cf-msg">Message</label><textarea id="cf-msg" name="message" rows="5" required></textarea></div>
+      <p class="consent">By sending this form you agree that Thread Futures may use these details to reply to your enquiry. We won't share them or add you to a mailing list.</p>
+      <button class="btn btn-dark" type="submit">Send message <span class="arr" aria-hidden="true">→</span></button>
+    </form>
   </div>
 </section>
 </main>
@@ -652,32 +687,27 @@ footer{background:var(--deep);padding:64px 0 48px;font-size:.92rem;color:var(--m
   <div class="wrap">
     <div class="foot">
       <div>
-        <a class="logo" href="#top">thread <span class="b">futures</span></a>
-        <p class="tag">Every unit a second life, and the proof.</p>
+        <a class="logo" href="#top" aria-label="Thread Futures, back to top">thread <span class="b">futures</span></a>
+        <p class="tag">We find new homes for the clothes fashion brands can't sell.</p>
       </div>
       <nav aria-label="Footer">
         <a href="#how">How it works</a>
         <a href="investors.html">For investors</a>
         <a href="#pricing">Pricing</a>
-        <a href="work.html">Founder's technical work</a>
+        <a href="work.html">Earlier technical work</a>
         <a href="#faq">FAQ</a>
         <a href="https://github.com/catliugit/ThreadFutures" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </div>
-    <p class="fine">Pre-launch, no customers yet. Screens are illustrative mock-ups with example data. Pricing is a hypothesis. Sources: EU Regulation 2024/1781; Agence du Don en Nature. Not legal advice.</p>
+    <p class="fine">Pre-launch. Screens are illustrative mock-ups with example data. Pricing is a hypothesis. Sources: EU Regulation 2024/1781; Agence du Don en Nature. Not legal advice.</p>
   </div>
 </footer>
 
 <script>
 (() => {
   'use strict';
-  const EMAIL = 'cathyqliu1@gmail.com';
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
-
-  // Calls: prefilled email
-  const callHref = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Thread Futures: 20-minute call') + '&body=' + encodeURIComponent('Hi Cathy, I work at [organisation] (a brand / a buyer / an EU charity / a warehouse) and would be happy to do a 20-minute call about unsold stock.');
-  $$('.js-call').forEach(a => a.href = callHref);
 
   // Nav: scrolled state + mobile menu
   const nav = $('#nav'), menu = $('#menu'), links = $('#links');

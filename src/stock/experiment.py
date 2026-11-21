@@ -1,6 +1,6 @@
 """Experimentation for Thread Futures.
 
-Part A (real data): does a markdown actually clear stock?
+Part A (real data): does a markdown actually help stock sell?
     Stacked difference-in-differences: each SKU whose list price first dropped by 15%+ is
     compared with the 5 never-marked-down SKUs from its launch cohort whose sales were most
     similar beforehand, over the same calendar weeks (4 before, 4 after). Standard errors
