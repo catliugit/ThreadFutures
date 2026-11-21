@@ -614,7 +614,7 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
   <div class="wrap">
     <div class="eyebrow">Earlier technical work</div>
     <h1>Earlier work, <em class="accent" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:var(--lime)">shown as proof I can build.</em></h1>
-    <p class="lede">Before settling on the Thread Futures service on 12 November 2026, I built software and models. They are <b>not the product</b> and not a reason to buy. The service itself (selling brands' unsold stock and reporting where every item went) is planned, not built.</p>
+    <p class="lede">Before settling on the Thread Futures service in late 2026, I built software and models. They are <b>not the product</b> and not a reason to buy. The service itself (selling brands' unsold stock and reporting where every item went) is planned, not built.</p>
     <div class="cta-row"><a class="btn btn-line" href="index.html">← Back to Thread Futures</a><a class="btn btn-line" href="https://github.com/catliugit/ThreadFutures">Code on GitHub</a></div>
     <nav class="work-jump" aria-label="On this page"><a href="#built">What I've built</a><a href="#stall">Stall-risk model</a><a href="#offcuts">Offcut forecast (earlier idea)</a></nav>
   </div>
@@ -638,7 +638,7 @@ select:focus,input[type=text]:focus,input[type=email]:focus,textarea:focus{outli
           <li><time>9 Nov</time><span>CI: every pull request runs the tests, builds the Docker image and calls the API</span></li>
           <li><time>9 Nov</time><span>Monitoring report: drift and calibration by launch quarter</span></li>
           <li><time>9 Nov</time><span>dbt models on 1.06m real sales lines, 22 data tests</span></li>
-          <li><time>Later</time><span>Batch-record system for the service (item checks, buyer terms, charity offers and refusals, recycler statements, disclosure rows), built only after hand-run pilots show what is needed. Nothing new is being built before the go, pivot or stop decision on 26 Feb 2027 <span class="tag plan">Planned</span></span></li>
+          <li><time>Later</time><span>Batch-record system for the service (item checks, buyer terms, charity offers and refusals, recycler statements, disclosure rows), built only after hand-run pilots show what is needed. Nothing new is being built during customer discovery (to early 2027) <span class="tag plan">Planned</span></span></li>
         </ol>
       </div>
       <div class="code" aria-label="Run the API yourself">
@@ -823,7 +823,7 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
       <p><a class="logo foot-logo" href="index.html"><span class="wm-a">thread</span> <span class="wm-b">futures</span></a></p>
       <p style="margin-top:8px">Earlier technical work by Cathy Liu. Not the Thread Futures service. The stall-risk model uses UCI Online Retail II (CC BY 4.0), not fashion data; the parked fabric-waste prototype uses simulated data. Regulation text © European Union, EUR-Lex. General information, not legal advice.</p>
     </div>
-    <nav aria-label="Footer"><a href="index.html">Main site</a><a href="index.html#how">How it works</a><a href="investors.html">For investors</a><a href="reports/monitoring.html">Monitoring report</a><a href="https://github.com/catliugit/ThreadFutures">GitHub</a><a href="mailto:cathyqliu1@gmail.com">Email us</a></nav>
+    <nav aria-label="Footer"><a href="index.html">Main site</a><a href="index.html#how">How it works</a><a href="investors.html">For investors</a><a href="reports/monitoring.html">Monitoring report</a><a href="https://github.com/catliugit/ThreadFutures">GitHub</a><a href="index.html#contact">Contact us</a></nav>
   </div>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -836,7 +836,6 @@ curl -X POST localhost:8000/v1/stock/stall-risk \
 <script>
 (() => {
   'use strict';
-  const CONTACT_EMAIL = 'cathyqliu1@gmail.com';
   const $ = id => document.getElementById(id);
   const fmt = n => Math.round(n).toLocaleString('en-GB');
   const typical = {tee:[1.8,180], hoodie:[1.8,320], shirt:[1.5,120], jeans:[1.55,380], dress:[1.5,140]};

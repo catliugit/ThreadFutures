@@ -2,7 +2,7 @@
 
 How the parts of this repository fit together, and the status of each one as of 21 Nov 2026.
 
-Thread Futures is a service, not software: the product is selling brands' unsold stock and reporting where every item went. Until the go / pivot / stop decision on Fri 26 Feb 2027, nothing new is built and any early pilot runs by hand (spreadsheet and email). The code here is earlier, exploratory work.
+Thread Futures is a service, not software: the product is selling brands' unsold stock and reporting where every item went. Until customer discovery concludes in early 2027, nothing new is built and any early pilot runs by hand (spreadsheet and email). The code here is earlier, exploratory work.
 
 ```mermaid
 flowchart LR
@@ -61,7 +61,7 @@ Dotted arrows into `site/` are manual export steps. `site/` is the live website,
 | dbt pipeline | `dbt/` | **Maybe later** | Bronze → silver → gold on real open retail data, 22 data tests. Not run in CI. Could be reused for brands' stock files after pilots. |
 | Stall-risk model, experiment, monitoring | `src/stock/` | **Maybe later** | ROC AUC 0.81 vs 0.60 for a simple rule, on retail data that is not fashion. A possible input to prevention ("make less"), a later stage. |
 | Offcut forecast and purchase-order agent | `src/offcut/` | **Parked** | Earlier exploratory work for a previous idea (garment factories), not the product. Trained on simulated data. Kept as proof of build. |
-| Batch-record tool | [Part 18 in `docs/6_planned.md`](6_planned.md#part-18-batch-report-prototype) | **Planned, not built** | The first piece of product software, if pilots show it is needed. Not before 26 Feb 2027; until then pilots run by hand. |
+| Batch-record tool | [Part 18 in `docs/6_planned.md`](6_planned.md#part-18-batch-report-prototype) | **Planned, not built** | The first piece of product software, if pilots show it is needed. Not during customer discovery (to early 2027); until then pilots run by hand. |
 
 ## Files that write into `site/`
 
@@ -90,7 +90,7 @@ The docs are grouped by theme. Each themed doc holds, for every part, a header b
 | [5_platform.md](5_platform.md) | 09 API service, 10 CI and Docker build |
 | [6_planned.md](6_planned.md) | 11 to 18 (planned, not built) |
 
-Parts 1 to 10 are built and public at https://github.com/catliugit/ThreadFutures: they are earlier, exploratory technical work, not the product (Thread Futures is a B2B resale service for fashion brands' unsold stock). Parts 11 to 18 are planned and not scheduled. Part 18, the batch report prototype, would be the first piece of product software (check, sell, donate or recycle only as a last resort, report); it is planned, not built, and nothing new is built before the Fri 26 Feb 2027 go / pivot / stop decision, and any early pilot runs by hand (spreadsheet and email). The offcut forecast (Part 1) and the purchase-order agent (Part 8) are earlier exploratory work for a previous idea (garment factories), not the product.
+Parts 1 to 10 are built and public at https://github.com/catliugit/ThreadFutures: they are earlier, exploratory technical work, not the product (Thread Futures is a B2B resale service for fashion brands' unsold stock). Parts 11 to 18 are planned and not scheduled. Part 18, the batch report prototype, would be the first piece of product software (check, sell, donate or recycle only as a last resort, report); it is planned, not built, and nothing new is built during customer discovery (to early 2027), and any early pilot runs by hand (spreadsheet and email). The offcut forecast (Part 1) and the purchase-order agent (Part 8) are earlier exploratory work for a previous idea (garment factories), not the product.
 
 Numbers come from the repo's models/*.json files; re-checked against them and dbt/target/run_results.json on 21 Nov 2026. Earlier check on 17 Nov 2026 (parts 7 to 10 against models/*.json, tests/ and the CI log of 17 Nov 2026: 23 tests passed).
 
@@ -117,7 +117,7 @@ Status follows the table above: **Live** (in use, maintenance only), **Maybe lat
 | 15 Seasonality fix | Machine Learning / Data Science | Planned: seasonal features plus Platt or isotonic calibration; monitoring re-run to measure the fix. | scikit-learn, pandas, SciPy | Planned | Planned | [6_planned.md](6_planned.md#part-15-seasonality-fix) |
 | 16 Markdown pricing (Bayesian) | Data Science / Machine Learning | Planned: hierarchical Bayesian elasticity model with partial pooling by category (MCMC). | PyMC, ArviZ, pandas | Planned | Planned | [6_planned.md](6_planned.md#part-16-markdown-pricing-bayesian) |
 | 17 Azure deploy | AI Engineering / Data Engineering | Planned: CI-built image pushed to a registry and deployed to Azure Container Apps. | Azure Container Apps, Azure Container Registry, Docker | Planned | Planned | [6_planned.md](6_planned.md#part-17-azure-deploy) |
-| 18 Batch report prototype | Data Engineering / AI Engineering | Planned: batch / unit / handover data model, hash-chained append-only log, FastAPI export of the batch report and Article 24 rows. | SQL (SQLite/Postgres), FastAPI, pytest | Planned (after hand-run pilots) | Planned (not before the 26 Feb 2027 decision) | [6_planned.md](6_planned.md#part-18-batch-report-prototype) |
+| 18 Batch report prototype | Data Engineering / AI Engineering | Planned: batch / unit / handover data model, hash-chained append-only log, FastAPI export of the batch report and Article 24 rows. | SQL (SQLite/Postgres), FastAPI, pytest | Planned (after hand-run pilots) | Planned (not during customer discovery (to early 2027)) | [6_planned.md](6_planned.md#part-18-batch-report-prototype) |
 
 ## Concept index
 

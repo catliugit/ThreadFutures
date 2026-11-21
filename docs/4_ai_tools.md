@@ -2,7 +2,7 @@
 
 Language-model and retrieval work: regulation search over EU law text (Part 07) and the purchase-order agent (Part 08, earlier exploratory work for a previous idea, garment factories, not the product).
 
-Thread Futures is a B2B resale service for fashion brands: we act as their sales team for stock they can't sell themselves, and give them the money from each sale plus a report of where every item went. The code described here is earlier, exploratory technical work, not the product. Nothing new is built before the go / pivot / stop decision on Fri 26 Feb 2027, and any early pilot runs by hand (spreadsheet and email). See [ARCHITECTURE.md](ARCHITECTURE.md) for how the parts fit together.
+Thread Futures is a B2B resale service for fashion brands: we act as their sales team for stock they can't sell themselves, and give them the money from each sale plus a report of where every item went. The code described here is earlier, exploratory technical work, not the product. Nothing new is built during customer discovery (to early 2027), and any early pilot runs by hand (spreadsheet and email). See [ARCHITECTURE.md](ARCHITECTURE.md) for how the parts fit together.
 
 Each part starts with a header block (discipline, methodology, tools, status), then the short part note, then the full step-by-step guide.
 

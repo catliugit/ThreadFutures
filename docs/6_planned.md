@@ -2,7 +2,7 @@
 
 Parts that are planned and not built. Parts 11 to 17 would extend the earlier technical work; Part 18, the batch report prototype, would be the first piece of product software and would be built only after hand-run pilots show it is needed.
 
-Thread Futures is a B2B resale service for fashion brands: we act as their sales team for stock they can't sell themselves, and give them the money from each sale plus a report of where every item went. The code described here is earlier, exploratory technical work, not the product. Nothing new is built before the go / pivot / stop decision on Fri 26 Feb 2027, and any early pilot runs by hand (spreadsheet and email). See [ARCHITECTURE.md](ARCHITECTURE.md) for how the parts fit together.
+Thread Futures is a B2B resale service for fashion brands: we act as their sales team for stock they can't sell themselves, and give them the money from each sale plus a report of where every item went. The code described here is earlier, exploratory technical work, not the product. Nothing new is built during customer discovery (to early 2027), and any early pilot runs by hand (spreadsheet and email). See [ARCHITECTURE.md](ARCHITECTURE.md) for how the parts fit together.
 
 Each part starts with a header block (discipline, methodology, tools, status), then the short part note, then the full step-by-step guide.
 
@@ -34,7 +34,7 @@ Each part starts with a header block (discipline, methodology, tools, status), t
 
 Parts are ordered by priority. Effort estimates come from the subproject summaries.
 
-Parts 11 to 17 extend the earlier, exploratory technical work; they are not the product and none is scheduled. Part 18, the batch report prototype ([below](#part-18-batch-report-prototype)), would come before these, but it is planned, not built: nothing new is built before the Fri 26 Feb 2027 go / pivot / stop decision, and any early pilot runs by hand (spreadsheet and email).
+Parts 11 to 17 extend the earlier, exploratory technical work; they are not the product and none is scheduled. Part 18, the batch report prototype ([below](#part-18-batch-report-prototype)), would come before these, but it is planned, not built: nothing new is built during customer discovery (to early 2027), and any early pilot runs by hand (spreadsheet and email).
 
 | # | Part | Skills it adds | Effort | Done when |
 |---|---|---|---|---|
@@ -53,7 +53,7 @@ Parts 11 to 17 extend the earlier, exploratory technical work; they are not the 
 **Discipline:** Data Analytics / Data Engineering (primary / secondary)  
 **Methodology:** Planned: export `mart_sku_health` and `fct_sku_weekly` from DuckDB, relate them one-to-many on `stock_code` in Power BI (or Looker Studio), and write DAX measures that match the dbt and MetricFlow definitions, with one page per audience.  
 **Tools:** Power BI, Looker Studio, DAX  
-**Status:** Planned: not scheduled; nothing new is built before the 26 Feb 2027 decision.
+**Status:** Planned: not scheduled; nothing new is built during customer discovery (to early 2027).
 
 **Build state:** Planned · **Data label:** Planned  
 
@@ -107,7 +107,7 @@ Published dashboard link and a screenshot on the site.
 **Discipline:** Data Science / Data Analytics (primary / secondary)  
 **Methodology:** Planned: monthly acquisition cohorts and retention curves in SQL over the customer IDs already in the staging data, RFM scores with k-means segments, and a simple LTV (optionally BG/NBD).  
 **Tools:** SQL, dbt, Python, scikit-learn  
-**Status:** Planned: not scheduled; nothing new is built before the 26 Feb 2027 decision.
+**Status:** Planned: not scheduled; nothing new is built during customer discovery (to early 2027).
 
 **Build state:** Planned · **Data label:** Planned  
 
@@ -162,7 +162,7 @@ Cohort chart and LTV table in the repo.
 **Discipline:** Data Engineering / Data Analytics (primary / secondary)  
 **Methodology:** Planned: add a cloud target to `dbt/profiles.yml`, load the Parquet bronze layer into BigQuery or Snowflake, run the same `dbt build` there and compare row counts with DuckDB.  
 **Tools:** BigQuery, Snowflake, dbt  
-**Status:** Planned: not scheduled; nothing new is built before the 26 Feb 2027 decision.
+**Status:** Planned: not scheduled; nothing new is built during customer discovery (to early 2027).
 
 **Build state:** Planned · **Data label:** Planned  
 
@@ -216,7 +216,7 @@ dbt build passes on the cloud target.
 **Discipline:** Data Engineering / Machine Learning (primary / secondary)  
 **Methodology:** Planned: rebuild the `src/stock/features.py` feature table in PySpark on Databricks from the Parquet bronze layer, using Spark window functions, write Delta tables and check that row counts and sampled values match DuckDB.  
 **Tools:** Databricks, PySpark, Delta Lake  
-**Status:** Planned: not scheduled; nothing new is built before the 26 Feb 2027 decision.
+**Status:** Planned: not scheduled; nothing new is built during customer discovery (to early 2027).
 
 **Build state:** Planned · **Data label:** Planned  
 
@@ -270,7 +270,7 @@ Same feature table as DuckDB; row counts and a sample of values match.
 **Discipline:** Machine Learning / Data Science (primary / secondary)  
 **Methodology:** Planned: add weeks-to-Christmas and launch-season features to the stall-risk model, calibrate probabilities with Platt scaling or isotonic regression, and re-run `src/stock/monitor.py` to see whether the 2011 Q2 over-prediction shrinks.  
 **Tools:** scikit-learn, pandas, SciPy  
-**Status:** Planned: not scheduled; nothing new is built before the 26 Feb 2027 decision.
+**Status:** Planned: not scheduled; nothing new is built during customer discovery (to early 2027).
 
 **Build state:** Planned · **Data label:** Planned  
 
@@ -326,7 +326,7 @@ The 2011 Q2 gap between predicted (14%) and actual (1.7%) stall rate shrinks.
 **Discipline:** Data Science / Machine Learning (primary / secondary)  
 **Methodology:** Planned: a hierarchical model of log units on log price by category with partial pooling, fitted with MCMC, building on the markdown data used in `src/stock/experiment.py`.  
 **Tools:** PyMC, ArviZ, pandas  
-**Status:** Planned (optional): not scheduled; nothing new is built before the 26 Feb 2027 decision.
+**Status:** Planned (optional): not scheduled; nothing new is built during customer discovery (to early 2027).
 
 **Build state:** Planned · **Data label:** Planned  
 
@@ -383,7 +383,7 @@ Elasticity by category with credible intervals. Optional.
 **Discipline:** AI Engineering / Data Engineering (primary / secondary)  
 **Methodology:** Planned: push the image that CI already builds from the `Dockerfile` to a container registry and deploy it to Azure Container Apps, then add the URL to the README.  
 **Tools:** Azure Container Apps, Azure Container Registry, Docker  
-**Status:** Planned (optional): not scheduled; nothing new is built before the 26 Feb 2027 decision.
+**Status:** Planned (optional): not scheduled; nothing new is built during customer discovery (to early 2027).
 
 **Build state:** Planned · **Data label:** Planned  
 
@@ -439,9 +439,9 @@ Live API URL on Azure. Optional.
 **Discipline:** Data Engineering / AI Engineering (primary / secondary)  
 **Methodology:** Planned: a SQL data model for batches, units and handovers, a hash-chained append-only event log, and FastAPI endpoints (reusing the patterns in `src/api/main.py`) to record events and export the batch report and Article 24 disclosure rows.  
 **Tools:** SQL (SQLite/Postgres), FastAPI, pytest  
-**Status:** Planned: only after hand-run pilots (spreadsheet and email) show it is needed, and not before the 26 Feb 2027 decision.
+**Status:** Planned: only after hand-run pilots (spreadsheet and email) show it is needed, and not during customer discovery (to early 2027).
 
-**Build state:** Planned, not built · **Data label:** Planned (not before the 26 Feb 2027 decision)  
+**Build state:** Planned, not built · **Data label:** Planned (not during customer discovery (to early 2027))  
 
 ### In one line
 Planned product software: one batch report per batch of a brand's unsold stock, recording every unit and every step (check, sell or donate or recycle, report), with an export of the EU Article 24 disclosure rows.
@@ -468,7 +468,7 @@ This is why the product isn't something a chatbot can reproduce: a chat can draf
 A demo season's batches produce a reproducible batch report and disclosure rows, with tests.
 
 ### Effort
-About 4 days (an estimate). Not scheduled: nothing new is built before the Fri 26 Feb 2027 go / pivot / stop decision, and any early pilot runs by hand (spreadsheet and email). This part would be built only if the pilot shows it is needed.
+About 4 days (an estimate). Not scheduled: nothing new is built during customer discovery (to early 2027), and any early pilot runs by hand (spreadsheet and email). This part would be built only if the pilot shows it is needed.
 
 ### Note on the file name
 This part was first written up in its own file under `docs/parts/`, whose name used an earlier working name for the batch report. It now lives in this doc.

@@ -2,7 +2,7 @@
 
 The two trained models in the repo: the offcut forecast (Part 01, earlier exploratory work for a previous idea, garment factories, not the product) and the stall-risk model (Part 04).
 
-Thread Futures is a B2B resale service for fashion brands: we act as their sales team for stock they can't sell themselves, and give them the money from each sale plus a report of where every item went. The code described here is earlier, exploratory technical work, not the product. Nothing new is built before the go / pivot / stop decision on Fri 26 Feb 2027, and any early pilot runs by hand (spreadsheet and email). See [ARCHITECTURE.md](ARCHITECTURE.md) for how the parts fit together.
+Thread Futures is a B2B resale service for fashion brands: we act as their sales team for stock they can't sell themselves, and give them the money from each sale plus a report of where every item went. The code described here is earlier, exploratory technical work, not the product. Nothing new is built during customer discovery (to early 2027), and any early pilot runs by hand (spreadsheet and email). See [ARCHITECTURE.md](ARCHITECTURE.md) for how the parts fit together.
 
 Each part starts with a header block (discipline, methodology, tools, status), then the short part note, then the full step-by-step guide.
 
@@ -451,7 +451,7 @@ Outputs: `data/raw/runs.csv`, `data/staged/runs.csv`, `data/staged/quality_repor
 **Discipline:** Machine Learning / Data Science (primary / secondary)  
 **Methodology:** `src/stock/features.py` queries DuckDB for ten features from each line's first 12 weeks; `train_stall.py` fits a `GradientBoostingClassifier` on launches before 1 Oct 2010 (a time-based split), compares it with a "sales halved" rule on ROC AUC, PR AUC, precision at the top 20% and Brier score, and logs and registers the model in MLflow.  
 **Tools:** scikit-learn, MLflow, DuckDB, pandas, joblib, skops  
-**Status:** Maybe later: a possible input to prevention (helping brands make less), a later stage. Not developed before the 26 Feb 2027 decision.
+**Status:** Maybe later: a possible input to prevention (helping brands make less), a later stage. Not developed during customer discovery (to early 2027).
 
 **Build state:** Built · **Data label:** Real open retail data  
 
@@ -459,7 +459,7 @@ Outputs: `data/raw/runs.csv`, `data/staged/runs.csv`, `data/staged/quality_repor
 From a line's first 12 weeks on sale, predicts whether its sales are about to collapse, which is the line most likely to end up as unsold stock.
 
 ### Why it matters
-Brands need to act while there is still time. This is the early-warning signal for the unsold-stock workflow: an optional later idea, trained on non-fashion data and not validated for brands, and not being developed before the 26 Feb 2027 decision.
+Brands need to act while there is still time. This is the early-warning signal for the unsold-stock workflow: an optional later idea, trained on non-fashion data and not validated for brands, and not being developed during customer discovery (to early 2027).
 
 ### Data
 1,319 SKUs whose launch is observed and whose outcome window is complete. Target: average weekly units in weeks 12 to 25 below 20% of the first 12 weeks.
